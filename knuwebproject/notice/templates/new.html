@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>새글쓰기</h1>
+
+<form action="{%url 'notice_create'%}">
+    <input type="textarea", name="title"><br>
+    <input type="textarea", name="body"><br>
+    <input type="submit">
+</form>
+
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<section class="noti_intro">
+    <div>
+        <div class="des">
+            <div class="flex">
+                <h1>멋사를 함께하게 되어 반가워요</h1>
+                <p>멋사를 하면서 우리는 앞으로 많은 일들을 하게 될 거예요! 우리 모두 즐겨요!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gap">
+    <div class="con">
+        <h1><i class="fas fa-exclamation-circle"></i></h1>  
+        <h1>공지사항</h1>
+    </div>
+</section>
+
+<section class="noti">
+    <div class="con">
+        <table>
+            <thead>
+                <tr>
+                <th>#</th>
+                <th>제목</th>
+                <th>날짜</th>
+                <th>글쓴이</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for notice in notices.object_list %}
+                    <tr>
+                        <th class="one">{{notice.id}}</th>
+                        <td class="two"><a href="{% url 'notice_detail' notice.id %}">{{notice.title}}</a></td>
+                        <td class="three"><p>{{notice.pub_date}}</p></td>
+                        <td class="four">작성자</td>
+                    </tr>
+                {% endfor %}
+                
+            </tbody>
+        </table>
+        <div id="pagination" style="margin-top:25px; display:flex; justify-content:center;">
+            {{ notices.render }}
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% block  content%}
+{% load static %}
+
+<section class="sch">
+    <div class="con">
+        <div class="event-calendar"></div>
+    </div>
+</section>
+
+<section class="gap">
+    <div class="con">
+        <h1>7기</h1>
+        <p>2019.03.11 ~ 2019.12.11</p>
+    </div>
+</section>
+
+<section class="sch_text">
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <h2>7기 모집(2019.2.20 ~ 3.7)</h2>
+                <p>3/7 지원 마감, 3/8 ~ 3/9 면접, 3/10 최종 발표<br>1년간 함께 할 <span style="color:#EE7600;">멋쟁이 사자처럼 7기</span>를 모집합니다. </p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>7기 세션 시작(2019.3.11 ~)</h2>
+                <p>html, css, javascript, python, django 등을 통해 <br><span style="color:#F08080;">웹 어플리케이션의 전반</span>에 대해 배우게 됩니다.</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <h2>교내 해커톤(2019.5.24 ~ 5.25)</h2>
+                <p>그 동안 배웠던 내용을 기반으로 <br> 경북대학교 멋쟁이 사자처럼 <span style="color:#EEC900;">교내 해커톤</span>을 실시합니다.<br>여러분의 실력을 맘껏 뽐내주세요!</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>아이디어톤(2019.7.20)</h2>
+                <p>여러분이 꿈꾸왔던 또는 만들고 싶은 <br><span style="color:#EE7600;">IT 서비스에 대한 아이디어</span>를 공유해보세요. <br>Top 20에 선정된 아이디어는 구글 캠퍼스 서울에서 피칭을 하게 됩니다.</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <h2>중앙해커톤(2019.8.16 ~ 8.17)</h2>
+                <p>그 동안의 노력과 열정에 대한 결실을 맺는 시간입니다.<br> 멋쟁이 사자처럼의 최대 규모 프로젝트인 중앙해커톤을 통해<br>직접 <span style="color:#F08080;">IT 서비스를 제작하여 출품</span>할 수 있습니다.</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>7기 수료(2019.12.20)</h2>
+                <p>수료증과 함께 멋쟁이 사자처럼 7기의 활동이 종료됩니다.<br> <span style="color:#EEC900;">멋쟁이 사자처럼 7기들의 앞날을 응원합니다.</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gap_2">
+    <div class="con">
+        <h1>Hack your life</h1>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="{% static 'js/equinox.min.js'%}"></script>
+
+<script>
+	jQuery('.event-calendar').equinox({
+        events: [{
+            start: '2019-01-05 00:00',
+            end: '2019-01-06 00:00 ',
+            title: '운영진 OT',
+            url: '#',
+            class: '',
+            color: '#F08080',
+            data: {}},
+            {
+            start: '2019-01-07 17:30',
+            end: '2019-02-28 17:30',
+            title: '운영진 교육',
+            url: '#',
+            class: '',
+            color: '#F08080',
+            data: {}},
+            {
+            start: '2019-02-20 17:30',
+            end: '2019-03-07 17:30',
+            title: '7기 홍보 및 모집',
+            url: '#',
+            class: '',
+            color: '#EEC900',
+            data: {}},
+            {
+            start: '2019-03-10 17:30',
+            end: '2019-03-10 17:30',
+            title: '모집 결과 발표',
+            url: '#',
+            class: '',
+            color: '#F08080',
+            data: {}},
+            {
+            start: '2019-03-11 17:30',
+            end: '2019-04-07 17:30',
+            title: '7기 세션 Part 1',
+            url: '#',
+            class: '',
+            color: '#EEC900',
+            data: {}},
+            {
+            start: '2019-04-08 17:30',
+            end: '2019-05-03 17:30',
+            title: '중간고사 휴무',
+            url: '#',
+            class: '',
+            color: '#F08080',
+            data: {}},
+            {
+            start: '2019-05-04 17:30',
+            end: '2019-05-23 17:30',
+            title: '7기 세션 Part 2',
+            url: '#',
+            class: '',
+            color: '#EEC900',
+            data: {}},
+            {
+            start: '2019-05-24 17:30',
+            end: '2019-05-25 17:30',
+            title: '교내 해커톤',
+            url: '#',
+            class: '',
+            color: '#EE7600',
+            data: {}},
+            {
+            start: '2019-05-26 17:30',
+            end: '2019-06-30 17:30',
+            title: '기말고사 휴무',
+            url: '#',
+            class: '',
+            color: '#F08080',
+            data: {}},
+            {
+            start: '2019-07-01 17:30',
+            end: '2019-08-03 17:30',
+            title: '7기 세션 Part 3',
+            url: '#',
+            class: '',
+            color: '#EEC900',
+            data: {}},
+            {
+            start: '2019-07-20 17:30',
+            end: '2019-07-21 00:00',
+            title: '아이디어톤',
+            url: '#',
+            class: '',
+            color: '#A90045',
+            data: {}},
+            {
+            start: '2019-08-16 17:30',
+            end: '2019-08-17 17:30',
+            title: '해커톤',
+            url: '#',
+            class: '',
+            color: '#A90045',
+            data: {}},
+            {
+            start: '2019-11-23 17:30',
+            end: '2019-11-24 17:30',
+            title: '컨퍼런스',
+            url: '#',
+            class: '',
+            color: '#A90045',
+            data: {}},
+            {
+            start: '2019-12-20 17:30',
+            end: '2019-12-21 17:30',
+            title: '수료증 발급',
+            url: '#',
+            class: '',
+            color: '#A90045',
+            data: {}}],
+    });
+</script>
+
+{% endblock  %}

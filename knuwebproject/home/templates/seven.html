@@ -1,0 +1,152 @@
+
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<section class="picture_intro">
+    <div class="des">
+        <div class="flex">
+            <h1>멋사를 함께하게 되어 반가워요</h1>
+            <p>멋사를 하면서 우리는 앞으로 많은 일들을 하게 될 거예요! 우리 모두 즐겨요!</p>
+        </div>
+    </div>
+</section>
+
+<section class="picture">
+    <div class="cont">
+        <div class="content">
+            <div class="card">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <div class="title">
+                                <h1>5기 헤커톤</h1>
+                            </div>
+                            <div class="img">
+                                <img src="{% static '/img/student/유재인.jpg'%}" alt="">
+                            </div>
+                            <div class="text">
+                                <p>#헤커톤#해커톤#멋사</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <h1>5기 헤커톤</h1>
+                            </div>
+                            <div class="img">
+                                <img src="{% static '/img/student/이산하.jpg'%}" alt="">
+                            </div>
+                            <div class="text">
+                                <p>#헤커톤#해커톤#멋사</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <h1>5기 헤커톤</h1>
+                            </div>
+                            <div class="img">
+                                <img src="{% static '/img/bg.jpg'%}" alt="">
+                            </div>
+                            <div class="text">
+                                <p>#헤커톤#해커톤#멋사</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <div class="title">
+                                <h1>5기 헤커톤</h1>
+                            </div>
+                            <div class="img">
+                                <img src="{% static '/img/student/윤신웅.jpg'%}" alt="">
+                            </div>
+                            <div class="text">
+                                <p>#헤커톤#해커톤#멋사</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <h1>5기 헤커톤</h1>
+                            </div>
+                            <div class="img">
+                                <img src="{% static '/img/student/김정수.jpg'%}" alt="">
+                            </div>
+                            <div class="text">
+                                <p>#헤커톤#해커톤#멋사</p>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="flexslider">
+                    <ul class="slides">
+                        <li>
+                            <div class="title">
+                                <h1>5기 헤커톤</h1>
+                            </div>
+                            <div class="img">
+                                <img src="{% static '/img/friend.jpg'%}" alt="">
+                            </div>
+                            <div class="text">
+                                <p>#헤커톤#해커톤#멋사</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <h1>5기 헤커톤</h1>
+                            </div>
+                            <div class="img">
+                                <img src="{% static '/img/student/이시준.jpg'%}" alt="">
+                            </div>
+                            <div class="text">
+                                <p>#헤커톤#해커톤#멋사</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="title">
+                                <h1>5기 헤커톤</h1>
+                            </div>
+                            <div class="img">
+                                <img src="{% static '/img//picture_bg.jpg'%}" alt="">
+                            </div>
+                            <div class="text">
+                                <p>#헤커톤#해커톤#멋사</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="nav">
+            <h2>7기</h2>
+            <p>2016.3.11 ~ 2016.12.20</p>
+            <ul>
+                <li><a href="{% url 'five'%}"><h4><i class="fas fa-camera-retro"></i>5기</a></h4></li>
+                <li><a href="{% url 'six'%}"><h4><i class="fas fa-camera-retro"></i>6기</a></h4></li>
+                <li><a href="{% url 'seven'%}"><h4><i class="fas fa-camera-retro"></i>7기</a></h4></li>
+            </ul>
+        </div>
+    </div> 
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="{% static 'js/jquery.flexslider.js'%}"></script>
+
+<script type="text/javascript" charset="utf-8">
+    jQuery(window).load(function() {
+    jQuery('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+            jQuery('.flexslider').resize();
+        }
+    });
+    });
+</script>
+
+{% endblock content %}

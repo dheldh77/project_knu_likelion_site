@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- {% load static %} -->
+{% load staticfiles %}
+<h1>김민석</h1>
+
+<h1>김민석</h1>
+<h1>김민석</h1>
+<h1>김민석</h1>
+<h1>김민석</h1>
+
+{% for teacher, student in total.items %}
+    {{teacher}}:
+    {% for name in student %}
+        <p id="img_name">{{name}}</p>
+        <img src="{% static 'img/student/'%}{{name}}.jpg" width="300">
+    {% endfor %}
+    <hr>
+{% endfor %}
+
+{% endblock content %}

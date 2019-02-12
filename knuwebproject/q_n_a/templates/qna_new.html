@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>질문을 등록하세요</h1>
+
+<form action="{% url 'qna_create' %}">
+    <input type="textarea", name='title'>
+    <input type="textarea", name='body'>
+    <input type="submit">
+</form>
+{% endblock content %}

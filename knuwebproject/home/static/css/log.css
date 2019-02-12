@@ -1,0 +1,153 @@
+@import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
+body{
+    margin:0;
+}
+
+.signup{
+    font-family: 'Oswald', sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../img/log_bg.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup .con{
+    border-radius: 5px;
+    padding-top:10px;
+    padding-bottom:70px;
+    padding-left:100px;
+    padding-right: 100px;
+    background:rgba(0,0,0,0.4);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.signup .con h1{
+    color:white;
+    letter-spacing: 4px;
+    padding-left: 10px;
+    /* font-family: 'Oswald', sans-serif; */
+    margin-bottom:30px;
+}
+
+.signup .con img{
+    width: 100px;
+    margin-bottom:30px;
+}
+
+.signup .con input{
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    font-size:16px;
+    font-family: FontAwesome;
+    display: block;
+    width: 300px;
+    border:none;
+    border-radius: 30px;
+    background:rgba(0,0,0,0.2);
+    margin-top:12px;
+    margin-bottom:12px;
+    padding: 12px 30px;
+    color:white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.signup .con input:focus{
+    outline: none;
+}
+
+.signup .con .input{
+    font-family: 'Oswald', sans-serif;
+    width: 360px;
+    background:#c50045;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.signup .con .input:focus{
+    background:transparent;
+    outline: none;
+}
+
+
+.login{
+    /* font-family: 'Oswald', sans-serif; */
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../img/log_bg.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .con{
+    border-radius: 5px;
+    padding-top:10px;
+    padding-bottom:70px;
+    padding-left:100px;
+    padding-right: 100px;
+    background:rgba(0,0,0,0.4);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.login .con h1{
+    color:white;
+    letter-spacing: 4px;
+    padding-left: 10px;
+    /* font-family: 'Oswald', sans-serif; */
+    margin-bottom:30px;
+}
+
+.login .con img{
+    width: 100px;
+    margin-bottom:30px;
+}
+
+.login .con input{
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    font-size:16px;
+    font-family: FontAwesome;
+    display: block;
+    width: 300px;
+    border:none;
+    border-radius: 30px;
+    background:rgba(0,0,0,0.2);
+    margin-top:12px;
+    margin-bottom:12px;
+    padding: 12px 30px;
+    color:white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.login .con input:focus{
+    outline: none;
+}
+
+.login .con .input{
+    /* font-family: 'Oswald', sans-serif; */
+    width: 360px;
+    background:#c50045;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.login .con .input:focus{
+    outline: none;
+}
+
+.login .con a{
+    letter-spacing: 2px;
+    color: white;
+    text-decoration: none;
+    /* font-size: 12px; */
+}
+
+.login .con .text{
+    width: 100%;
+    text-align: center;
+}
+

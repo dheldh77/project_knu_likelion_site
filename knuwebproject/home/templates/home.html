@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/fullpage.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link rel="shortcut icon" href="https://uni.likelion.org/assets/favicons/favicon-841c731d4bf227cdbfe4fe4245d7750b2c18c37f61810aa6100de9174db89e4f.ico" type="img/x-icon">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://uni.likelion.org/assets/favicons/favicon-120-f7b42ac475d76685a746bfd55e9d9de8c5e006f9b6afb90331a72c5942da7e59.png">
+
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <a href="{% url 'home' %}">
+                <div class="logo">
+                    <img src="{% static '/img/logo_r.png' %}" alt="">
+                    <h2>KNU X LIKELION</h2>
+                </div>
+            </a>
+            <div class="menubar" id="menubar">
+                <ul class="menu">
+                    <li><a href="{% url 'schedule'%}">Introduction</a>
+                        <ul>
+                            <li class="drop_one"><a href="{% url 'about'%}">About</a></li>
+                            <li class="drop_one"><a href="{% url 'schedule'%}">Schedule</a></li>
+                            <li class="drop_one"><a href="{% url 'shuffle'%}">Team</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">History</a>
+                        <ul>
+                            <li class="drop_one"><a href="{% url 'history'%}">Members</a></li>
+                            <li class="drop_one"><a href="{% url 'five'%}">Galleries</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Community</a>
+                        <ul>
+                            <li class="drop_one"><a href="{% url 'notice'%}">Notice</a></li>
+                            <li class="drop_one"><a href="{% url 'qna'%}">Q&A</a></li>
+                        </ul>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a class="nav-link" style="color:white;">{{user.username}}</a>
+                        <ul>
+                            <li class="drop_one">
+                                <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+                                <form id="logout" method="POST" action="{% url 'logout' %}">
+                                    {% csrf_token %} <input type="hidden" />
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div id="fullpage">
+        <div class="section">
+            <section class="home_intro">
+                <div class="des">
+                    <div class="flex">
+                        <h1>멋사를 함께하게 되어 반가워요</h1>
+                        <p>멋사를 하면서 우리는 앞으로 많은 일들을 하게 될 거예요! 우리 모두 즐겨요!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="section">
+            <section id="service" class="serv">
+                <div class="width">
+                    <div class="service">
+                        <div class="img">
+                            <div class="box">
+                                <h1>멋쟁이 <br>사자처럼을 통해 <br>우리는...</h1>
+                            </div>
+                            
+                        </div>
+                        <div class="text">
+                            <p>Ruby 라는 언어를 배우고 Ruby On Raills를 통해 웹서비스를 만들겁니다! 그리고 2018년에는 더 많은 것들을 배울 수 있도록 준비하고 있습니다 :)</p>
+                        </div>
+                    </div>
+
+                    <div class="serv_des">
+                        <div class="con">
+                            <i class="fab fa-chrome"></i>
+                            <h2>PROGRAMING IS LIKE MAGIC</h2>
+                            <p>우리는 프로그래밍을 통해 평소에 꿈꾸던 서비스 혹은 세상을 바꿀 수 있는 것들을 직접 만들 수 있습니다!</p>
+                        </div>
+                        <div class="con">
+                            <i class="fas fa-laptop"></i>
+                            <h2>HACK YOUR LIFE</h2>
+                            <p>프로그래밍을 통해 우리의 삶을 바꾸는 도전을 합니다! 그 첫단계로 자신의 아이디어를 실현합니다 :)</p>
+                        </div>
+                        <div class="con">
+                            <i class="fas fa-child"></i>
+                            <h2>OPTIMIZED TO CHANGE LIFE</h2>
+                            <p>지루한 일상에서 무언가 새로운 것을 찾고 있으신가요? 그렇다면 멋쟁이 사자처럼이 도와드립니다!</p>
+                        </div>     
+                    </div>
+                </div>  
+            </section>
+        </div>
+        <div class="section">Section 3</div>
+        <div class="section">
+            <div class="slide">Slide 2.1
+            </div>
+            <div class="slide">Slide 2.2
+            </div>
+            <div class="slide">Slide 2.3
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/fullpage.js'%}"></script>
+    <script>
+        new fullpage('#fullpage', {
+            licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+            navigation: true,
+            responsiveWidth: 700,
+            anchors: ['home', 'about-us', 'contact'],
+            parallax: true,
+            onLeave: function(origin, destination, direction){
+                console.log("Leaving section" + origin.index);
+            },
+        });
+    </script>
+</body>
+</html>
+

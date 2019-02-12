@@ -1,0 +1,397 @@
+body{
+    margin:0;
+}
+
+.history_intro {
+    height: 700px;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.8)), url(../img/friend.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    
+}
+.history_intro .des{
+    word-break: keep-all;
+    font-family: 'Oswald', sans-serif;
+    padding-left:50px;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    padding-bottom:30px;
+}
+
+
+.history_intro .des h1{
+    letter-spacing: 5px;
+    font-size:38px;
+}
+
+.history_intro .des p{
+    letter-spacing: 2px;
+}
+
+.history_intro .des .flex{
+    color:white;
+}
+
+
+.history_intro .con{
+    padding-top: 70px;
+    font-family: 'Oswald', sans-serif;
+    color:white;
+    padding-top:20px;
+    padding-bottom:50px;
+    max-width: 1000px;
+    margin-left:auto;
+    margin-right:auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.history_intro .con img{
+    padding-top:10px;
+    height: 36px;
+    width: auto;
+}
+
+.history_intro .con a{
+    transition: .5s;
+    text-decoration: none;
+    color:white;
+    font-family: 'Oswald', sans-serif;
+}
+
+
+.history_intro .con a h1{
+    font-size: 18px;
+    padding:2px 50px;
+    transition: .5s;
+    border-bottom:1px solid transparent;
+}
+
+.history_intro .con a:hover h1{
+    background: rgba(196,0,69, 0.8);
+    transition: .5s;
+    color: black;
+    border-radius: 20px;
+}
+
+.master .flexslider{
+    max-width: 1300px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.master .flexslider img{
+    width:150px !important;
+    height:150px !important;
+    border-radius: 50%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.master .flexslider .list{
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    max-width: 1000px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.master .flexslider .list li{
+    margin-bottom: 70px;
+    flex:1;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.master .flexslider .list .text{
+    text-align: center;
+    word-break: keep-all;
+}
+
+.master .flexslider .list h4{
+    color: #aaa;
+    font-size:12px;
+
+}
+
+
+.student .flexslider{
+    max-width: 1300px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.student .flexslider img{
+    width:150px !important;
+    height:150px !important;
+    border-radius: 50%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.student .flexslider .list{
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    max-width: 1000px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.student .flexslider .list li{
+    margin-bottom: 70px;
+    flex:1;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.student .flexslider .list .text{
+    text-align: center;
+    word-break: keep-all;
+}
+
+.student .flexslider .list h4{
+    color: #aaa;
+    font-size:12px;
+
+}
+
+.serv .width {
+    max-width: 1300px;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.serv .width .serv_des .con{
+    text-align: center;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+.serv .width .serv_des{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serv .width .serv_des .con{
+    padding-left:60px;
+    padding-right:60px;
+}
+
+.serv .width .serv_des .con i{
+    font-size: 60px;
+    margin-bottom:30px;
+}
+
+.serv .width .serv_des .con h2{
+    font-size: 16px;
+
+}
+
+.serv .width .serv_des .con p{
+    font-size: 12px;
+    opacity: .8;
+}
+
+.master {
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)), url(../img/lion.jpg);
+    background-position:center;
+    background-size:cover;
+    padding-top:100px;
+    width: 100%;
+    padding-bottom: 50px;
+
+}
+
+.master .title{
+    font-family: 'Oswald', sans-serif;
+    color:white;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.master .title h1{
+    letter-spacing: 5px;
+}
+
+.master .title p{
+    display: inline;
+    letter-spacing: 2px;
+    border-bottom: 1px solid white;
+    padding-bottom:30px;
+}
+
+.master .flexslider{
+    border:none;
+    background:transparent;
+}
+
+.master .flexslider a{
+    text-decoration: none;
+}
+
+.master .flexslider .content{
+    transition:.5s;
+    color:white;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding:40px 15px 30px 30px;
+    background: rgba(0,0,0,0.3);
+    border:3px solid rgba(163,163,163,0.2);
+    border-radius: 2px;
+}
+
+
+.master .flexslider a:hover .content{
+    transition:.5s;
+    border:3px solid rgba(180, 23, 23, 0.2);
+}
+
+
+.master .flexslider a:hover{
+    text-emphasis: none;
+    text-decoration: none;
+}
+
+.master .flexslider .content .text{
+    display: block;
+    width: 170px;
+}
+
+.master .flexslider .content .text h1{
+    font-size: 16px;
+    letter-spacing: 5px;
+}
+
+.master .flexslider .content .text p{
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+.student {
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)), url(../img/baby_lion.jpg);
+    background-position:center;
+    background-size:cover;
+    padding-top:100px;
+    width: 100%;
+    padding-bottom: 50px;
+
+}
+
+.student .title{
+    font-family: 'Oswald', sans-serif;
+    color:white;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.student .title h1{
+    letter-spacing: 5px;
+}
+
+.student .title p{
+    display: inline;
+    letter-spacing: 2px;
+    border-bottom: 1px solid white;
+    padding-bottom:30px;
+}
+
+.student .flexslider{
+    border:none;
+    background:transparent;
+}
+
+.student .flexslider .content{
+    transition: .5s;
+    color:white;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding:40px 30px 15px 30px;
+    background: rgba(0,0,0,0.3);
+    border:3px solid rgba(163,163,163,0.2);
+    border-radius: 2px;
+}
+
+.student .flexslider .content .text{
+    display: block;
+    width: 150px;
+}
+
+.student .flexslider .content .text h1{
+    font-size: 16px;
+    letter-spacing: 5px;
+}
+
+.student .flexslider .content .text p{
+    display: block;
+    height: 50px;
+    font-size: 14px;
+    letter-spacing: 2px;
+}
+
+
+.student .flexslider a{
+    text-decoration: none;
+}
+
+.student .flexslider a:hover .content{
+    transition:.5s;
+    border:3px solid rgba(180, 23, 23, 0.2);
+}
+
+
+.student .flexslider a:hover{
+    text-emphasis: none;
+    text-decoration: none;
+}
+
+
+.blank{
+    opacity: 0;
+}
+
+.gap{
+    color:white;
+    padding:100px 50px;
+    background:rgba(0,0,0,0.9);
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gap .con{
+    text-align: center;
+}
+
+.top {
+    font-size: 40px;
+    color:white;
+    position: fixed;
+    right:50px;
+    display: none;
+    bottom: 30px;
+    opacity: 0.3;
+    transition: .5s;
+}
+
+.top:hover{
+    transition: .5s;
+    opacity: 1;
+}
