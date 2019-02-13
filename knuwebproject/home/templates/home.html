@@ -22,7 +22,7 @@
         <div class="header">
             <a href="{% url 'home' %}">
                 <div class="logo">
-                    <img src="{% static '/img/logo_r.png' %}" alt="">
+                    <img src="{% static '/img/logo.png' %}" alt="">
                     <h2>KNU X LIKELION</h2>
                 </div>
             </a>
@@ -113,7 +113,18 @@
                 </div>  
             </section>
         </div>
-        <div class="section">Section 3</div>
+        <div class="section">
+            <section id="section" class="timeline">
+                <div class="con">
+                    <div class="title">
+                    <h1>커리큘럼이닷!</h1>
+                    <p>이렇게 저렇게 진행됩니다</p>
+                    <img src=" {% static 'img/dot.png' %}" alt="">     
+                    </div>
+                    <img src="{% static 'img/timeline.png'%}" width="70%" alt="">
+                </div>
+            </section>
+        </div>
         <div class="section">
             <div class="slide">Slide 2.1
             </div>
