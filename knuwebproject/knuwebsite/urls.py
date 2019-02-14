@@ -19,6 +19,7 @@ import home.views
 import notice.views
 import q_n_a.views
 import game.views
+import interview.views
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -32,15 +33,9 @@ urlpatterns = [
     path('seven/', home.views.seven, name="seven"),
     path('schedule/', home.views.schedule, name='schedule'),
     path('about/', home.views.about, name='about'),
-    path('notice/',notice.views.notice,name="notice"),
-    path('notice/new/',notice.views.new,name="notice_new"),
-    path('notice/create/',notice.views.create,name="notice_create"),
-    path('notice/<int:notice_num>/',notice.views.detail,name="notice_detail"),
-    path('notice/more',notice.views.more,name="notice_more"),
-    path('qna/',q_n_a.views.qna,name='qna'),
-    path('qna/new/',q_n_a.views.new,name='qna_new'),
-    path('qna/create/',q_n_a.views.create,name="qna_create"),
-    path('qna/<int:qna_num>',q_n_a.views.detail,name='qna_detail'),
-    path('shuffle/', game.views.shuffle, name="shuffle"),
+    path('notice/',include('notice.urls')),
+    path('q_n_a/',include('q_n_a.urls')),
     path('accounts/',include('accounts.urls')),
-]
+    path('shuffle/', game.views.shuffle, name="shuffle"),
+    path('interview/',interview.views.board, name="interview")
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

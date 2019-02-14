@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'game.apps.GameConfig',
     'pure_pagination',
     'accounts.apps.AccountsConfig',
+    'interview.apps.InterviewConfig',
 ]
 
 MIDDLEWARE = [
@@ -158,6 +159,9 @@ STATICFILES_DIRS = [
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
