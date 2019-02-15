@@ -473,7 +473,7 @@ footer .container .contact a:hover{
     margin: 0 auto; 
 }
 
-.timeline{
+.home_timeline{
     width: 100%;
     height:100vh;
     background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)), url(../img/home_code.jpg);
@@ -484,31 +484,31 @@ footer .container .contact a:hover{
     align-items: center;
 }
 
-.timeline .con{
+.home_timeline .con{
     text-align: center;
     max-width: 1500px;
     margin-right: auto;
     margin-left:auto;
 }
 
-.timeline .title{
+.home_timeline .title{
     font-family: 'Oswald', sans-serif;
     color:white;
     margin-bottom: 50px;
 }
 
-.timeline .title h1{
+.home_timeline .title h1{
     letter-spacing: 5px;
     margin-bottom: 0 !important;
     margin-top: 0 !important;
 }
 
-.timeline .title p{
+.home_timeline .title p{
     opacity: .6;
     margin-top: 0 !important;
 }
 
-.timeline .title img{
+.home_timeline .title img{
     width: 150px;
     height: auto;
 }
