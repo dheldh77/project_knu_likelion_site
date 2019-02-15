@@ -2,7 +2,7 @@
 {% block content %}
 <h1>질문을 등록하세요</h1>
 
-<form action="{% url 'qna_create' %}">
+<form action="{% url 'qna:create' %}">
     <input type="textarea", name='title'>
     <input type="textarea", name='body'>
     <input type="submit">

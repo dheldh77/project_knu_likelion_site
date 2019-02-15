@@ -34,9 +34,9 @@
                 {% for notice in notices.object_list %}
                     <tr>
                         <th class="one">{{notice.id}}</th>
-                        <td class="two"><a href="{% url 'notice_detail' notice.id %}">{{notice.title}}</a></td>
+                        <td class="two"><a href="{% url 'notice:detail' notice.id %}">{{notice.title}}</a></td>
                         <td class="three"><p>{{notice.pub_date}}</p></td>
-                        <td class="four">작성자</td>
+                        <td class="four">관리자</td>
                     </tr>
                 {% endfor %}
                 

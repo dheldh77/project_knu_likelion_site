@@ -57,8 +57,8 @@
                     </li>
                     <li><a href="#">Community</a>
                         <ul>
-                            <li class="drop_one"><a href="{% url 'notice'%}">Notice</a></li>
-                            <li class="drop_one"><a href="{% url 'qna'%}">Q&A</a></li>
+                            <li class="drop_one"><a href="{% url 'notice:notice'%}">Notice</a></li>
+                            <li class="drop_one"><a href="{% url 'qna:qna'%}">Q&A</a></li>
                         </ul>
                     </li>
                     {% if user.is_authenticated %}

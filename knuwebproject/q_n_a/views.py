@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import QNA
+# from django.utils import timezone
 from django.utils import timezone
 from pure_pagination import Paginator, EmptyPage, PageNotAnInteger 
 
@@ -15,18 +16,18 @@ def qna(request):
     p = Paginator(qnas, 10)
 
     people = p.page(page)
-    return render(request,'qna.html', {'qnas':people})
+    return render(request,'qna/qna.html', {'qnas':people})
 
 def create(request):
     qna = QNA()
     qna.title = request.GET['title']
     qna.body = request.GET['body']
-    qna.pub_date = timezone.datetime.now()
+    qna.pub_date = timezone.now()
     qna.save()
-    return redirect('/qna/'+str(qna.id))
+    return redirect('/q_n_a/'+str(qna.id))
 
 def new(request):
-    return render(request,'qna_new.html')
+    return render(request,'qna/new.html')
 
 def detail(request, qna_num):
     qna = get_object_or_404(QNA,pk=qna_num)
@@ -39,8 +40,8 @@ def detail(request, qna_num):
 
     #맨 마지막 글
     if(QNA.objects.last() == qna):
-        next = 0
+        next_ = 0
     else:
-        next = qna.id + 1
+        next_ = qna.id + 1
 
-    return render(request,'qna_detail.html',{'qna':qna, 'prev':prev, 'next':next})
+    return render(request,'qna/detail.html',{'qna':qna, 'prev':prev, 'next':next_})

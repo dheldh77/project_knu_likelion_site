@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-<section class="intro">
+{% load static %}
+<section class="qna_intro">
     <div>
         <div class="des">
             <div class="flex">
@@ -14,7 +15,7 @@
 <section class="gap">
     <div class="con">
         <h1><i class="fas fa-exclamation-circle"></i></h1>  
-        <h1>공지사항</h1>
+        <h1>질문사항</h1>
     </div>
 </section>
 
@@ -23,31 +24,39 @@
         <div class="card">
             <div class="title">
                 <div class="main">
-                    <h1>{{notice.title}}</h1>
+                    <h1>{{qna.title}}</h1>
                 </div>
                 <div class="sub_title">
-                    <p><i class="fas fa-calendar-alt"></i>{{notice.pub_date}}</p>
+                    <p><i class="fas fa-calendar-alt"></i>{{qna.pub_date}}</p>
                     <p><i class="fas fa-user"></i>작성자</p>
                 </div>
             </div>
             <div class="content">
-                <p>{{notice.body}}</p>
+                <p id= "qna_body">{{qna.body}}</p>
             </div>
         </div>
         <div class="go">
             {% if prev == 0 %}
-                <a href="#" onclick="alert('처음 공지 입니다!')"><i class="fas fa-angle-left"></i> previous</a>
+                <a href="#" onclick="alert('처음 질문 입니다!')"><i class="fas fa-angle-left"></i> previous</a>
             {% else %}
-                <a href="{% url 'notice_detail' prev %}"><i class="fas fa-angle-left"></i> previous</a>
+                <a href="{% url 'qna:detail' prev %}"><i class="fas fa-angle-left"></i> previous</a>
             {% endif %}
-            <a href="{% url 'notice'%}">list</a>
+            <a href="{% url 'qna:qna' %}">list</a>
             {% if next == 0 %}
-                <a href="#" onclick="alert('마지막 공지 입니다!')">next <i class="fas fa-angle-right"></i></a>
+                <a href="#" onclick="alert('마지막 질문 입니다!')">next <i class="fas fa-angle-right"></i></a>
             {% else %}
-                <a href="{% url 'notice_detail' next %}">next <i class="fas fa-angle-right"></i></a>
+                <a href="{% url 'qna:detail' next_ %}">next <i class="fas fa-angle-right"></i></a>
             {% endif %}
         </div>
     </div>
 </section>
+<script>
+function changeStr(){
+    var str = document.getElementById("qna_body").innerHTML;
+    document.getElementById("qna_body").innerHTML= document.getElementById("qna_body").innerText
+}
+window.onload=changeStr;
+</script>
 
 {% endblock content %}
+

@@ -34,7 +34,7 @@
                 {% for qna in qnas.object_list %}
                     <tr>
                         <th class="one">{{qna.id}}</th>
-                        <td class="two"><a href="{% url 'qna_detail' qna.id %}">{{qna.title}}</a></td>
+                        <td class="two"><a href="{% url 'qna:detail' qna.id %}">{{qna.title}}</a></td>
                         <td class="three"><p>{{qna.pub_date}}</p></td>
                         <td class="four">작성자</td>
                     </tr>
@@ -47,7 +47,7 @@
             <button id="myBtn">질문하기</button>
             <div id="myModal" class="modal">
                 <div class="modal-content">
-                    <form action="{% url 'qna_create' %}" onsubmit="SubmitQ()">
+                    <form action="{% url 'qna:create' %}" onsubmit="SubmitQ()">
                         <div class="modal-header">
                             <span class="close">&times;</span>
                             <input type="textarea", name='title' autocomplete=off placeholder="제목을 입력하세요">
