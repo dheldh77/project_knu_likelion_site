@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/fullpage.css'%}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/yoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css">
 
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="shortcut icon" href="https://uni.likelion.org/assets/favicons/favicon-841c731d4bf227cdbfe4fe4245d7750b2c18c37f61810aa6100de9174db89e4f.ico" type="img/x-icon">
@@ -119,23 +120,64 @@
             <section id="section" class="timeline">
                 <div class="con">
                     <div class="title">
-                    <h1>커리큘럼이닷!</h1>
-                    <p>이렇게 저렇게 진행됩니다</p>
-                    <img src=" {% static 'img/dot.png' %}" alt="">     
+                        <h1>커리큘럼이닷!</h1>
+                        <p>이렇게 저렇게 진행됩니다</p>
+                        <img src=" {% static 'img/dot.png' %}" alt="">     
                     </div>
                     <img src="{% static 'img/timeline.png'%}" width="70%" alt="">
                 </div>
             </section>
         </div>
         <div class="section">
-            <div class="slide">Slide 2.1
-            </div>
-            <div class="slide">Slide 2.2
-            </div>
-            <div class="slide">Slide 2.4
+            <div class="home_ad">
+                <div class="ad">
+                    <div class="title">
+                        <h1>멋사소식이닷!</h1>
+                        <p>이렇게 저렇게 진행됩니다</p>
+                    </div>
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li>
+                                <div class="content">
+                                    <img src="{% static 'img/new/n1.jpg'%}" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content">
+                                    <img src="{% static 'img/new/n2.jpg'%}" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content">
+                                    <img src="{% static 'img/new/n3.jpg'%}" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content">
+                                    <img src="{% static 'img/new/n4.jpg'%}" alt="">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="{% static 'js/jquery.flexslider.js'%}"></script>
+
+<script type="text/javascript" charset="utf-8">
+    jQuery(window).load(function() {
+    jQuery('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+            jQuery('.flexslider').resize();
+        }
+    });
+    });
+</script>
 
     <script src="{% static 'js/fullpage.js'%}"></script>
     <script>
