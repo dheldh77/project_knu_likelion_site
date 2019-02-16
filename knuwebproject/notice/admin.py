@@ -1,5 +1,13 @@
 from django.contrib import admin
-from .models import Notice
+from .models import Notice, Pic
 
 # Register your models here.
-admin.site.register(Notice)
+
+
+class PicInline(admin.TabularInline):
+    model = Pic
+
+class NoticeAdmin(admin.ModelAdmin):
+    inlines = [PicInline,]
+
+admin.site.register(Notice, NoticeAdmin)

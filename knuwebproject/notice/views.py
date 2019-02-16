@@ -31,8 +31,8 @@ def create(request):
     notice.save()
     return redirect("/notice/"+str(notice.id))
 
-def detail(request,notice_num):
-    notice = get_object_or_404(Notice,pk=notice_num)
+def detail(request,notice_id):
+    notice = get_object_or_404(Notice,pk=notice_id)
     
     #맨 처음 글
     if(Notice.objects.first() == notice):
