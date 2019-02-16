@@ -155,7 +155,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'game', 'static'),
     os.path.join(BASE_DIR, 'notice', 'static'),
     os.path.join(BASE_DIR, 'q_n_a', 'static'),
-
+    os.path.join(BASE_DIR, 'interview', 'static'),
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
