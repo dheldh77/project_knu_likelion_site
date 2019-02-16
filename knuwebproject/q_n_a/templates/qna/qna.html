@@ -34,20 +34,25 @@
                 {% for qna in qnas.object_list %}
                     <tr>
                         <th class="one">{{qna.id}}</th>
-                        <td class="two"><a href="{% url 'qna:detail' qna.id %}">{{qna.title}}</a></td>
+                        <td class="two"><a href="{%url 'qna:detail' qna.id %}">{{qna.title}}</a></td>
                         <td class="three"><p>{{qna.pub_date}}</p></td>
-                        <td class="four">작성자</td>
+                        <td class="four">{{qna.user.username}}</td>
                     </tr>
                 {% endfor %}
-                
             </tbody>
         </table>
         <div class="new">
-            <i class="fas fa-angle-double-left"></i>
-            <button id="myBtn">질문하기</button>
+            {% if user.is_authenticated %}
+                <i class="fas fa-angle-double-left"></i>
+                <button id="myBtn">질문하기</button>
+            {% else %}
+                <i class="fas fa-angle-double-left"></i>
+                <button onClick="alert('로그인해주세요')">질문하기</button>
+            {% endif %}
             <div id="myModal" class="modal">
                 <div class="modal-content">
-                    <form action="{% url 'qna:create' %}" onsubmit="SubmitQ()">
+                    <form action="{% url 'qna:create' %}" onsubmit="SubmitQ()" enctype='multipart/form-data' method="POST">
+                        {% csrf_token %}
                         <div class="modal-header">
                             <span class="close">&times;</span>
                             <input type="textarea", name='title' autocomplete=off placeholder="제목을 입력하세요">
@@ -57,7 +62,7 @@
                             <textarea name='body' id='qna_body' autocomplete=off placeholder="내용을 입력하세요"></textarea>
                         </div>
                         <div class="modal-footer">
-                            <input type="file">
+                            <input type="file" name="file" multiple>   
                             <i class="fas fa-angle-double-right"></i>
                             <input type="submit" value="submit">
                         </div>

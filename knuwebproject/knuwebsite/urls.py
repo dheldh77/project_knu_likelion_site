@@ -34,8 +34,8 @@ urlpatterns = [
     path('schedule/', home.views.schedule, name='schedule'),
     path('about/', home.views.about, name='about'),
     path('notice/',include('notice.urls')),
-    path('q_n_a/',include('q_n_a.urls')),
+    path('qna/',include('q_n_a.urls')),
     path('accounts/',include('accounts.urls')),
     path('shuffle/', game.views.shuffle, name="shuffle"),
-    path('interview/',interview.views.board, name="interview")
+    path('interview/',interview.views.board, name="interview"),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,5 +1,8 @@
 <h1>interview</h1>
  {% for img in imgs.all %}
-    <img src="{{img.image.url}} " alt="">
+    {% if img.image is null%}
 
+    {% else %}
+        <img src="{{img.image.url}} " alt="">
+    {% endif %}
 {% endfor %}

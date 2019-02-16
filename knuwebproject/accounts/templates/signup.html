@@ -48,8 +48,8 @@
                     </li>
                     <li><a href="#">Community</a>
                         <ul>
-                            <li class="drop_one"><a href="{% url 'notice'%}">Notice</a></li>
-                            <li class="drop_one"><a href="{% url 'qna'%}">Q&A</a></li>
+                            <li class="drop_one"><a href="{% url 'notice:notice'%}">Notice</a></li>
+                            <li class="drop_one"><a href="{% url 'qna:board'%}">Q&A</a></li>
                         </ul>
                     </li>
                     {% if user.is_authenticated %}
@@ -83,7 +83,7 @@
                     <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="passwd1" placeholder="&#xf023;      Password">
                 </div>
                 <div class="form-group">
-                    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="&#xf023;      Password confirm">
+                    <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" name="passwd2" placeholder="&#xf023;      Password confirm">
                 </div>
                 <input class="input" type="submit" value="submit" >
             </form>

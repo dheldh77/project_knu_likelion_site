@@ -28,24 +28,31 @@
                 </div>
                 <div class="sub_title">
                     <p><i class="fas fa-calendar-alt"></i>{{qna.pub_date}}</p>
-                    <p><i class="fas fa-user"></i>작성자</p>
+                    <p><i class="fas fa-user"></i>{{qna.user.username}}</p>
                 </div>
             </div>
+            {% if canEdit == True %}
+                <a href="{% url 'qna:edit' qna.id %}" class="button">수정</a>
+                <a href="{% url 'qna:delete' qna.id %}" class="button">삭제</a>
+            {% endif %}
             <div class="content">
                 <p id= "qna_body">{{qna.body}}</p>
+                {% for pic in qna.photo_set.all%}
+                    <img src="{{pic.image.url}}" alt="picture">
+                {% endfor %}
             </div>
         </div>
         <div class="go">
             {% if prev == 0 %}
                 <a href="#" onclick="alert('처음 질문 입니다!')"><i class="fas fa-angle-left"></i> previous</a>
             {% else %}
-                <a href="{% url 'qna:detail' prev %}"><i class="fas fa-angle-left"></i> previous</a>
+                <a href="{#% url 'qna:detail' prev %#}"><i class="fas fa-angle-left"></i> previous</a>
             {% endif %}
-            <a href="{% url 'qna:qna' %}">list</a>
+            <a href="{% url 'qna:board' %}">list</a>
             {% if next == 0 %}
                 <a href="#" onclick="alert('마지막 질문 입니다!')">next <i class="fas fa-angle-right"></i></a>
             {% else %}
-                <a href="{% url 'qna:detail' next_ %}">next <i class="fas fa-angle-right"></i></a>
+                <a href="{#% url 'qna:detail' next_ %#}">next <i class="fas fa-angle-right"></i></a>
             {% endif %}
         </div>
     </div>
