@@ -30,8 +30,30 @@
                     <p><i class="fas fa-calendar-alt"></i>{{qna.pub_date}}</p>
                     <p><i class="fas fa-user"></i>{{qna.user.username}}</p>
                     {% if canEdit == True %}
-                        <p><a href="{% url 'qna:edit' qna.id %}" class="button"><i class="fas fa-edit"></i>edit</a></p> 
-                        <p><a href="{% url 'qna:delete' qna.id %}" class="button"><i class="fas fa-trash-alt"></i>delete</a></p> 
+                        <p><a id="myBtn" class="focus"><i class="fas fa-edit"></i>edit</a></p>
+                        <p><a href="{% url 'qna:delete' qna.id %}" class="button"><i class="fas fa-trash-alt"></i>delete</a></p>
+                        <div id="myModal" class="modal">
+                            <div class="modal-content">
+                                <form action="{% url 'qna:update' qna.id %}" onsubmit="SubmitQ()" enctype='multipart/form-data'>
+                                    {% csrf_token %}
+                                    <div class="modal-header">
+                                        <span class="close">&times;</span>
+                                        <input type="textarea", name='title' autocomplete=off placeholder="제목을 입력하세요">
+                                        <div class="file">
+                                            <input type="file" name="file" multiple>   
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- <input type="text", id='qna_body'name='body' autocomplete=off placeholder="내용을 입력하세요"> -->
+                                        <textarea name='body' id='qna_body' autocomplete=off placeholder="내용을 입력하세요"></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <i class="fas fa-angle-double-right"></i>
+                                        <input type="submit" value="submit">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     {% endif %}
                 </div>
             </div>
@@ -63,6 +85,26 @@ function changeStr(){
     document.getElementById("qna_body").innerHTML= document.getElementById("qna_body").innerText
 }
 window.onload=changeStr;
+</script>
+
+<script>
+    var modal = document.getElementById('myModal');
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 </script>
 
 {% endblock content %}

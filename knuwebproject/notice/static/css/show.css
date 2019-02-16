@@ -110,6 +110,10 @@ body{
     text-decoration: none;
 }
 
+.show .con .card .title .sub_title .focus:hover{
+    cursor: pointer;
+}
+
 .show .con .card .content{
     min-height: 600px;
     padding: 50px 50px;
