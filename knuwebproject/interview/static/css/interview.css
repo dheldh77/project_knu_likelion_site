@@ -1,0 +1,27 @@
+body{
+    margin:0;
+}
+.interview{
+    width: 100%;
+    background-color:rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.interview .con{
+    max-width: 1300px;
+    margin-right:auto;
+    margin-left:auto;
+    color:white;
+}
+
+.interview .con .title{
+    margin-top: 100px;
+}
+
+.interview .con .view img{
+    display: flex;
+    justify-content: flex-start;
+    width: 300px;
+}

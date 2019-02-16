@@ -1,0 +1,97 @@
+@font-face { font-family: 'BMJUA'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'locus_sangsang'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/locus_sangsang.woff') format('woff'); font-weight: normal; font-style: normal; }
+
+/* HEADER */
+header a{
+    font-family: 'locus_sangsang' !important;
+}
+
+header .menubar .menu li a{
+    font-size:14px;
+}
+
+/* ABOUT */
+.about_what .con h3{
+    color:white;
+    font-family: 'locus_sangsang';
+    margin-bottom:100px;
+}
+
+.about_what .con h4{
+    color:white;
+    font-family: 'locus_sangsang';
+}
+
+.about_what .con p{
+    font-size:15px;
+    font-family: 'BMJUA';
+}
+
+.about_how .con .text h4{
+    font-family: 'Oswald', sans-serif;
+    color:#F08080;
+}
+.about_how .con .text{
+    font-family:'locus_sangsang';
+}
+
+.about_last .con .text h2{
+    font-family:'locus_sangsang';
+}
+
+.about_last .con .text p{
+    font-family:'BMJUA';
+    font-size:15px;
+}
+
+
+
+/* Schedule */
+.sch_text h2{
+    font-family:"locus_sangsang";
+}
+
+.sch_text p{
+    font-family:"BMJUA";
+}
+
+.gap h1,p{
+    font-family:"locus_sangsang";
+}
+
+/* HISTORY */
+
+.history_intro .des h1{
+    font-family:"locus_sangsang";
+}
+.history_intro .des p{
+    font-family:"BMJUA";
+}
+
+
+/* LOGIN */
+.login{
+    font-family:"BMJUA";
+    /* font-size:15px; */
+}
+.login .con h1{
+    font-family:"locus_sangsang";
+}
+.login .con .input{
+    font-family:"BMJUA";
+}
+
+.log .con a{
+    font-family:"BMJUA";
+    font-size:15px;
+}
+
+.signup .con h1{
+    font-family:"locus_sangsang";
+}
+
+.signup .con .input{
+    font-family:"BMJUA";
+    font-size:15px;
+}
+

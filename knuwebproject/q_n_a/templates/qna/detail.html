@@ -29,12 +29,12 @@
                 <div class="sub_title">
                     <p><i class="fas fa-calendar-alt"></i>{{qna.pub_date}}</p>
                     <p><i class="fas fa-user"></i>{{qna.user.username}}</p>
+                    {% if canEdit == True %}
+                        <p><a href="{% url 'qna:edit' qna.id %}" class="button"><i class="fas fa-edit"></i>edit</a></p> 
+                        <p><a href="{% url 'qna:delete' qna.id %}" class="button"><i class="fas fa-trash-alt"></i>delete</a></p> 
+                    {% endif %}
                 </div>
             </div>
-            {% if canEdit == True %}
-                <a href="{% url 'qna:edit' qna.id %}" class="button">수정</a>
-                <a href="{% url 'qna:delete' qna.id %}" class="button">삭제</a>
-            {% endif %}
             <div class="content">
                 <p id= "qna_body">{{qna.body}}</p>
                 {% for pic in qna.photo_set.all%}

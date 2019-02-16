@@ -101,14 +101,24 @@ body{
 
 
 .show .con .card .title .sub_title p {
-    font-size: 14px;
-    margin-left: 50px;
+    margin-right: 40px;
+    font-size: 10px;
+}
+
+.show .con .card .title .sub_title p a{
+    color: white;
+    text-decoration: none;
 }
 
 .show .con .card .content{
     min-height: 600px;
     padding: 50px 50px;
     border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.show .con .card .content img{
+    width:100%;
+    height: auto;
 }
 
 .show .con .card .content p{
