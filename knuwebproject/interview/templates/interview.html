@@ -2,18 +2,85 @@
 {% extends 'base.html' %}
 {% block  content %}
 {% load static %}
+    <section class="interview_intro">
+        <div class="des">
+            <div class="flex">
+                <h1>OB 멤버들과의 인터뷰입니다</h1>
+                <p>멋사를 하면서 우리는 앞으로 많은 일들을 하게 될 거예요! 우리 모두 즐겨요!</p>
+            </div>
+        </div>
+    </section>
     <section class="interview">
         <div class="con">
             <div class="title">
-            <h1>interview</h1>
+                <h1>Interview</h1>
             </div>
             <div class="view">
                 {% for img in imgs.all %}
-                    <img src="{{img.image.url}} " alt="">
-                    <h3>{{ img.title }}</h3>
+                    <div class="card">
+                        <button class="detail" onclick="cust(this)" data-id="{{imgs.id}}">
+                            <div class="img">
+                                <img src="{{img.image.url}} " alt="">
+                                <div class="overlay">
+                                    <div class="text"><i class="fas fa-plus"></i></div>
+                                </div>
+                            </div>
+                            <div class="des">
+                                <h3>{{ img.title }}</h3>
+                            </div>
+                        </button>
+                        <div id="myModal{{img.id}}" class="modal">
+                            <div class="modal-content">
+                                <form action="{% url 'qna:create' %}" onsubmit="SubmitQ()" enctype='multipart/form-data' method="POST">
+                                    {% csrf_token %}
+                                    <div class="modal-header">
+                                        <span class="close">&times;</span>
+                                        <input type="textarea", name='title' autocomplete=off placeholder="제목을 입력하세요">
+                                        <div class="file">
+                                            <input type="file" name="file" multiple>   
+                                        </div>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- <input type="text", id='qna_body'name='body' autocomplete=off placeholder="내용을 입력하세요"> -->
+                                        <textarea name='body' id='qna_body' autocomplete=off placeholder="내용을 입력하세요"></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <i class="fas fa-angle-double-right"></i>
+                                        <input type="submit" value="submit">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
         </div>
     </section>
+    
+    <script>
+        function cust(elem){
+            var modal = document.getElementById('myModal');
+            modal.style.display = "blcock";
+        }
+    </script>
+    <script>
+        var modal = document.getElementById('myModal'+elem);
+        var btn = document.getElementById("myBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 {% endblock %}
 

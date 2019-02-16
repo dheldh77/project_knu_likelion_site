@@ -10,18 +10,151 @@ body{
 }
 
 .interview .con{
-    max-width: 1300px;
+    width: 1000px;
     margin-right:auto;
     margin-left:auto;
     color:white;
 }
 
 .interview .con .title{
+    font-family: 'Oswald', sans-serif;
     margin-top: 100px;
+    margin-bottom: 60px;
 }
 
-.interview .con .view img{
+.interview .con .title h1{
+    letter-spacing: 0.3em;
+    font-size: 3em;
+    padding-bottom:30px;
+    border-bottom:1px solid #aaa;
+}
+
+.interview .con .view {
     display: flex;
     justify-content: flex-start;
-    width: 300px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
 }
+
+.interview .con .view .card{
+    width: 300px;
+    margin-bottom:30px;
+}
+
+.interview .con .view .card .detail{
+    display: block;
+    background:transparent;
+    padding:0;
+    border:none;
+    margin:0;
+    width: 100%;
+}
+
+.interview .con .view .card .img{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:black;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.interview .con .view .card .img img{
+    margin:0 auto;
+    transition: .5s ease;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.interview .con .view .card button{
+    color:white;
+    text-decoration: none;
+}
+
+.interview .con .view .card .detail h3{
+    margin-top:5px;
+}
+
+.interview .con .view .card .detail .des{
+    font-size:18px;
+    width:100%;
+    display: flex;
+    font-family: 'Oswald', sans-serif;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.interview .con .view .card .detail .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(200,5,69,0.6);
+}
+
+.interview .con .view .card .detail .text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.interview .con .view .card .detail:hover .overlay{
+    opacity: 1;
+}
+
+.interview .con .view .card .detail:hover .img img{
+    transition: .5s;
+    transform: scale(1.2);
+}
+
+.interview_intro {
+    height: 450px;
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.8)), url(../img/friend.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    
+}
+.interview_intro .des{
+    word-break: keep-all;
+    font-family: 'Oswald', sans-serif;
+    padding-left:50px;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: center;
+    padding-bottom:30px;
+}
+
+
+.interview_intro .des h1{
+    letter-spacing: 5px;
+    font-size:38px;
+}
+
+.interview_intro .des p{
+    letter-spacing: 2px;
+}
+
+.interview_intro .des .flex{
+    color:white;
+}
+
