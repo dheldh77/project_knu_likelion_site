@@ -74,6 +74,10 @@ body{
     text-decoration: none;
 }
 
+.interview .con .view .card button:focus {
+    oultine:none;
+}
+
 .interview .con .view .card .detail h3{
     margin-top:5px;
 }
@@ -158,3 +162,41 @@ body{
     color:white;
 }
 
+.modal-content2 {
+    position: relative;
+    background-color: rgba(0, 0,0 , 0.4);
+    margin: auto;
+    padding: 0;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 5px;
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+.modal-content2 .modal-header2{
+    padding-left:50px;
+    padding-right:50px;
+}
+
+.modal-content2 .modal-body2{
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-content2 .modal-body .main{
+    width: 50%;
+}
+.modal-content2 .modal-body .sub{
+    width: 50%;
+}
+
+.modal-content2 .modal-body2 .main img{
+    width: 600px;
+    height: 400px;
+}
