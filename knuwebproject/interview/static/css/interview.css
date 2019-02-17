@@ -75,7 +75,11 @@ body{
 }
 
 .interview .con .view .card button:focus {
-    oultine:none;
+    outline:none;
+}
+
+.interview .con .view .card button:hover{
+    cursor: pointer;
 }
 
 .interview .con .view .card .detail h3{
@@ -167,8 +171,8 @@ body{
     background-color: rgba(0, 0,0 , 0.4);
     margin: auto;
     padding: 0;
-    border: 1px solid rgba(255,255,255,0.5);
-    border-radius: 5px;
+    padding-top:25px;
+    padding-bottom:25px;
     width: 90%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
@@ -189,14 +193,47 @@ body{
     align-items: center;
 }
 
-.modal-content2 .modal-body .main{
-    width: 50%;
-}
-.modal-content2 .modal-body .sub{
-    width: 50%;
+.modal-content2 .modal-body2 .main{
+    padding-right: 30px;
+    flex:1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
 }
 
-.modal-content2 .modal-body2 .main img{
-    width: 600px;
-    height: 400px;
+.modal-content2 .modal-body2 .main .img{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width:500px;
+    height:400px;
+    background:black;
+}
+
+.modal-content2 .modal-body2 .main .img img{
+    max-width: 600px;
+    max-height: 400px;
+}
+
+.modal-content2 .modal-body2 .sub{
+    flex:1;
+}
+
+.modal-content2 .modal-body2 .sub .select{
+    display:flex;
+}
+
+.modal-content2 .modal-body2 .sub .img{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    width:300px;
+    height:200px;
+    background:black;
+}
+
+.modal-content2 .modal-body2 .sub .img img{
+    max-height: 100%;
+    max-width: 100%;
 }
