@@ -18,9 +18,9 @@
             <div class="view">
                 {% for interview in interviews.all %}
                     <div class="card">
-                        <button class="detail" onclick="cust(this)" data-id="{{img.id}}">
+                        <button class="detail" onclick="cust(this)" data-id="{{interview.id}}">
                             <div class="img">
-                                <img src="{{interview.pic_set.first.image.url}} " alt="">
+                                <img src="{{ interview.pic_set.first.image.url }} " alt="">
                                 <div class="overlay">
                                     <div class="text"><i class="fas fa-plus"></i></div>
                                 </div>
@@ -29,7 +29,7 @@
                                 <h3>{{ interview.title }}</h3>
                             </div>
                         </button>
-                        <div id="myModal{{img.id}}" class="modal">
+                        <div id="myModal{{interview.id}}" class="modal">
                             <div class="modal-content2">
                                 <div class="modal-header2">
                                     <span class="close{{interview.id}} close">&times;</span>
@@ -38,20 +38,18 @@
                                 <div class="modal-body2">
                                     <div class="main">
                                         <div class="img">
-                                            <img src="{{img.image.url}} " alt="">
+                                            <img id="main{{interview.id}}" src="{{interview.pic_set.first.image.url}} " alt="">
                                         </div>
                                     </div>
                                     <div class="sub">
                                         <div class="select">
-                                            <div class="img">
-                                                <img src="{{img.image.url}} " alt="">
-                                            </div>
-                                            <div class="img">
-                                                <img src="{{img.image.url}} " alt="">
-                                            </div>
-                                            <div class="img">
-                                                <img src="{{img.image.url}} " alt="">
-                                            </div>
+                                            {% for pic in interview.pic_set.all %}
+                                                <button onclick="change('{{pic.image.url}}',this)" data-id="{{interview.id}}">
+                                                    <div class="img">
+                                                        <img id="select" src="{{pic.image.url}} " alt="">
+                                                    </div>
+                                                </button>
+                                            {% endfor %}
                                         </div>
                                         <div class="des">
                                             {{img.description}}
@@ -68,7 +66,16 @@
     </section>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    
+    <!--이미지 바꾸는 js-->
+    <script>
+        function change(elem,id){
+            var url = elem
+            var dataId = $(id).data("id");
+            var id = '#main' + dataId;
+            $(id).attr("src",elem);
+        }
+    </script>
+    <!-- 모달 js ㅅㅂ -->
     <script>
         function cust(elem){
             var dataId = $(elem).data("id");

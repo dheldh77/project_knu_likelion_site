@@ -72,20 +72,22 @@
                 </div>
             </div>
         </div>
-        <div>
-            {% if qnas.has_previous %}
-                <a href="?page=1">First</a>
-                <a href="?page={{qnas.previous_page_number}}">Previous</a>
-            {% endif %}
+        <div style="display:flex; justify-content:center; align-items:center; margin-top:20px;">
+            <div>
+                {% if qnas.has_previous %}
+                    <a href="?page=1">First</a>
+                    <a href="?page={{qnas.previous_page_number}}">Previous</a>
+                {% endif %}
 
-            <span>{{qnas.number}}</span>
-            <span>of</span>
-            <span>{{qnas.paginator.num_pages}}</span>
+                <span>{{qnas.number}}</span>
+                <span>of</span>
+                <span>{{qnas.paginator.num_pages}}</span>
 
-            {% if qnas.has_next %}
-                <a href="?page={{qnas.next_page_number}}">Next</a>
-                <a href="?page={{qnas.paginator.num_pages}}">Last</a>
-            {% endif %}
+                {% if qnas.has_next %}
+                    <a href="?page={{qnas.next_page_number}}">Next</a>
+                    <a href="?page={{qnas.paginator.num_pages}}">Last</a>
+                {% endif %}
+            </div>
         </div>
         <!-- <div id="pagination" style="margin-top:25px; display:flex; justify-content:center;">
             {{ qnas.render }}
