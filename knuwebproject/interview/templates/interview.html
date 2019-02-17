@@ -16,24 +16,24 @@
                 <h1>Interview</h1>
             </div>
             <div class="view">
-                {% for img in imgs.all %}
+                {% for interview in interviews.all %}
                     <div class="card">
                         <button class="detail" onclick="cust(this)" data-id="{{img.id}}">
                             <div class="img">
-                                <img src="{{img.image.url}} " alt="">
+                                <img src="{{interview.pic_set.first.image.url}} " alt="">
                                 <div class="overlay">
                                     <div class="text"><i class="fas fa-plus"></i></div>
                                 </div>
                             </div>
                             <div class="des">
-                                <h3>{{ img.title }}</h3>
+                                <h3>{{ interview.title }}</h3>
                             </div>
                         </button>
                         <div id="myModal{{img.id}}" class="modal">
                             <div class="modal-content2">
                                 <div class="modal-header2">
-                                    <span class="close{{img.id}} close">&times;</span>
-                                    <h2>{{img.title}}</h2>
+                                    <span class="close{{interview.id}} close">&times;</span>
+                                    <h2>{{intreview.title}}</h2>
                                 </div>
                                 <div class="modal-body2">
                                     <div class="main">

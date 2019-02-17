@@ -1,22 +1,21 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import QNA, Photo
 from django.utils import timezone
-from pure_pagination import Paginator, EmptyPage, PageNotAnInteger 
-
+from django.core.paginator import Paginator, PageNotAnInteger
+from next_prev import next_in_order, prev_in_order
 
 # Create your views here.
 def qna(request):
+    qnas = QNA.objects.all().order_by('-id')
+    paginator = Paginator(qnas, 10)
+
     try:
         page = request.GET.get('page', 1)
     except PageNotAnInteger:
         page = 1
-        
-    qnas = QNA.objects.all().order_by('-id')
 
-    p = Paginator(qnas, 10)
-
-    people = p.page(page)
-    return render(request,'qna/qna.html', {'qnas':people})
+    posts = paginator.get_page(page)
+    return render(request,'qna/qna.html', {'qnas':posts})
 
 def create(request):
     qna = QNA()
@@ -44,20 +43,20 @@ def detail(request, qna_id):
     if(QNA.objects.first() == qna):
         prev = 0
     else:
-        prev = qna.id - 1
+        prev = prev_in_order(qna).id
 
     #맨 마지막 글
     if(QNA.objects.last() == qna):
-        next_ = 0
+        next = 0
     else:
-        next_ = qna.id + 1
+        next = next_in_order(qna).id
     
     if (qna.user == request.user):
         canEdit = True
     else:
         canEdit = False
     
-    return render(request,'qna/detail.html',{'qna':qna, 'prev':prev, 'next':next_, 'canEdit':canEdit})
+    return render(request,'qna/detail.html',{'qna':qna, 'prev':prev, 'next':next, 'canEdit':canEdit})
 
 def delete(request, qna_id):
     get_object_or_404(QNA, pk=qna_id).delete()

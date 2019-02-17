@@ -1,5 +1,11 @@
 from django.contrib import admin
-from .models import Interview
+from .models import Interview, Pic
 
 # Register your models here.
-admin.site.register(Interview)
+class PicInline(admin.TabularInline):
+    model = Pic
+
+class InterviewAdmin(admin.ModelAdmin):
+    inlines = [PicInline,]
+
+admin.site.register(Interview, InterviewAdmin)

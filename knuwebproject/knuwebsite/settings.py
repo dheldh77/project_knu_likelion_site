@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'q_n_a.apps.QNAConfig',
     'home.apps.HomeConfig',
     'game.apps.GameConfig',
-    'pure_pagination',
+    # 'pure_pagination',
     'accounts.apps.AccountsConfig',
     'interview.apps.InterviewConfig',
 ]
