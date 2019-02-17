@@ -9,8 +9,8 @@ class Notice(models.Model):
     def __str__(self):
         return self.title
     
-    # class Meta:
-    #     verbose_name_plural="not"
+    class Meta:
+        ordering = ('id',)
     
 class Pic(models.Model):
     notice = models.ForeignKey(Notice, on_delete=models.CASCADE, null=True)

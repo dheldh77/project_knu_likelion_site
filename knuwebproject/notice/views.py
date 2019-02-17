@@ -4,21 +4,21 @@ from django.utils import timezone
 from django.http import HttpResponse
 import json
 from django.forms.models import model_to_dict
-from pure_pagination import Paginator, EmptyPage, PageNotAnInteger 
+from django.core.paginator import Paginator, PageNotAnInteger
+from next_prev import next_in_order, prev_in_order
 
 # Create your views here.
 def notice(request):
+    notices = Notice.objects.all().order_by('-id')
+    paginator = Paginator(notices, 10)
     try:
         page = request.GET.get('page', 1)
     except PageNotAnInteger:
-        page = 1
-        
-    notices = Notice.objects.all().order_by('-id')
+        page = 1    
+    
 
-    p = Paginator(notices, 10)
-
-    people = p.page(page)
-    return render(request,"notice/notice.html",{'notices': people})
+    posts = paginator.get_page(page)
+    return render(request,"notice/notice.html",{'notices': posts})
 
 def new(request):
     return render(request,'notice/new.html')
@@ -38,13 +38,13 @@ def detail(request,notice_id):
     if(Notice.objects.first() == notice):
         prev = 0
     else:
-        prev = notice.id - 1
+        prev = prev_in_order(notice).id
 
     #맨 마지막 글
     if(Notice.objects.latest('id') == notice):
         next = 0
     else:
-        next = notice.id + 1
+        next = next_in_order(notice).id
 
     return render(request,'notice/detail.html',{'notice':notice, 'prev':prev, 'next':next})
 
