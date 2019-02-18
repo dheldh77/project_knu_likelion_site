@@ -9,4 +9,5 @@ urlpatterns = [
     path('<int:qna_id>/delete/', views.delete, name='delete'),
     path('<int:qna_id>/edit/',views.edit, name='edit'),
     path('<int:qna_id>/update/', views.update, name='update'),
+    path('<int:ans_id>/ans', views.ans,name='ans'),
 ]

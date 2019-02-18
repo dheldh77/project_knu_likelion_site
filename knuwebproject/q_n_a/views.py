@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import QNA, Photo
+from .models import QNA, Photo, Answer
 from django.utils import timezone
 from django.core.paginator import Paginator, PageNotAnInteger
 from next_prev import next_in_order, prev_in_order
@@ -73,3 +73,8 @@ def update(request, qna_id):
     qna.body = request.GET['body']
     qna.save()
     return redirect('/qna/'+str(qna.id))
+
+def ans(request, ans_id):
+    ans = get_object_or_404(Answer, pk=ans_id)
+
+    return render(request,'qna/ans.html',{'ans':ans})
