@@ -45,6 +45,19 @@
     </div>
 </section>
 
+<script src="{% static 'js/fullpage.js'%}"></script>
+<script>
+    new fullpage('#fullpage', {
+        licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+        navigation: true,
+        responsiveWidth: 700,
+        anchors: ['home', 'about-us', 'contact'],
+        parallax: true,
+        onLeave: function(origin, destination, direction){
+            console.log("Leaving section" + origin.index);
+        },
+    });
+</script>
 
 
 {% endblock  %}
