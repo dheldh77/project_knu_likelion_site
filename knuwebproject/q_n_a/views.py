@@ -15,6 +15,7 @@ def qna(request):
         page = 1
 
     posts = paginator.get_page(page)
+    
     return render(request,'qna/qna.html', {'qnas':posts})
 
 def create(request):
