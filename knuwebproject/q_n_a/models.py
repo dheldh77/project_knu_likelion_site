@@ -20,3 +20,12 @@ class Photo(models.Model):
     qna = models.ForeignKey(QNA, on_delete=models.CASCADE, null=True)
     image = models.ImageField(upload_to='images/', blank=True, null=True)
     description = models.CharField(max_length=200)
+
+class Answer(models.Model):
+    qna = models.ForeignKey(QNA, on_delete=models.CASCADE, null=True)
+    title = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
+    body = models.TextField()
+
+    def __str__(self):
+        return self.title
