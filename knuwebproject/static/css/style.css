@@ -28,7 +28,9 @@ select:-webkit-autofill:focus {
     }
 }
 header{
-    transition:.5s;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition:1s;
     position: fixed;
     top:0;
     width: 100%;
@@ -38,7 +40,9 @@ header{
 }
 
 header:hover{
-    transition:.5s;
+    opacity: 1;
+    transform: translateY(0);
+    transition:1s;
     background: rgba(0,0,0,0.6);
 }
 

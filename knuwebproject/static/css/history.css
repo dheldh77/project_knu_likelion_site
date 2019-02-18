@@ -367,9 +367,9 @@ body{
 }
 
 .gap{
-    color:white;
+    color:#444;
     padding:100px 50px;
-    background:rgba(0,0,0,0.9);
+    background:white;
     font-family: 'Oswald', sans-serif;
     display: flex;
     align-items: center;
