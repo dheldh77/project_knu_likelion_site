@@ -31,20 +31,22 @@
                 </tr>
             </thead>
             <tbody>
+                
                 {% for qna in qnas %}
                     <tr>
                         <th class="one">{{qna.id}}</th>
+                        
                         <td class="two"><a href="{%url 'qna:detail' qna.id %}">{{qna.title}}</a></td>
                         <td class="three"><p>{{qna.pub_date}}</p></td>
                         <td class="four">{{qna.user.username}}</td>
                     </tr>
-                        {% for ans in qna.answer_set.all %}
+                    {% for ans in qna.answer_set.all %}
                         <tr>
                             <th class="one"></th>
                             <td class="two"><a href="{%url 'qna:ans' ans.id %}">└답변: {{ans.title}}</a></td>
                             <td class="three"><p>{{ans.pub_date}}</p></td>
                             <td class="four">관리자</td>
-                        </tr>
+                        </tr>   
                     {% endfor %}
                 {% endfor %}
             </tbody>
