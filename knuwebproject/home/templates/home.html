@@ -1,75 +1,6 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{% static 'css/fullpage.css'%}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/yoon.css' %}">
-    <link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css">
-
-    <link rel="icon" href="favicon.png" type="image/png">
-    <link rel="shortcut icon" href="https://uni.likelion.org/assets/favicons/favicon-841c731d4bf227cdbfe4fe4245d7750b2c18c37f61810aa6100de9174db89e4f.ico" type="img/x-icon">
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://uni.likelion.org/assets/favicons/favicon-120-f7b42ac475d76685a746bfd55e9d9de8c5e006f9b6afb90331a72c5942da7e59.png">
-
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <div class="header">
-            <a href="{% url 'home' %}">
-                <div class="logo">
-                    <img src="{% static '/img/logo_no_text.png' %}" alt="">
-                    <h2>KNU X LIKELION</h2>
-                </div>
-            </a>
-            <div class="menubar" id="menubar">
-                <ul class="menu">
-                    <li><a href="{% url 'schedule'%}">Introduction</a>
-                        <ul>
-                            <li class="drop_one"><a href="{% url 'about'%}">About</a></li>
-                            <li class="drop_one"><a href="{% url 'schedule'%}">Schedule</a></li>
-                            <li class="drop_one"><a href="{% url 'shuffle'%}">Team</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">History</a>
-                        <ul>
-                            <li class="drop_one"><a href="{% url 'history'%}">Members</a></li>
-                            <li class="drop_one"><a href="{% url 'five'%}">Galleries</a></li>
-                            <li class="drop_one"><a href="{% url 'interview'%}">Interview</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Community</a>
-                        <ul>
-                            <li class="drop_one"><a href="{% url 'notice:notice'%}">Notice</a></li>
-                            <li class="drop_one"><a href="{% url 'qna:board'%}">Q&A</a></li>
-                        </ul>
-                    </li>
-                    {% if user.is_authenticated %}
-                    <li>
-                        <a class="nav-link" style="color:white;">{{user.username}}</a>
-                        <ul>
-                            <li class="drop_one">
-                                <a class="nav-link" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
-                                <form id="logout" method="POST" action="{% url 'logout' %}">
-                                    {% csrf_token %} <input type="hidden" />
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                    {% else %}
-                    <li><a href="{% url 'login' %}">Login</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </div>
-    </header>
-
+{% extends 'base.html' %}
+{% block content %}
+{% load static%}
     <div id="fullpage">
         <div class="section">
             <section class="home_intro">
@@ -83,115 +14,209 @@
         </div>
         <div class="section">
             <section id="service" class="serv">
-                <div class="width">
-                    <div class="service">
-                        <div class="img">
-                            <div class="box">
-                                <h1>멋쟁이 <br>사자처럼을 통해 <br>우리는...</h1>
-                            </div>
-                            
-                        </div>
-                        <div class="text">
-                            <p>Ruby 라는 언어를 배우고 Ruby On Raills를 통해 웹서비스를 만들겁니다! 그리고 2018년에는 더 많은 것들을 배울 수 있도록 준비하고 있습니다 :)</p>
-                        </div>
-                    </div>
-
-                    <div class="serv_des">
-                        <div class="con">
-                            <i class="fab fa-chrome"></i>
-                            <h2>PROGRAMING IS LIKE MAGIC</h2>
-                            <p>우리는 프로그래밍을 통해 평소에 꿈꾸던 서비스 혹은 세상을 바꿀 수 있는 것들을 직접 만들 수 있습니다!</p>
-                        </div>
-                        <div class="con">
-                            <i class="fas fa-laptop"></i>
-                            <h2>HACK YOUR LIFE</h2>
-                            <p>프로그래밍을 통해 우리의 삶을 바꾸는 도전을 합니다! 그 첫단계로 자신의 아이디어를 실현합니다 :)</p>
-                        </div>
-                        <div class="con">
-                            <i class="fas fa-child"></i>
-                            <h2>OPTIMIZED TO CHANGE LIFE</h2>
-                            <p>지루한 일상에서 무언가 새로운 것을 찾고 있으신가요? 그렇다면 멋쟁이 사자처럼이 도와드립니다!</p>
-                        </div>     
-                    </div>
-                </div>  
-            </section>
-        </div>
-        <div class="section">
-            <section id="section" class="home_timeline">
                 <div class="con">
                     <div class="title">
-                        <h1>커리큘럼이닷!</h1>
-                        <p>이렇게 저렇게 진행됩니다</p>
-                        <img src=" {% static 'img/dot.png' %}" alt="">     
+                        <h1>멋사를 통해 우리는</h1>
                     </div>
-                    <img src="{% static 'img/timeline.png'%}" width="70%" alt="">
+                    <div class="icon">
+                        <div id="item1" onmouseover="change_text('text1')" class="item">
+                            <i class="fab fa-chrome"></i>
+                            <h2>PROGRAMING IS LIKE MAGIC</h2>
+                        </div>
+                        <div id="item2" onmouseover="change_text('text2')" class="item">
+                            <i class="fas fa-laptop"></i>
+                            <h2>HACK YOUR LIFE</h2>
+                        </div>
+                        <div id="item3" onmouseover="change_text('text3')" class="item">
+                            <i class="fas fa-child"></i>
+                            <h2>OPTIMIZED TO CHANGE LIFE</h2>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div>
+                            <div class="quo1">
+                            <h1><i class="fas fa-quote-left"></i></h1>
+                            </div>
+                            <div id="text1" class="text1">
+                                <p>Ruby 라는 언어를 배우고 Ruby On Raills를 통해 웹서비스를 만들겁니다! 그리고 2018년에는 더 많은 것들을 배울 수 있도록 준비하고 있습니다 :)</p>
+                            </div>
+                            <div id="text2" class="text2">
+                                <p>프로그래밍을 통해 우리의 삶을 바꾸는 도전을 합니다! 그 첫단계로 자신의 아이디어를 실현합니다 :)</p>
+                            </div>
+                            <div id="text3" class="text3">
+                                <p>지루한 일상에서 무언가 새로운 것을 찾고 있으신가요? 그렇다면 멋쟁이 사자처럼이 도와드립니다!</p>
+                            </div>
+                            <div class="quo2">
+                                <h1><i class="fas fa-quote-right"></i></h1>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
-        <div class="section">
-            <div class="home_ad">
-                <div class="ad">
-                    <div class="title">
-                        <h1>멋사소식이닷!</h1>
-                        <p>이렇게 저렇게 진행됩니다</p>
-                    </div>
-                    <div class="flexslider">
-                        <ul class="slides">
-                            <li>
-                                <div class="content">
-                                    <img src="{% static 'img/new/n1.jpg'%}" alt="">
-                                </div>
-                            </li>
-                            <li>
-                                <div class="content">
-                                    <img src="{% static 'img/new/n2.jpg'%}" alt="">
-                                </div>
-                            </li>
-                            <li>
-                                <div class="content">
-                                    <img src="{% static 'img/new/n3.jpg'%}" alt="">
-                                </div>
-                            </li>
-                            <li>
-                                <div class="content">
-                                    <img src="{% static 'img/new/n4.jpg'%}" alt="">
-                                </div>
-                            </li>
-                        </ul>
+        <div id="scroll" class="section">
+            <section class="sch_text">
+                <div class="gap_2">
+                    <div class="con">
+                        <h1>멋사 7기 공식 일정</h1>
                     </div>
                 </div>
+                <div class="con">
+                    <div class="timeline">
+                        <div class="container left">
+                            <div class="content">
+                                <h2>7기 모집(2019.2.20 ~ 3.7)</h2>
+                                <p>3/7 지원 마감, 3/8 ~ 3/9 면접, 3/10 최종 발표<br>1년간 함께 할 <span style="color:#EE7600;">멋쟁이 사자처럼 7기</span>를 모집합니다. </p>
+                            </div>
+                        </div>
+                        <div class="container right">
+                            <div class="content">
+                                <h2>7기 세션 시작(2019.3.11 ~)</h2>
+                                <p>html, css, javascript, python, django 등을 통해 <br><span style="color:#F08080;">웹 어플리케이션의 전반</span>에 대해 배우게 됩니다.</p>
+                            </div>
+                        </div>
+                        <div class="container left">
+                            <div class="content">
+                                <h2>교내 해커톤(2019.5.24 ~ 5.25)</h2>
+                                <p>그 동안 배웠던 내용을 기반으로 <br> 경북대학교 멋쟁이 사자처럼 <span style="color:#EEC900;">교내 해커톤</span>을 실시합니다.<br>여러분의 실력을 맘껏 뽐내주세요!</p>
+                            </div>
+                        </div>
+                        <div class="container right">
+                            <div class="content">
+                                <h2>아이디어톤(2019.7.20)</h2>
+                                <p>여러분이 꿈꾸왔던 또는 만들고 싶은 <br><span style="color:#EE7600;">IT 서비스에 대한 아이디어</span>를 공유해보세요. <br>Top 20에 선정된 아이디어는 구글 캠퍼스 서울에서 피칭을 하게 됩니다.</p>
+                            </div>
+                        </div>
+                        <div class="container left">
+                            <div class="content">
+                                <h2>중앙해커톤(2019.8.16 ~ 8.17)</h2>
+                                <p>그 동안의 노력과 열정에 대한 결실을 맺는 시간입니다.<br> 멋쟁이 사자처럼의 최대 규모 프로젝트인 중앙해커톤을 통해<br>직접 <span style="color:#F08080;">IT 서비스를 제작하여 출품</span>할 수 있습니다.</p>
+                            </div>
+                        </div>
+                        <div class="container right">
+                            <div class="content">
+                                <h2>7기 수료(2019.12.20)</h2>
+                                <p>수료증과 함께 멋쟁이 사자처럼 7기의 활동이 종료됩니다.<br> <span style="color:#EEC900;">멋쟁이 사자처럼 7기들의 앞날을 응원합니다.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gap_2">
+                    <div class="con">
+                        <h1>Hack your life</h1>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+        <div class="section">
+            <div class="special">
+                <div class="home_ad">
+                    <div class="ad">
+                        <div class="title">
+                            <h1>멋사소식이닷!</h1>
+                            <p>이렇게 저렇게 진행됩니다</p>
+                        </div>
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <div class="content">
+                                        <img src="{% static 'img/new/n1.jpg'%}" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="content">
+                                        <img src="{% static 'img/new/n2.jpg'%}" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="content">
+                                        <img src="{% static 'img/new/n3.jpg'%}" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="content">
+                                        <img src="{% static 'img/new/n4.jpg'%}" alt="">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="whynot">
+                    <div class="news">
+                        <h1>멋사 새소식</h1>
+                        ㅁㄴㅇㄹㅁㄴㅇㄹ
+                        에라이모르겠다 신웅아 부탁해
+                    </div>
+                    
+                </div>
             </div>
+            
         </div>
     </div>
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="{% static 'js/jquery.flexslider.js'%}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <script src="{% static 'js/jquery.flexslider.js'%}"></script>
 
-<script type="text/javascript" charset="utf-8">
-    jQuery(window).load(function() {
-    jQuery('.flexslider').flexslider({
-        animation: "slide",
-        start: function(slider){
-            jQuery('.flexslider').resize();
-        }
-    });
-    });
-</script>
+    <script type="text/javascript" charset="utf-8">
+        jQuery(window).load(function() {
+        jQuery('.flexslider').flexslider({
+            animation: "slide",
+            start: function(slider){
+                jQuery('.flexslider').resize();
+            }
+        });
+        });
+    </script>
 
+    <script src="{% static 'js/scrolloverflow.min.js'%}"></script>
     <script src="{% static 'js/fullpage.js'%}"></script>
     <script>
         new fullpage('#fullpage', {
             licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-            navigation: true,
-            responsiveWidth: 700,
-            anchors: ['home', 'about-us', 'contact'],
-            parallax: true,
-            onLeave: function(origin, destination, direction){
-                console.log("Leaving section" + origin.index);
-            },
+            navigation: true,       
+            normalScrollElements: '#scroll',
+            scrollOverflow: true
         });
     </script>
-</body>
-</html>
 
+    <script>
+        function change_text(elem){
+            if(elem == "text1"){
+                $('#text1').css("display","flex");
+                $('#text2').css("display","none");
+                $('#text3').css("display","none");
+                $('#item1').css("opacity","1");
+                $('#item2').css("opacity",".6");
+                $('#item3').css("opacity",".6");
+                $('#item1').css("transform","scale(1.2)");
+                $('#item2').css("transform","scale(1)");
+                $('#item3').css("transform","scale(1)");
+            }
+            else if(elem == "text2"){
+                $('#text1').css("display","none");
+                $('#text2').css("display","flex");
+                $('#text3').css("display","none");
+                $('#item1').css("opacity",".6");
+                $('#item2').css("opacity","1");
+                $('#item3').css("opacity",".6");
+                $('#item1').css("transform","scale(1)");
+                $('#item2').css("transform","scale(1.2)");
+                $('#item3').css("transform","scale(1)");
+            }
+            else if(elem == "text3"){
+                $('#text1').css("display","none");
+                $('#text2').css("display","none");
+                $('#text3').css("display","flex");
+                $('#item1').css("opacity",".6");
+                $('#item2').css("opacity",".6");
+                $('#item3').css("opacity","1");
+                $('#item1').css("transform","scale(1)");
+                $('#item2').css("transform","scale(1)");
+                $('#item3').css("transform","scale(1.2)");
+            }
+        }
+    </script>
+{% endblock %}

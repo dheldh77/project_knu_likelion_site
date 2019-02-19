@@ -1,10 +1,10 @@
 .about_title{
-    padding-top:100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
     width: 100%;
-    background:rgba(0,0,0,0.8);
+    background: black;
 }
 .about_title .con{
     max-width: 1000px;
@@ -18,12 +18,12 @@
 }
 
 .about_what{
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background:rgba(0,0,0,0.8);
-    padding-bottom:100px;
+    background:white;
 }
 
 .about_what .con{
@@ -34,7 +34,7 @@
 }
 
 .about_what .con h3{
-    color:white;
+    color:black !important;
     font-family: 'Oswald', sans-serif;
     margin-bottom:100px;
 }
@@ -45,28 +45,26 @@
 }
 
 .about_what .con h4{
-    color:white;
+    color:black;
     /* font-family: ''Oswald', sans-serif;' */
-    margin-top:100px;
     margin-bottom:50px;
 }
 
 .about_what .con p{
     font-size:14px;
-    color:white;
+    color:black;
     opacity: .8;
 }
 
 .about_how{
+    height: 100vh;
     font-family: 'Oswald', sans-serif;
     color:white;
-    padding-top:100px;
-    padding-bottom:100px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background:rgba(0,0,0,0.8);
+    background:black;
 }
 
 .about_how .con{
@@ -116,14 +114,14 @@
 
 .about_last{
     font-family: 'Oswald', sans-serif;
-    color:white;
+    color:black;
     padding-top:100px;
     padding-bottom:200px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9));
+    background:white;
 }
 
 .about_last .con{

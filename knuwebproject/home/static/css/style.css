@@ -189,152 +189,115 @@ header .menubar .menu li a:hover{
     color:white;
 }
 
-@media(max-width:767px){
-    .service{
-        display: unset !important;
-    }
-
-    .serv .service .img{
-        display: flex !important;
-        justify-content: center !important;
-    }
-
-    .serv .service .img .box{
-        border-radius: 2px;
-        padding: 0 !important;
-        border:1px solid #c50045;
-        width:250px;
-        padding-left:50px !important;
-        margin-left:-200px !important; 
-    }
-
-    .serv .service .img .box h1{
-        font-size: 24px !important;
-    }
-
-    .serv .service .text{
-        margin-top: -30px;
-        margin-left:100px !important;
-        width:350px !important;
-        background: rgba(0,0,0,0.5);
-        margin-bottom: 100px;
-    }
-
-    .serv .width .serv_des{
-        display: unset !important;
-    }
-
-    .serv .width .serv_des .con{
-        padding:40px 180px !important;
-    }
-    
-}
-
 .serv{
-    height: 100vh;
+    width:100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)), url(../img/bg2.jpg);
-    background-position: center;
-    background-size:cover;
 }
 
-.service{
-    font-family: 'Oswald', sans-serif;
-    color:white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1000px;
+.serv .con{
+    max-width:1300px;
     margin-left:auto;
     margin-right:auto;
+}
+.serv .con .title{
+    width: 100%;
+    color: #444;
     margin-bottom:150px;
 }
 
-
-.serv .service .img{
-    flex: 2;
-}
-
-.serv .service .img .box{
-    border-radius: 2px;
-    padding: 0px 50px;
-    border:1px solid #c50045;
-    margin: 5px -20px;
-}
-
-.serv .service .img .box h1{
-    font-size: 50px;
-}
-
-.serv .service .text{
-    padding:20px 50px;
-    background: rgba(0,0,0,0.5);
-    flex:2.5;
-}
-
-
-
-
-
-.serv .width {
-    max-width: 1300px;
-    margin-right:auto;
-    margin-left:auto;
-}
-
-.serv .width .serv_des .con{
-    text-align: center;
-    color: white;
+.serv .con .title h1{
     font-family: 'Oswald', sans-serif;
+    display:inline;
+    padding-bottom: 30px;
+    font-size: 3.2em;
+    margin-left:-50px;
+    border-bottom: 1px solid #ddd;
 }
 
-.serv .width .serv_des{
+.serv .con .icon{
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:100px;
+}
+
+.serv .con .icon .item{
+    transition: .5s;
+    background: transparent;
+    border:none;
+    text-align: center;
+}
+
+.serv .con .icon .item h2{
+    font-size: 14px;
+    color:black;
+}
+
+.serv .con .icon .item i{
+    margin-bottom:10px;
+    font-size: 4em;
+    color: rgb(200,5,69);
+}
+
+.serv .con .content{
+    background:#eee;
+    color:black;
+    width:1000px;
+    text-align: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.serv .con .content .quo1{
+    text-align: start;
+}
+.serv .con .content .quo2{
+    text-align: end;
+}
+
+.serv .con .content .text1{
+    display:flex;
     justify-content: center;
     align-items: center;
 }
 
-.serv .width .serv_des .con{
-    padding-left:60px;
-    padding-right:60px;
+.serv .con .content .text2, .text3{
+    display:none;
+    justify-content: center;
+    align-items: center;
 }
-
-.serv .width .serv_des .con i{
-    font-size: 60px;
-    margin-bottom:30px;
+.special{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
 }
-
-.serv .width .serv_des .con h2{
-    font-size: 16px;
-
-}
-
-.serv .width .serv_des .con p{
-    font-size: 12px;
-    opacity: .8;
-}
-
 .home_ad {
-    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../img/bg_master.jpg);
-    background-position:center;
-    background-size:cover;
-    width: 100%;
+    background:white;
+    flex:1;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.home_ad .ad{
-    
+.whynot{
+    flex:1;
+    color:black;
+}
 
+.whynot .news{
+    padding-left:100px;
+    padding-right:100px;
+}
+
+.home_ad .ad{
     text-align: center;
     background: transparent;
-    max-width: 1300px;
-    margin-left:auto;
-    margin-right:auto;
+    flex:1;
 }
 
 .home_ad .title{
@@ -371,7 +334,6 @@ header .menubar .menu li a:hover{
 
 .home_ad .ad .flexslider .content img{
     width: 500px;
-    box-shadow: 4px 10px 25px -5px black;
     border-radius: 5px; 
 }
 
@@ -478,42 +440,160 @@ footer .container .contact a:hover{
     margin: 0 auto; 
 }
 
-.home_timeline{
-    width: 100%;
+.gap_2{
+    color:white;
+    padding:50px 50px;
+    background:black;
+    font-family: 'Oswald', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gap_2 .con{
+    text-align: center;
+}
+
+
+.sch_text{
     height:100vh;
-    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)), url(../img/home_code.jpg);
+}
+
+.sch_text h2, p{
+    /* font-family: 'Oswald', sans-serif; */
+}
+
+.sch_text h2{
+    letter-spacing: 2px;
+}
+
+.sch_text{
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,1)), url(../img/sch_1.jpg);
     background-position: center;
     background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow: scroll !important;
+    z-index:999 !important;
+    position: relative;
 }
 
-.home_timeline .con{
-    text-align: center;
-    max-width: 1500px;
-    margin-right: auto;
-    margin-left:auto;
+.sch_text::-webkit-scrollbar{
+    display: none;
+}
+.sch_text .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.home_timeline .title{
-    font-family: 'Oswald', sans-serif;
+.sch_text .timeline::after {
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    width: 6px;
+    border-left:.5px solid rgba(255,255,255,0.8);
+    border-right:.5px solid rgba(255,255,255,0.8);
+    background-color: rgba(0,0,0,0.4);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+.sch_text .container {
+    box-sizing: border-box;
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+
+.sch_text .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid rgba(196,0,69, 0.9);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.sch_text .left {
+    box-sizing: border-box;
+    left: 0;
+}
+
+.sch_text .right {
+    box-sizing: border-box;
+    left: 50%;
+}
+
+.sch_text .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+.sch_text .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+.sch_text .right::after {
+    left: -16px;
+}
+
+.sch_text .content {
     color:white;
-    margin-bottom: 50px;
+    padding: 20px 30px;
+    background-color: rgba(0,0,0,0.4);
+    border:1px solid white;
+    position: relative;
+    border-radius: 6px;
 }
 
-.home_timeline .title h1{
-    letter-spacing: 5px;
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
-}
+@media screen and (max-width: 600px) {
+/* Place the timelime to the left */
+    .sch_text .timeline::after {
+        left: 31px;
+    }
 
-.home_timeline .title p{
-    opacity: .6;
-    margin-top: 0 !important;
-}
+    .sch_text .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
 
-.home_timeline .title img{
-    width: 150px;
-    height: auto;
+    .sch_text .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    .sch_text .left::after, .right::after {
+        left: 15px;
+    }
+
+    .sch_text .right{
+        box-sizing: border-box;
+        left: 0%;
+    }
 }
