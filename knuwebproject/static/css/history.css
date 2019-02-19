@@ -1,10 +1,13 @@
+ul{
+    padding: 0 !important;
+}
 body{
     margin:0;
 }
 
 .history_intro {
-    height: 700px;
-    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.8)), url(../img/friend.jpg);
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,1)), url(../img/friend.jpg);
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -56,7 +59,7 @@ body{
 
 .history_intro .con img{
     padding-top:10px;
-    height: 36px;
+    height: 75px;
     width: auto;
 }
 
@@ -81,6 +84,7 @@ body{
     color: black;
     border-radius: 20px;
 }
+
 
 .master .flexslider{
     max-width: 1300px;
@@ -122,7 +126,7 @@ body{
 }
 
 .master .flexslider .list h4{
-    color: #aaa;
+    color: black;
     font-size:12px;
 
 }
@@ -168,7 +172,7 @@ body{
 }
 
 .student .flexslider .list h4{
-    color: #aaa;
+    color: #444;
     font-size:12px;
 
 }
@@ -181,7 +185,7 @@ body{
 
 .serv .width .serv_des .con{
     text-align: center;
-    color: white;
+    color: black;
     font-family: 'Oswald', sans-serif;
 }
 
@@ -212,19 +216,18 @@ body{
 }
 
 .master {
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)), url(../img/lion.jpg);
-    background-position:center;
-    background-size:cover;
-    padding-top:100px;
+    background:white;
     width: 100%;
-    padding-bottom: 50px;
-
 }
 
 .master .title{
     font-family: 'Oswald', sans-serif;
-    color:white;
-    text-align: center;
+    color:#444;
+    text-align: start;
+    margin-bottom: 30px;
+    max-width: 1000px;
+    margin-left:auto;
+    margin-right:auto;
     margin-bottom: 100px;
 }
 
@@ -250,19 +253,14 @@ body{
 
 .master .flexslider .content{
     transition:.5s;
-    color:white;
+    color:black;
     font-family: 'Noto Sans KR', sans-serif;
     padding:40px 15px 30px 30px;
-    background: rgba(0,0,0,0.3);
-    border:3px solid rgba(163,163,163,0.2);
+    background: #eee;
     border-radius: 2px;
 }
 
 
-.master .flexslider a:hover .content{
-    transition:.5s;
-    border:3px solid rgba(180, 23, 23, 0.2);
-}
 
 
 .master .flexslider a:hover{
@@ -286,20 +284,21 @@ body{
 }
 
 .student {
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)), url(../img/baby_lion.jpg);
-    background-position:center;
-    background-size:cover;
-    padding-top:100px;
+    background:white;
     width: 100%;
     padding-bottom: 50px;
 
 }
 
 .student .title{
+    padding-top:100px;
     font-family: 'Oswald', sans-serif;
-    color:white;
-    text-align: center;
+    color:#444;
+    text-align: start;
     margin-bottom: 100px;
+    max-width: 1000px;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .student .title h1{
@@ -320,11 +319,10 @@ body{
 
 .student .flexslider .content{
     transition: .5s;
-    color:white;
+    color:black;
     font-family: 'Noto Sans KR', sans-serif;
     padding:40px 30px 15px 30px;
-    background: rgba(0,0,0,0.3);
-    border:3px solid rgba(163,163,163,0.2);
+    background: #eee;
     border-radius: 2px;
 }
 
@@ -352,7 +350,6 @@ body{
 
 .student .flexslider a:hover .content{
     transition:.5s;
-    border:3px solid rgba(180, 23, 23, 0.2);
 }
 
 
@@ -369,7 +366,7 @@ body{
 .gap{
     color:#444;
     padding:100px 50px;
-    background:white;
+    background:rgba(0,0,0,0.9);
     font-family: 'Oswald', sans-serif;
     display: flex;
     align-items: center;
@@ -395,3 +392,10 @@ body{
     transition: .5s;
     opacity: 1;
 }
+
+.history_scroll{
+    overflow-y:auto !important;
+    z-index: 1 !important;
+    position: relative !important; 
+    height: 100% !important;
+} 

@@ -214,6 +214,7 @@ body{
     padding-right: 50px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .modal-content2 .modal-body2 .main{
@@ -226,7 +227,7 @@ body{
 }
 
 .modal-content2 .modal-body2 .sub{
-    height: 400px;
+    height: 100%;
     flex:1;
 }
 
@@ -245,12 +246,11 @@ body{
 }
 
 .modal-content2 .modal-body2 .sub .select{
-    height: 50%;
+    height: 30%;
     overflow: auto;
     display:flex;
     flex-wrap: wrap;
     border-bottom:1px solid #ddd;
-    width: 100%;
 }
 
 .modal-content2 .modal-body2 .sub .select button{
@@ -273,8 +273,9 @@ body{
 }
 
 .modal-content2 .modal-body2 .sub .des{
+
     font-family: 'Oswald', sans-serif;
-    height:50%;
+    height:70%;
     overflow: auto;
 }
 .modal-content2 .modal-body2 .sub .des h4{
@@ -288,8 +289,6 @@ body{
 .modal-content2 .modal-body2 .sub .des p{
     color:black;
     padding-bottom:10px;
-    padding-left:50px;
-    padding-right: 50px;
 }
 
 .modal-content2 .modal-body2 .sub .des::-webkit-scrollbar{

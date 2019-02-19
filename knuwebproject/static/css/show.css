@@ -75,7 +75,7 @@ body{
 
 .show .con .card{
     font-family: 'Oswald', sans-serif;
-    width: 800px;
+    max-width: 800px;
     background:rgba(0,0,0,0.2);
 }
 
@@ -101,14 +101,34 @@ body{
 
 
 .show .con .card .title .sub_title p {
-    font-size: 14px;
-    margin-left: 50px;
+    margin-right: 40px;
+    font-size: 10px;
+}
+
+.show .con .card .title .sub_title p a{
+    color: white;
+    text-decoration: none;
+}
+
+.show .con .card .title .sub_title .focus:hover{
+    cursor: pointer;
 }
 
 .show .con .card .content{
     min-height: 600px;
+    max-height: 600px;
+    overflow: auto;
     padding: 50px 50px;
     border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.show .con .card .content::-webkit-scrollbar-track {
+    background: #12353d; 
+}
+
+.show .con .card .content img{
+    width:100%;
+    height: auto;
 }
 
 .show .con .card .content p{
