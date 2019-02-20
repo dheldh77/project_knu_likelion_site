@@ -2,70 +2,17 @@ body{
     margin:0;
 }
 
-
-.intro {
-    height: 500px;
-    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(../img/notification.jpg);
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-.intro .des{
-    word-break: keep-all;
-    font-family: 'Oswald', sans-serif;
-    padding-left:50px;
-    width: 1000px;
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
-    justify-content: center;
-    padding-bottom:30px;
-}
-
-
-.intro .des h1{
-    letter-spacing: 5px;
-    font-size:38px;
-}
-
-.intro .des p{
-    letter-spacing: 2px;
-}
-
-.intro .des .flex{
-    color:white;
-}
-
-.gap{
-    color:white;
-    letter-spacing: 10px;
-    padding:40px 50px;
-    background:rgba(0,0,0,0.9);
-    font-family: 'Oswald', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.gap .con{
-    text-align: center;
-}
-
 .show{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 100px 40px;
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)), url(../img/noti.jpg);
+    background:white;
     background-size:cover;
     background-position:center;}
 
 .show .con{
-    color: white;
+    color: black;
     letter-spacing: 2px;
     max-width: 1300px;
     margin-left: auto;
@@ -76,7 +23,8 @@ body{
 .show .con .card{
     font-family: 'Oswald', sans-serif;
     max-width: 800px;
-    background:rgba(0,0,0,0.2);
+    border-top:1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
 .show .con .card .title .main{
@@ -92,7 +40,7 @@ body{
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid #eee;
 }
 
 .show .con .card .title .sub_title i{
@@ -106,7 +54,7 @@ body{
 }
 
 .show .con .card .title .sub_title p a{
-    color: white;
+    color:black;
     text-decoration: none;
 }
 
@@ -116,15 +64,10 @@ body{
 
 .show .con .card .content{
     min-height: 600px;
-    max-height: 600px;
-    overflow: auto;
     padding: 50px 50px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid #eee;
 }
 
-.show .con .card .content::-webkit-scrollbar-track {
-    background: #12353d; 
-}
 
 .show .con .card .content img{
     width:100%;
@@ -143,11 +86,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background:rgba(0,0,0,0.2);
+    background:white;
 }
 
 .show .con .go a{
-    color:white;
+    color:black;
     text-decoration: none;
 }
 

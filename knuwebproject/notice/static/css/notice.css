@@ -40,20 +40,6 @@ body{
     color:white;
 }
 
-.gap{
-    color:white;
-    letter-spacing: 10px;
-    padding:40px 50px;
-    background:rgba(0,0,0,0.9);
-    font-family: 'Oswald', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.gap .con{
-    text-align: center;
-}
 
 .noti{
     display: flex;
