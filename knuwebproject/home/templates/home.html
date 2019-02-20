@@ -54,6 +54,51 @@
                 </div>
             </section>
         </div>
+        <div class="section">
+            <div class="special">
+                <div class="home_ad">
+                    <div class="ad">
+                        <div class="title">
+                            <h1>멋사소식이닷!</h1>
+                            <p>이렇게 저렇게 진행됩니다</p>
+                        </div>
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li>
+                                    <div class="content">
+                                        <img src="{% static 'img/new/n1.jpg'%}" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="content">
+                                        <img src="{% static 'img/new/n2.jpg'%}" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="content">
+                                        <img src="{% static 'img/new/n3.jpg'%}" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="content">
+                                        <img src="{% static 'img/new/n4.jpg'%}" alt="">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="whynot">
+                    <div class="news">
+                        <h1>멋사 새소식</h1>
+                        ㅁㄴㅇㄹㅁㄴㅇㄹ
+                        에라이모르겠다 신웅아 부탁해
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
         <div id="scroll" class="section">
             <section class="sch_text">
                 <div class="gap_2">
@@ -109,51 +154,6 @@
             </section>
             
         </div>
-        <div class="section">
-            <div class="special">
-                <div class="home_ad">
-                    <div class="ad">
-                        <div class="title">
-                            <h1>멋사소식이닷!</h1>
-                            <p>이렇게 저렇게 진행됩니다</p>
-                        </div>
-                        <div class="flexslider">
-                            <ul class="slides">
-                                <li>
-                                    <div class="content">
-                                        <img src="{% static 'img/new/n1.jpg'%}" alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="content">
-                                        <img src="{% static 'img/new/n2.jpg'%}" alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="content">
-                                        <img src="{% static 'img/new/n3.jpg'%}" alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="content">
-                                        <img src="{% static 'img/new/n4.jpg'%}" alt="">
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="whynot">
-                    <div class="news">
-                        <h1>멋사 새소식</h1>
-                        ㅁㄴㅇㄹㅁㄴㅇㄹ
-                        에라이모르겠다 신웅아 부탁해
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </div>
     </div>
 
 
@@ -177,7 +177,7 @@
         new fullpage('#fullpage', {
             licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
             navigation: true,       
-            normalScrollElements: '#scroll',
+            normalScrollElements: '.sch_text',
             scrollOverflow: true
         });
     </script>

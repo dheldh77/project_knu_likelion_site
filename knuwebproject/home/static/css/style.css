@@ -463,7 +463,9 @@ footer .container .contact a:hover{
 
 
 .sch_text{
-    height:100vh;
+    height:100%;
+    overflow: auto;
+    z-index:999;
 }
 
 .sch_text h2, p{
