@@ -168,9 +168,9 @@ body{
     color:white;
 }
 .modal2 {
-    ont-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif;
     display: none; 
-    position: fixed; 
+    position: absolute;
     z-index: 1; 
     padding-top: 100px; 
     left: 0;

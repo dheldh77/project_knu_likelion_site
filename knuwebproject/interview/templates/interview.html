@@ -1,78 +1,81 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-
-    
-    <section class="interview_intro">
-        <div class="des">
-            <div class="flex">
-                <h1>OB 멤버들과의 인터뷰입니다</h1>
-                <p>멋사를 하면서 우리는 앞으로 많은 일들을 하게 될 거예요! 우리 모두 즐겨요!</p>
-            </div>
+    <div id="fullpage">
+        <div class="section">
+            <section class="interview_intro">
+                <div class="des">
+                    <div class="flex">
+                        <h1>OB 멤버들과의 인터뷰입니다</h1>
+                        <p>멋사를 하면서 우리는 앞으로 많은 일들을 하게 될 거예요! 우리 모두 즐겨요!</p>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-    <section class="interview">
-        <div class="con">
-            <div class="title">
-                <h1>Interview</h1>
-            </div>
-            <div class="view">
-                {% for interview in interviews.all %}
-                    <div class="card">
-                        <button class="detail" onclick="cust(this)" data-id="{{interview.id}}">
-                            <div class="img">
-                                <img src="{{ interview.pic_set.first.image.url }} " alt="">
-                                <div class="overlay">
-                                    <div class="text"><i class="fas fa-plus"></i></div>
-                                </div>
-                            </div>
-                            <div class="des">
-                                <h3>{{ interview.title }}</h3>
-                            </div>
-                        </button>
-                        <div id="myModal{{interview.id}}" class="modal2">
-                            <div class="modal-content2">
-                                <div class="modal-header2">
-                                    <span class="close{{interview.id}} close">&times;</span>
-                                    <h2>{{interview.title}}</h2>
-                                </div>
-                                <div class="modal-body2">
-                                    <div class="main">
-                                        <div class="img">
-                                            <img id="main{{interview.id}}" src="{{interview.pic_set.first.image.url}} " alt="">
+        <div class="section">
+            <section class="interview">
+                <div class="con">
+                    <div class="title">
+                        <h1>Interview</h1>
+                    </div>
+                    <div class="view">
+                        {% for interview in interviews.all %}
+                            <div class="card">
+                                <button class="detail" onclick="cust(this)" data-id="{{interview.id}}">
+                                    <div class="img">
+                                        <img src="{{ interview.pic_set.first.image.url }} " alt="">
+                                        <div class="overlay">
+                                            <div class="text"><i class="fas fa-plus"></i></div>
                                         </div>
                                     </div>
-                                    <div class="sub">
-                                        <div class="select">
-                                            {% for pic in interview.pic_set.all %}
-                                                <button onclick="change('{{pic.image.url}}',this)" data-id="{{interview.id}}">
-                                                    <div class="img">
-                                                        <img id="select" src="{{pic.image.url}} " alt="">
-                                                    </div>
-                                                </button>
-                                            {% endfor %}
+                                    <div class="des">
+                                        <h3>{{ interview.title }}</h3>
+                                    </div>
+                                </button>
+                                <div id="myModal{{interview.id}}" class="modal2">
+                                    <div class="modal-content2">
+                                        <div class="modal-header2">
+                                            <span class="close{{interview.id}} close">&times;</span>
+                                            <h2>{{interview.title}}</h2>
                                         </div>
-                                        <div class="des">
-                                            <div class="des_title">
-                                                <h4><i class="fas fa-pencil-alt"></i>description</h4>
+                                        <div class="modal-body2">
+                                            <div class="main">
+                                                <div class="img">
+                                                    <img id="main{{interview.id}}" src="{{interview.pic_set.first.image.url}} " alt="">
+                                                </div>
                                             </div>
-                                            <div class="des_body">
-                                                <p>{{interview.description}}</p>
+                                            <div class="sub">
+                                                <div class="select">
+                                                    {% for pic in interview.pic_set.all %}
+                                                        <button onclick="change('{{pic.image.url}}',this)" data-id="{{interview.id}}">
+                                                            <div class="img">
+                                                                <img id="select" src="{{pic.image.url}} " alt="">
+                                                            </div>
+                                                        </button>
+                                                    {% endfor %}
+                                                </div>
+                                                <div class="des">
+                                                    <div class="des_title">
+                                                        <h4><i class="fas fa-pencil-alt"></i>description</h4>
+                                                    </div>
+                                                    <div class="des_body">
+                                                        <p>{{interview.description}}</p>
+                                                    </div>
+                                                    
+                                                </div>
                                             </div>
                                             
                                         </div>
                                     </div>
-                                    
                                 </div>
                             </div>
-                        </div>
+                        {% endfor %}
                     </div>
-                {% endfor %}
-            </div>
+                </div>
+            </section>
         </div>
-    </section>
-
-
+    </div>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!--이미지 바꾸는 js-->
     <script>
@@ -102,6 +105,17 @@
                 modal.style.display = "none";
             }
         }
+    </script>
+
+    <script src="{% static 'js/scrolloverflow.min.js'%}"></script>
+    <script src="{% static 'js/fullpage.js'%}"></script>
+    <script>
+        new fullpage('#fullpage', {
+            licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+            navigation: true,       
+            normalScrollElements: '#scroll',
+            scrollOverflow: true
+        });
     </script>
 {% endblock %}
 
