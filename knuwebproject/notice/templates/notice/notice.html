@@ -32,23 +32,7 @@
                                 <tr>
                                     <th class="one">{{notice.id}}</th>
                                     <td class="two">
-                                        <button onclick="cust(this)" data-id="{{notice.id}}">{{notice.title}}</button>
-                                        <div id="myModal{{notice.id}}" class="modal2">
-                                            <div class="modal-content2">
-                                                <div class="modal-header2">
-                                                    <span class="close{{notice.id}} close">&times;</span>
-                                                    <h2>{{notice.title}}</h2>
-                                                </div>
-                                                <div class="modal-body3">
-                                                    <div class="modal_notice_des">
-                                                        {% for pic in notice.pic_set.all%}
-                                                            <img src="{{pic.image.url}}" alt="picture">
-                                                        {% endfor %}
-                                                        <p>{{notice.body}}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <a href="{% url 'notice:detail' notice.id %}">{{notice.title}}</a>
                                     </td>
                                     <td class="three"><p>{{notice.pub_date}}</p></td>
                                     <td class="four">관리자</td>

@@ -40,33 +40,16 @@ body{
     color:white;
 }
 
-.gap{
-    color:white;
-    letter-spacing: 10px;
-    padding:40px 50px;
-    background:rgba(0,0,0,0.9);
-    font-family: 'Oswald', sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.gap .con{
-    text-align: center;
-}
-
 .qna{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 100px 40px;
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)), url(../img/qna_bg.jpg);
-    background-size:cover;
-    background-position:center;
+    background:white;
 }
 
 .qna .con{
-    color: white;
+    color: black;
     letter-spacing: 2px;
     max-width: 1300px;
     margin-left: auto;
@@ -78,13 +61,15 @@ body{
     font-family: 'Oswald', sans-serif;
     border-collapse: collapse;
     width: 1000px;
-    background:rgba(0,0,0,0.2);
+    border-top:1px solid #eee;
+    border-bottom:1px solid #eee;
 }
 
 .qna .con a{
+    display: block;
     width: 100%;
     text-decoration: none;
-    color:white;
+    color:black;
 }
 
 .qna .con table th{
@@ -92,14 +77,14 @@ body{
     vertical-align: center;
     padding: 5px 15px;
     text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid #eee;
 }
 
 .qna .con table td {
     height: 50px;
     vertical-align: cente;
     padding: 5px 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid #eee;
 }
 
 .qna .con table tbody tr{
@@ -108,9 +93,8 @@ body{
 
 .qna .con table tbody tr:hover {
     transition:.3s;
-    background-color: rgba(0, 0,0 , 0.4);
+    background-color: #eee;
 }
-
 .qna .con table .one{
     width: 20%;
     text-align: center;
@@ -145,7 +129,7 @@ body{
     border:none;
     border-radius: 5px;
     padding:5px 30px;
-    color:white;
+    color:black;
     margin-right:5px;
     margin-top:30px;
 }
@@ -160,7 +144,7 @@ body{
 }
 
 .modal {
-    ont-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif;
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -304,13 +288,14 @@ body{
 }
 
 .qna .con .new .nouser{
+    display: inline;
     transition: .5s;
     letter-spacing: 2px;
     background:transparent;
     border:none;
     border-radius: 5px;
     padding:5px 30px;
-    color:white;
+    color:black;
     margin-right:5px;
     margin-top:30px;
 }

@@ -1,4 +1,3 @@
-
 body{
     margin:0;
 }
@@ -29,22 +28,29 @@ select:-webkit-autofill:focus {
     }
 }
 header{
-    transform: translateY(-10px);
-    opacity: 0;
-    transition:1s;
+    transition:.5s;
     position: fixed;
     top:0;
     width: 100%;
     z-index: 100;
-    background: rgba(0, 0,0 , 0.2);
+    background: white;
     height: 70px;
 }
 
 header:hover{
     opacity: 1;
-    transform: translateY(0);
-    transition:1s;
-    background: rgba(0,0,0,0.6);
+    transition:.5s;
+    background: black;
+}
+
+header:hover .logo h2{
+    transition: .5s;
+    color:white;
+}
+
+header:hover .menubar .menu li a{
+    transition: .5s;
+    color:white;
 }
 
 header .header{
@@ -77,7 +83,8 @@ header .logo img{
 }
 
 header .logo h2{
-    color:white;
+    transition: .5s;
+    color:black;
     margin:0 20px;
 }
 
@@ -114,7 +121,7 @@ header .menubar .menu li{
 }
 
 header .menubar .menu li a{
-    color:white;
+    color:black;
     font-size: 14px;
     font-family: 'Oswald', sans-serif;
     transition: .5s;
@@ -190,11 +197,7 @@ header .menubar .menu li a:hover{
 }
 
 .serv{
-<<<<<<< Updated upstream
     width:100%;
-=======
-    height: 100vh;
->>>>>>> Stashed changes
     display: flex;
     justify-content: center;
     align-items: center;
@@ -208,7 +211,8 @@ header .menubar .menu li a:hover{
 .serv .con .title{
     width: 100%;
     color: #444;
-    margin-bottom:150px;
+    margin-top:60px;
+    margin-bottom:120px;
 }
 
 .serv .con .title h1{
@@ -239,7 +243,6 @@ header .menubar .menu li a:hover{
     color:black;
 }
 
-<<<<<<< Updated upstream
 .serv .con .icon .item i{
     margin-bottom:10px;
     font-size: 4em;
@@ -279,22 +282,6 @@ header .menubar .menu li a:hover{
     display: flex !important;
     justify-content: center;
     align-items: center;
-=======
-
-
-
-
-.serv .width {
-    max-width: 1300px;
-    margin-right:auto;
-    margin-left:auto;
-}
-
-.serv .width .serv_des .con{
-    text-align: center;
-    color: white;
-    font-family: 'Oswald', sans-serif;
->>>>>>> Stashed changes
 }
 .home_ad {
     background:white;
@@ -310,7 +297,6 @@ header .menubar .menu li a:hover{
     color:black;
 }
 
-<<<<<<< Updated upstream
 .whynot .news{
     padding-left:100px;
     padding-right:100px;
@@ -320,27 +306,6 @@ header .menubar .menu li a:hover{
     text-align: center;
     background: transparent;
     flex:1;
-=======
-.home_ad {
-    background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../img/bg_master.jpg);
-    background-position:center;
-    background-size:cover;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.home_ad .ad{
-    
-
-    text-align: center;
-    background: transparent;
-    max-width: 1300px;
-    margin-left:auto;
-    margin-right:auto;
->>>>>>> Stashed changes
 }
 
 .home_ad .title{
@@ -360,13 +325,8 @@ header .menubar .menu li a:hover{
     margin-top: 0 !important;
     margin-bottom: 0;
 }
-<<<<<<< Updated upstream
 
 
-=======
-
-
->>>>>>> Stashed changes
 .home_ad .ad .flexslider{
     background: transparent;
     border:none;
@@ -382,10 +342,6 @@ header .menubar .menu li a:hover{
 
 .home_ad .ad .flexslider .content img{
     width: 500px;
-<<<<<<< Updated upstream
-=======
-    box-shadow: 4px 10px 25px -5px black;
->>>>>>> Stashed changes
     border-radius: 5px; 
 }
 
@@ -492,10 +448,9 @@ footer .container .contact a:hover{
     margin: 0 auto; 
 }
 
-<<<<<<< Updated upstream
 .gap_2{
     color:white;
-    padding:50px 50px;
+    padding:120px 50px;
     background:black;
     font-family: 'Oswald', sans-serif;
     display: flex;
@@ -506,13 +461,14 @@ footer .container .contact a:hover{
     text-align: center;
 }
 
-
-.sch_text{
-    height:100vh;
+#scroll{
+    overflow: auto;
 }
 
-.sch_text h2, p{
-    /* font-family: 'Oswald', sans-serif; */
+.sch_text{
+    position: relative;
+    height:100vh;
+    overflow: auto;
 }
 
 .sch_text h2{
@@ -523,8 +479,6 @@ footer .container .contact a:hover{
     background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,1)), url(../img/sch_1.jpg);
     background-position: center;
     background-size: cover;
-    overflow: scroll !important;
-    z-index:999 !important;
     position: relative;
 }
 
@@ -650,44 +604,3 @@ footer .container .contact a:hover{
         left: 0%;
     }
 }
-=======
-.home_timeline{
-    width: 100%;
-    height:100vh;
-    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)), url(../img/home_code.jpg);
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.home_timeline .con{
-    text-align: center;
-    max-width: 1500px;
-    margin-right: auto;
-    margin-left:auto;
-}
-
-.home_timeline .title{
-    font-family: 'Oswald', sans-serif;
-    color:white;
-    margin-bottom: 50px;
-}
-
-.home_timeline .title h1{
-    letter-spacing: 5px;
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
-}
-
-.home_timeline .title p{
-    opacity: .6;
-    margin-top: 0 !important;
-}
-
-.home_timeline .title img{
-    width: 150px;
-    height: auto;
-}
->>>>>>> Stashed changes
