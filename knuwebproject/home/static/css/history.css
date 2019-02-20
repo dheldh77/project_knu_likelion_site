@@ -221,6 +221,7 @@ body{
 }
 
 .master .title{
+    margin-top:100px;
     font-family: 'Oswald', sans-serif;
     color:#444;
     text-align: start;
