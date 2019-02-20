@@ -120,22 +120,44 @@
             </div>
         </div>
         <div class="nav">
-            <h2>5기</h2>
-            <p>2016.3.11 ~ 2016.12.20</p>
-            <ul>
-                <li><a href="{% url 'five'%}">
+            <div class="nav_header">
+                <div class="nav_master">
                     <img src="{% static '/img/student/이우섭.jpg'%}" alt="">
-                    <h4>5기</h4>
-                </a></li>
-                <li><a href="{% url 'six'%}">
-                    <img src="{% static '/img/student/이령홍.jpg'%}" alt="">
-                    <h4>6기</h4>
-                </a></li>
-                <li><a href="{% url 'seven'%}">
-                    <img src="{% static '/img/student/김민석.jpg'%}" alt="">
-                    <h4>7기</h4>
-                </a></li>
-            </ul>
+                    <div class="nav_date">
+                        <h2>다섯번째 멋사</h2>
+                        <p>2016.3.11 ~ 2016.12.20</p>
+                    </div>
+                </div>
+            </div>
+            <div class="nav_box">   
+                <div class="box_title">
+                    <h5>바로가기</h5>
+                    <p>knu 멋사s</p>
+                </div>
+                <ul>
+                    <li><a href="{% url 'five'%}">
+                        <img src="{% static '/img/student/이우섭.jpg'%}" alt="">
+                        <div class="nav_navg">
+                            <h4>다섯번 째 멋사</h4>
+                            <p>2016.3.11 ~ 2016.12.20</p>
+                        </div>
+                    </a></li>
+                    <li><a href="{% url 'six'%}">
+                        <img src="{% static '/img/student/이령홍.jpg'%}" alt="">
+                        <div class="nav_navg">
+                            <h4>여섯번 째 멋사</h4>
+                            <p>2016.3.11 ~ 2016.12.20</p>
+                        </div>
+                    </a></li>
+                    <li><a href="{% url 'seven'%}">
+                        <img src="{% static '/img/student/김민석.jpg'%}" alt="">
+                        <div class="nav_navg">
+                            <h4>일곱번 째 멋사</h4>
+                            <p>2016.3.11 ~ 2016.12.20</p>
+                        </div>
+                    </a></li>
+                </ul>
+            </div>
         </div>
     </div> 
 </section>

@@ -12,7 +12,7 @@ body{
 
 .picture .cont{
     height: 100vh;
-    max-width: 1000px;
+    max-width: 1200px;
     margin-right:auto;
     margin-left:auto;
     display: flex;
@@ -71,13 +71,14 @@ body{
     display: flex;
     justify-content: center;
     width: 100%;
-    height: 400px;
+    height: 600px;
     background:white;
 }
 
 .picture .cont .content .card .flexslider .img img{
-    height: 100%;
-    width: auto;
+    max-height: 100%;
+    width:auto;
+    max-width: 100%;
 }
 
 .picture .nav{
@@ -87,36 +88,25 @@ body{
     margin-top:200px;
 }
 
-.picture .nav h2{
-    padding-left: 20px;
-}
-
-.picture .nav p{
-    padding-left:20px;
-    margin-bottom:30px;
-}
 .picture .nav ul{
-    list-style: none;;
-    border:1px solid #eee;
+    list-style: none;
     border-radius: 2px;
     background:white;
     padding:20px 30px;
+    margin-top:0;
+    height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .picture .nav ul li{
     margin-left:20px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 2px;
-    padding-top:10px;
-    padding-bottom:10px;
+    display: block;
+    width:100%;
+    padding-top:15px;
+    padding-bottom:15px;
 }
-.picture .nav ul li h4{
-    display: flex;
-    align-items: center;
-    font-size: 18px !important;
-    margin:0;
-}
+
 .picture .nav ul li a{ 
     display: flex;
     align-content: center;
@@ -129,6 +119,76 @@ body{
     width: 35px;
     border-radius: 50%;
     margin-right:20px;
-    padding:3px;
-    border:3px solid rgb(200,5,69);
+    padding:2px;
+    border:2px solid rgb(200,5,69);
+}
+.picture .nav .nav_header{
+    margin-bottom:40px;
+}
+
+.picture .nav .nav_header h2{
+    margin:0;
+    font-size:18px;
+    color:black;
+}
+
+.picture .nav .nav_header p{
+    margin:0;
+    color:black;
+    opacity: .6;
+    font-size: 12px;
+}
+
+.picture .nav .nav_header .nav_master{
+    padding-left:20px;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.picture .nav .nav_header .nav_master img{
+    height:50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-right:20px;
+}
+
+.picture .nav ul li .nav_navg h4{
+    margin:0;
+    font-size:18px;
+    color:black;
+}
+
+.picture .nav ul li .nav_navg p{
+    margin:0;
+    color:black;
+    opacity: .6;
+    font-size: 12px;
+}
+
+.picture .nav .nav_box{
+    border: 1px solid #eee;
+}
+
+.picture .nav .nav_box .box_title{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-left:20px;
+    padding-right: 20px;
+    color:#444;
+    margin-bottom:0;
+    margin-top:20px;
+}
+
+.picture .nav .nav_box .box_title h5{
+    font-size:20px;
+    margin:0;
+    opacity: .5;
+}
+
+.picture .nav .nav_box .box_title p{
+    margin:0;
+    display: flex;
+    align-items: flex-end;
 }
