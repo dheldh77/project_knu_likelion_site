@@ -65,7 +65,7 @@ body{
     border-bottom:1px solid #eee;
 }
 
-.noti .con button{
+.noti .con a{
     font-size:14px;
     background:transparent;
     border:none;
@@ -75,7 +75,7 @@ body{
     color:black !important;
 }
 
-.noti .con button:focus{
+.noti .con a:focus{
     outline:none;
 }
 

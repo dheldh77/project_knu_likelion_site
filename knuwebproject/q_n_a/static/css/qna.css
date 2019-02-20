@@ -144,7 +144,7 @@ body{
 }
 
 .modal {
-    ont-family: 'Oswald', sans-serif;
+    font-family: 'Oswald', sans-serif;
     display: none; 
     position: fixed; 
     z-index: 1; 
@@ -288,6 +288,7 @@ body{
 }
 
 .qna .con .new .nouser{
+    display: inline;
     transition: .5s;
     letter-spacing: 2px;
     background:transparent;

@@ -32,7 +32,7 @@
                                 <tr>
                                     <th class="one">{{qna.id}}</th>
                                     
-                                    <td class="two"><a href="{%url 'qna:detail' qna.id %}">{{qna.title}}</a></td>
+                                    <td class="two"><a href="{% url 'qna:detail' qna.id %}">{{qna.title}}</a></td>
                                     <td class="three"><p>{{qna.pub_date}}</p></td>
                                     <td class="four">{{qna.user.username}}</td>
                                 </tr>
@@ -53,7 +53,7 @@
                             <button id="myBtn">질문하기</button>
                         {% else %}
                             <i class="fas fa-angle-double-left"></i>
-                            <button class="nouser" onClick="alert('로그인해주세요')">질문하기</button>
+                            <button class="nouser" onClick="nouser('{% url 'login'%}')" >질문하기</button>
                         {% endif %}
                         <div id="myModal" class="modal">
                             <div class="modal-content">
@@ -141,6 +141,11 @@
             scrollOverflow: true
         });
     </script>
-
+    <script>
+        function nouser(url){
+            alert('로그인해주세요');
+            window.location.href= url;
+        }
+    </script>
 
 {% endblock content %}

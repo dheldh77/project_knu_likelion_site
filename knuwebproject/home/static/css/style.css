@@ -466,6 +466,7 @@ footer .container .contact a:hover{
 }
 
 .sch_text{
+    position: absolute;
     height:100vh;
     overflow: auto;
 }
