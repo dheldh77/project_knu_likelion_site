@@ -189,5 +189,6 @@ body{
 .modal-content3 .modal-body3 .modal_notice_des{
     overflow-y: auto;
     max-height: 400px;
+    color:black;
 }
 
