@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # 'pure_pagination',
     'accounts.apps.AccountsConfig',
     'interview.apps.InterviewConfig',
+    'gallery.apps.GalleryConfig',
 ]
 
 MIDDLEWARE = [
