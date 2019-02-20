@@ -59,14 +59,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px 40px;
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.8)), url(../img/noti.jpg);
-    background-size:cover;
-    background-position:center;
+    background:white;
 }
 
 .noti .con{
-    color: white;
+    color: black;
     letter-spacing: 2px;
     max-width: 1300px;
     margin-left: auto;
@@ -78,13 +75,22 @@ body{
     font-family: 'Oswald', sans-serif;
     border-collapse: collapse;
     width: 1000px;
-    background:rgba(0,0,0,0.2);
+    border-top:1px solid #eee;
+    border-bottom:1px solid #eee;
 }
 
-.noti .con a{
+.noti .con button{
+    font-size:14px;
+    background:transparent;
+    border:none;
+    display: block;
     width: 100%;
     text-decoration: none;
-    color:white;
+    color:black !important;
+}
+
+.noti .con button:focus{
+    outline:none;
 }
 
 .noti .con table th{
@@ -92,14 +98,14 @@ body{
     vertical-align: center;
     padding: 5px 15px;
     text-align: center;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid #eee;
 }
 
 .noti .con table td {
     height: 50px;
     vertical-align: cente;
     padding: 5px 15px;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid #eee;
 }
 
 .noti .con table tbody tr{
@@ -108,7 +114,7 @@ body{
 
 .noti .con table tbody tr:hover {
     transition:.3s;
-    background-color: rgba(0, 0,0 , 0.4);
+    background-color: #eee;
 }
 
 .noti .con table .one{
@@ -129,3 +135,59 @@ body{
 .noti .con .current{
     opacity: 0.4;
 }
+
+.modal_3 {
+    font-family: 'Oswald', sans-serif;
+    display: none; 
+    position: absolute;
+    z-index: 99; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    
+    background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content3 {
+    overflow: hidden; 
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding: 0;
+    width: 60%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+.modal-content3 .modal-header3{
+    padding-top:25px;
+    padding-bottom:25px;
+    background:rgb(200,5,69);
+    padding-left:50px;
+    padding-right:50px;
+}
+
+.modal-content3 .modal-header3 h2{
+    font-family: 'Oswald', sans-serif;
+    color:white;
+    margin:0;
+}
+
+.modal-content3 .modal-body3{
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-content3 .modal-body3 .modal_notice_des{
+    overflow-y: auto;
+    max-height: 400px;
+}
+
