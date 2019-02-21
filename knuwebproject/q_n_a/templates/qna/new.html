@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
+<<<<<<< HEAD
 <br><br><br><br><br>
 <form action="" method="POST">
     {% csrf_token %}
@@ -12,4 +13,44 @@
         <input class="btn btn dark" type="submit" value="제출하기">
     </form>
 </form>
+=======
+    <section class="qna_new">
+        <div class="con">
+            <div class="content">
+                <form action="{% url 'qna:create' %}" onsubmit="SubmitQ()" enctype='multipart/form-data' method="POST">
+                    <div class="title">
+                        <h2>질문하기</h2>
+                    </div>
+                    {% csrf_token %}
+                    <div class="input_title">
+                        <input type="textarea", name='title' autocomplete=off placeholder="제목을 입력하세요">
+                    </div>
+                    <div class="input_content">
+                        <textarea name='body' autocomplete=off placeholder="내용을 입력하세요"></textarea>
+                    </div>
+                    <div class="input_file">
+                        <input type="file" name="file" multiple>
+                    </div>
+                    <div class="input_submit">
+                        <i class="fas fa-angle-double-left"></i>
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </section>
+    
+    <script>
+        function SubmitQ() {
+            console.log(document.getElementById("qna_body").value)
+            var str = document.getElementById("qna_body").value;
+
+            str = str.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+
+            document.getElementById("qna_body").value = str;
+            return true;
+        }
+    </script>
+>>>>>>> 6cbd9c6278572ad4a22c72d0fd363e4dd0d80e4b
 {% endblock content %}

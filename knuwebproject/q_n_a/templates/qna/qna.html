@@ -50,34 +50,16 @@
                     <div class="new">
                         {% if user.is_authenticated %}
                             <i class="fas fa-angle-double-left"></i>
+<<<<<<< HEAD
                             <a href="{% url 'qna:newQNA' %}">질문하기</a>
                             <button id="myBtn">질문하기</button>
+=======
+                            <button class="nouser" onclick="window.location.href='{% url 'qna:new' %}'">질문하기</button>
+>>>>>>> 6cbd9c6278572ad4a22c72d0fd363e4dd0d80e4b
                         {% else %}
                             <i class="fas fa-angle-double-left"></i>
                             <button class="nouser" onClick="nouser('{% url 'login'%}')" >질문하기</button>
                         {% endif %}
-                        <div id="myModal" class="modal">
-                            <div class="modal-content">
-                                <form action="{% url 'qna:create' %}" onsubmit="SubmitQ()" enctype='multipart/form-data' method="POST">
-                                    {% csrf_token %}
-                                    <div class="modal-header">
-                                        <span class="close">&times;</span>
-                                        <input type="textarea", name='title' autocomplete=off placeholder="제목을 입력하세요">
-                                        <div class="file">
-                                            <input type="file" name="file" multiple>   
-                                        </div>
-                                    </div>
-                                    <div class="modal-body">
-                                        <!-- <input type="text", id='qna_body'name='body' autocomplete=off placeholder="내용을 입력하세요"> -->
-                                        <textarea name='body' id='qna_body' autocomplete=off placeholder="내용을 입력하세요"></textarea>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <i class="fas fa-angle-double-right"></i>
-                                        <input type="submit" value="submit">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
                     </div>
                     <div style="display:flex; justify-content:center; align-items:center; margin-top:20px;">
                         <div>

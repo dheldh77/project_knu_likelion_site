@@ -13,12 +13,13 @@
         <div class="section">
             <section class="about_what">
                 <div class="con">
-                    <h3>멋쟁이 사자처럼에서는</h3>
+                    <h3 class="app0_1">멋쟁이 사자처럼에서는</h3>
+                    <h4 class="app0_1">무엇을 하나요?</h4>
                     <img src="{% static "img/test.png"%}" alt="">
-                    <h4>무엇을 하나요?</h4>
-                    <p><span style="color:#F08080;">웹 어플리케이션</span>에 대한 교육을 실시합니다 </p>
-                    <p>멋쟁이 사자처럼에서는 기본적으로 프로그래밍을 전혀 모르는 대학생 누구나를 대상으로 웹 어플리케이션에 대한 교육을 실시합니다. </p>
-                    <p>구체적으로는 <span style="color:#EEC900;">html, css, javascript, python, django</span> 등을 통해 웹 어플리케이션을 제작의 전반에 대해 배우게 됩니다.</p>
+                    
+                    <p class="app0_2"><span style="color:#F08080;">웹 어플리케이션</span>에 대한 교육을 실시합니다 </p>
+                    <p class="app0_2">멋쟁이 사자처럼에서는 기본적으로 프로그래밍을 전혀 모르는 대학생 누구나를 대상으로 웹 어플리케이션에 대한 교육을 실시합니다. </p>
+                    <p class="app0_2">구체적으로는 <span style="color:#EEC900;">html, css, javascript, python, django</span> 등을 통해 웹 어플리케이션을 제작의 전반에 대해 배우게 됩니다.</p>
                 </div>
             </section>
         </div>
@@ -27,11 +28,11 @@
                 <div class="con">
                     <img src="{% static "img/code.png"%}" alt="">
                     <div class="text">
-                        <h4>웹 어플리케이션이 뭐에요?</h4>
-                        <h2>웹 어플리케이션<br>(Web application)</h2>
+                        <h4 class="app1_1">웹 어플리케이션이 뭐에요?</h4>
+                        <h2 class="app1_1">웹 어플리케이션<br>(Web application)</h2>
                         <hr style="margin-left:50px; margin-bottom:30px;">
-                        <p>웹 어플리케이션은 소프트웨어 공학적 관점에서 인터넷이나 인트라넷을 통해 웹 브라우저에서 이용할 수 있는 <span style="color:#EE7600;">응용 소프트웨어</span>를 말합니다.</p>
-                        <p>보다 쉽게 말하자면 우리가 사용하는 네이버, 구글 등 다양한 포털사이트부터 자소설 닷컴, 커뮤니티 등의 특정 목적성을 지닌 사이트 등을 아우르는 <br><span style="color:#F08080;">웹 형식의 서비스</span>를 말합니다.</p>
+                        <p class="app1_2">웹 어플리케이션은 소프트웨어 공학적 관점에서 인터넷이나 인트라넷을 통해 웹 브라우저에서 이용할 수 있는 <span style="color:#EE7600;">응용 소프트웨어</span>를 말합니다.</p>
+                        <p class="app1_2">보다 쉽게 말하자면 우리가 사용하는 네이버, 구글 등 다양한 포털사이트부터 자소설 닷컴, 커뮤니티 등의 특정 목적성을 지닌 사이트 등을 아우르는 <br><span style="color:#F08080;">웹 형식의 서비스</span>를 말합니다.</p>
                     </div>
                 </div>
             </section>
@@ -40,10 +41,10 @@
             <section class="about_last">
                 <div class="con">
                     <div class="text">
-                        <h4>무엇을 배우게 되나요?</h4>
-                        <h2>웹을 위한 프로그래밍<br>(Programming)</h2>
+                        <h4 class="app2_1">무엇을 배우게 되나요?</h4>
+                        <h2 class="app2_1">웹을 위한 프로그래밍<br>(Programming)</h2>
                         <hr style="margin-right:80px; margin-bottom:30px;">
-                        <p>웹을 표현할 <span style="color:#EE7600;">HTML, CSS, Javascript </span>부터 <br>웹에서 서비스를 제공해줄 <span style="color:#EEC900;">Python과 Django</span> 까지<br> 웹 어플리케이션을 위한 전반의 프로그래밍 과정을 배우게 됩니다.</p>
+                        <p class="app2_2">웹을 표현할 <span style="color:#EE7600;">HTML, CSS, Javascript </span>부터 <br>웹에서 서비스를 제공해줄 <span style="color:#EEC900;">Python과 Django</span> 까지<br> 웹 어플리케이션을 위한 전반의 프로그래밍 과정을 배우게 됩니다.</p>
                     </div>
                     <img src="{% static "img/about_last.png"%}" alt="">
                 </div>
@@ -52,16 +53,65 @@
     </div>
 
 <script src="{% static 'js/fullpage.js'%}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script>
     new fullpage('#fullpage', {
+        
         licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
         navigation: true,
         responsiveWidth: 700,
-        anchors: ['home', 'about-us', 'contact'],
+        anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
         parallax: true,
-        onLeave: function(origin, destination, direction){
-            console.log("Leaving section" + origin.index);
-        },
+        
+        afterLoad: function(origin, section){
+                var loadedSection = this;
+
+                console.log(section.anchor);
+                console.log(origin.index);
+                if(section.anchor == 'secondPage'){
+                    $('.app0_1').css('opacity','1');
+                    $('.app0_1').css('transition','.5s');
+                    $('.app0_1').css('transform','translateY(0)');
+                    $('.app0_2').css('opacity','1');
+                    $('.app0_2').css('transition','.5s');
+                    $('.app0_2').css('transform','translateY(0)');
+                }
+                else{
+                    $('.app0_1').css('opacity','0');
+                    $('.app0_1').css('transform','translateY(-100px)');
+                    $('.app0_2').css('opacity','0');
+                    $('.app0_2').css('transform','translateY(200px)');
+                }
+                if(section.anchor == 'thirdPage'){
+                    $('.app1_1').css('opacity','1');
+                    $('.app1_1').css('transition','.5s');
+                    $('.app1_1').css('transform','translateX(0)');
+                    $('.app1_2').css('opacity','1');
+                    $('.app1_2').css('transition','.5s');
+                    $('.app1_2').css('transform','translateX(0)');
+                }
+                else{
+                    $('.app1_1').css('opacity','0');
+                    $('.app1_1').css('transform','translateX(-200px)');
+                    $('.app1_2').css('opacity','0');
+                    $('.app1_2').css('transform','translateX(200px)');
+                }
+                if(section.anchor == 'fourthPage'){
+                    $('.app2_1').css('opacity','1');
+                    $('.app2_1').css('transition','.5s');
+                    $('.app2_1').css('transform','translateX(0)');
+                    $('.app2_2').css('opacity','1');
+                    $('.app2_2').css('transition','.5s');
+                    $('.app2_2').css('transform','translateX(0)');
+                }
+                else{
+                    $('.app2_1').css('opacity','0');
+                    $('.app2_1').css('transform','translateX(200px)');
+                    $('.app2_2').css('opacity','0');
+                    $('.app2_2').css('transform','translateX(-200px)');
+                }
+            }
+
     });
 </script>
 

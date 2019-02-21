@@ -23,8 +23,8 @@ body{
 .show .con .card{
     font-family: 'Oswald', sans-serif;
     max-width: 800px;
-    border-top:1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-top:30px solid rgb(200,5,69);
+    border-radius: 10px;
 }
 
 .show .con .card .title .main{

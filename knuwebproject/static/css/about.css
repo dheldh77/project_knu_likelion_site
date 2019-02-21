@@ -36,7 +36,7 @@
 .about_what .con h3{
     color:black !important;
     font-family: 'Oswald', sans-serif;
-    margin-bottom:100px;
+    margin-bottom:5px;
 }
 
 .about_what .con img{
@@ -108,8 +108,6 @@
 
 .about_how .con .text p{
     letter-spacing: 1px;
-    font-size: 12px;
-    opacity: .8;
 }
 
 .about_last{
@@ -171,4 +169,30 @@
     width: 200px;
     border-bottom:1px solid #ddd;
     margin-bottom:60px;
+}
+
+.app0_1{
+    opacity: 0;
+    transform: translateY(-100px);
+}
+.app0_2{
+    opacity: 0;
+    transform: translateY(200px);
+}
+
+.app1_1{
+    opacity: 0;
+    transform: translateX(-200px);
+}
+.app1_2{
+    opacity: 0;
+    transform: translateX(200px);
+}
+.app2_1{
+    opacity: 0;
+    transform: translateX(200px);
+}
+.app2_2{
+    opacity: 0;
+    transform: translateX(-200px);
 }
