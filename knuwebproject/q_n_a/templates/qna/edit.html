@@ -2,22 +2,14 @@
 {% block content %}
 {% load static %}
 <br><br><br><br><br>
-<form action="{% url 'qna:update' post.id %}" enctype='multipart/form-data' method="POST">
+<form action="{% url 'qna:editQNA' qna.id%}" method="POST">
     {% csrf_token %}
-    <div class="modal-header">
-        <span class="close">&times;</span>
-        <input type="textarea", name='title' autocomplete=off value="{{post.title}}">
-        <div class="file">
-            <input type="file" name="file" multiple>   
-        </div>
-    </div>
-    <div class="modal-body">
-        <!-- <input type="text", id='qna_body'name='body' autocomplete=off placeholder="내용을 입력하세요"> -->
-        <textarea name='body' id='qna_body' autocomplete=off>{{post.body}}</textarea>
-    </div>
-    <div class="modal-footer">
-        <i class="fas fa-angle-double-right"></i>
-        <input type="submit" value="submit">
-    </div>
+    {{form.media}}
+    <table>
+    {{form.as_table}}
+    </table>
+    <br>
+        <input class="btn btn dark" type="submit" value="제출하기">
+    </form>
 </form>
 {% endblock content %}

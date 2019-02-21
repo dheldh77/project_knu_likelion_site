@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'interview.apps.InterviewConfig',
     'gallery.apps.GalleryConfig',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -165,3 +167,7 @@ MEDIA_URL = '/media/'
 
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
+
+# ckeditor
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = "pillow"

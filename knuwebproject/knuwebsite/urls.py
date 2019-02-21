@@ -40,4 +40,5 @@ urlpatterns = [
     path('shuffle/', game.views.shuffle, name="shuffle"),
     path('interview/',interview.views.board, name="interview"),
     path('gallery/',gallery.views.board,name='gallery'),
+    path('ckeditor/', include('ckeditor_uploader.urls')), # ckeditor
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
