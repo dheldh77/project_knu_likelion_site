@@ -20,6 +20,7 @@ import notice.views
 import q_n_a.views
 import game.views
 import interview.views
+import gallery.views
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -38,4 +39,5 @@ urlpatterns = [
     path('accounts/',include('accounts.urls')),
     path('shuffle/', game.views.shuffle, name="shuffle"),
     path('interview/',interview.views.board, name="interview"),
+    path('gallery/',gallery.views.board,name='gallery'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

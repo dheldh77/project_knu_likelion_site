@@ -34,8 +34,8 @@ def create(request):
     
     return redirect('/qna/'+str(qna.id))
 
-# def new(request):
-#     return render(request,'qna/new.html')
+def new(request):
+    return render(request,'qna/new.html')
 
 def detail(request, qna_id):
     qna = get_object_or_404(QNA,pk=qna_id)
@@ -70,8 +70,8 @@ def edit(request, qna_id):
 
 def update(request, qna_id):
     qna = get_object_or_404(QNA, pk=qna_id)
-    qna.title = request.GET['title']
-    qna.body = request.GET['body']
+    qna.title = request.POST['title']
+    qna.body = request.POST['body']
     qna.save()
     return redirect('/qna/'+str(qna.id))
 

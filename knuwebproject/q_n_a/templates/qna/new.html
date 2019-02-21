@@ -2,18 +2,18 @@
 {% block content %}
 {% load static %}
 <br><br><br><br><br>
-<form action="{% url 'qna:update' post.id %}" enctype='multipart/form-data' method="POST">
+<form action="{% url 'qna:create' %}" enctype='multipart/form-data' method="POST">
     {% csrf_token %}
     <div class="modal-header">
         <span class="close">&times;</span>
-        <input type="textarea", name='title' autocomplete=off value="{{post.title}}">
+        <input type="textarea", name='title' autocomplete=off placeholder="제목을 입력하세요">
         <div class="file">
             <input type="file" name="file" multiple>   
         </div>
     </div>
     <div class="modal-body">
         <!-- <input type="text", id='qna_body'name='body' autocomplete=off placeholder="내용을 입력하세요"> -->
-        <textarea name='body' id='qna_body' autocomplete=off>{{post.body}}</textarea>
+        <textarea name='body' id='qna_body' autocomplete=off placeholder="내용을 입력하세요"></textarea>
     </div>
     <div class="modal-footer">
         <i class="fas fa-angle-double-right"></i>

@@ -3,7 +3,7 @@ from . import views
 app_name = 'qna'
 urlpatterns = [
     path('',views.qna,name='board'),
-    # path('new/',views.new,name='new'),
+    path('new/',views.new,name='new'),
     path('create/',views.create,name="create"),
     path('<int:qna_id>/',views.detail,name='detail'),
     path('<int:qna_id>/delete/', views.delete, name='delete'),
