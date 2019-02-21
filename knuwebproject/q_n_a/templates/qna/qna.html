@@ -50,12 +50,9 @@
                     <div class="new">
                         {% if user.is_authenticated %}
                             <i class="fas fa-angle-double-left"></i>
-<<<<<<< HEAD
-                            <a href="{% url 'qna:newQNA' %}">질문하기</a>
-                            <button id="myBtn">질문하기</button>
-=======
-                            <button class="nouser" onclick="window.location.href='{% url 'qna:new' %}'">질문하기</button>
->>>>>>> 6cbd9c6278572ad4a22c72d0fd363e4dd0d80e4b
+
+                            <button class="nouser" onclick="window.location.href='{% url 'qna:newQNA' %}'">질문하기</button>
+
                         {% else %}
                             <i class="fas fa-angle-double-left"></i>
                             <button class="nouser" onClick="nouser('{% url 'login'%}')" >질문하기</button>

@@ -1,23 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-<<<<<<< HEAD
-<br><br><br><br><br>
-<form action="" method="POST">
-    {% csrf_token %}
-    {{form.media}}
-    <table>
-    {{form.as_table}}
-    </table>
-    <br>
-        <input class="btn btn dark" type="submit" value="제출하기">
-    </form>
-</form>
-=======
     <section class="qna_new">
         <div class="con">
             <div class="content">
-                <form action="{% url 'qna:create' %}" onsubmit="SubmitQ()" enctype='multipart/form-data' method="POST">
+                <!--<form action="{% url 'qna:create' %}" onsubmit="SubmitQ()" enctype='multipart/form-data' method="POST">
                     <div class="title">
                         <h2>질문하기</h2>
                     </div>
@@ -35,6 +22,16 @@
                         <i class="fas fa-angle-double-left"></i>
                         <input type="submit" value="Submit">
                     </div>
+                </form>-->
+                <form action="" onsubmit="SubmitQ()" method="POST">
+                    {% csrf_token %}
+                    {{form.media}}
+                    <table>
+                    {{form.as_table}}
+                    </table>
+                    <br>
+                        <input class="btn btn dark" type="submit" value="제출하기">
+                    </form>
                 </form>
             </div>
             
@@ -52,5 +49,4 @@
             return true;
         }
     </script>
->>>>>>> 6cbd9c6278572ad4a22c72d0fd363e4dd0d80e4b
 {% endblock content %}
