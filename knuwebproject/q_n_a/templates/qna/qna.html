@@ -50,6 +50,7 @@
                     <div class="new">
                         {% if user.is_authenticated %}
                             <i class="fas fa-angle-double-left"></i>
+                            <a href="{% url 'qna:new' %}">질문하기</a>
                             <button id="myBtn">질문하기</button>
                         {% else %}
                             <i class="fas fa-angle-double-left"></i>
