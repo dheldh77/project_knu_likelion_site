@@ -164,7 +164,6 @@
         });
         });
     </script>
-    <script src="{% static 'js/scrolloverflow.min.js.map '%}"></script>
     <script src="{% static 'js/scrolloverflow.min.js'%}"></script>
     <script src="{% static 'js/fullpage.js'%}"></script>
     <script>
@@ -173,18 +172,31 @@
             licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
             navigation: true,
             
-            afterSlideLoad: function( section, origin, destination, direction){
-                var loadedSlide = this;
+            afterLoad: function(origin, section){
+                var loadedSection = this;
 
-                //두번째 구역의 첫번째 슬라이드
-                if(section.anchor == 'secondPage' && destination == 1){
-                    alert("First slide loaded");
+                console.log(section.anchor);
+                console.log(origin.index);
+                
+                if(section.anchor == 'secondPage'){
+                    $('.app1').css('opacity','1');
+                    $('.app1').css('transition','.5s');
+                    $('.app1').css('transform','translateY(0)');
+                    
                 }
-
-                //두번째 구역의 두번째 슬라이드
-                //(#secondSlide가 두번째 슬라이드의 앵커라고 가정할 때)
-                if(section.index == 1 && destination.anchor == 'secondSlide'){
-                    alert("Second slide loaded");
+                else if(section.anchor == 'thirdPage'){
+                    $('.app2').css('opacity','1');
+                    $('.app2').css('transition','.5s');
+                    $('.app2').css('transform','translateY(0)');
+                    
+                }
+                else{
+                    $('.app1').css('opacity','0');
+                    $('.app1').css('transition','.5s');
+                    $('.app1').css('transform','translateY(100px)');
+                    $('.app2').css('opacity','0');
+                    $('.app2').css('transition','.5s');
+                    $('.app2').css('transform','translateY(100px)');
                 }
             }
 

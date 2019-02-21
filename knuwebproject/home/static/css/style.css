@@ -480,9 +480,6 @@ footer .container .contact a:hover{
     height: 100%;
 }
 
-.sch_text::-webkit-scrollbar{
-    display: none;
-}
 .sch_text .timeline {
     position: relative;
     max-width: 1200px;
@@ -601,4 +598,9 @@ footer .container .contact a:hover{
         box-sizing: border-box;
         left: 0%;
     }
+}
+
+.app1, .app2{
+    opacity: 0;
+    transform: translateY(100px);
 }
