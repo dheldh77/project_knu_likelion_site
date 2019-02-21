@@ -18,7 +18,7 @@
                     <div class="title app1">
                         <h1>멋사가 뭐에요?</h1>
                     </div>
-                    <div class="icon">
+                    <div id="app1_2" class="icon">
                         <div id="item1" onmouseover="change_text('text1')" class="item">
                             <i class="fab fa-chrome"></i>
                             <h2>PROGRAMING IS LIKE MAGIC</h2>
@@ -32,7 +32,7 @@
                             <h2>OPTIMIZED TO CHANGE LIFE</h2>
                         </div>
                     </div>
-                    <div class="content">
+                    <div id="app1_1" class="content">
                         <div>
                             <div class="quo1">
                             <h1><i class="fas fa-quote-left"></i></h1>
@@ -64,7 +64,7 @@
                                 <p>이렇게 저렇게 진행됩니다</p>
                             </div>
                         </div>
-                        <div class="flexslider">
+                        <div id="app2_1" class="flexslider">
                             <ul class="slides">
                                 <li>
                                     <div class="content">
@@ -203,23 +203,37 @@
                 }
                 if(section.anchor == 'secondPage'){
                     $('.app1').css('opacity','1');
-                    $('.app1').css('transition','.5s');
+                    $('.app1').css('transition','.7s');
                     $('.app1').css('transform','translateY(0)');
-                    
+                    $('#app1_1').css('opacity','1');
+                    $('#app1_1').css('transition','.7s');
+                    $('#app1_1').css('transform','translateY(0)');
+                    $('#app1_2').css('opacity','1');
+                    $('#app1_2').css('transition','.3s');
+                    $('#app1_2').css('transform','translateY(0)');
                 }
                 else{
                     $('.app1').css('opacity','0');
-                    $('.app1').css('transform','translateY(100px)');
+                    $('.app1').css('transform','translateY(-100px)');
+                    $('#app1_1').css('opacity','0');
+                    $('#app1_1').css('transform','translateY(100px)');
+                    $('#app1_2').css('opacity','0');
+                    $('#app1_2').css('transform','translateY(100px)');
                 }
                 if(section.anchor == 'thirdPage'){
                     $('.app2').css('opacity','1');
                     $('.app2').css('transition','.5s');
                     $('.app2').css('transform','translateY(0)');
+                    $('#app2_1').css('opacity','1');
+                    $('#app2_1').css('transition','.5s');
+                    $('#app2_1').css('transform','translateY(0)');
                     
                 }
                 else{
                     $('.app2').css('opacity','0');
-                    $('.app2').css('transform','translateY(100px)');
+                    $('.app2').css('transform','translateY(-100px)');
+                    $('#app2_1').css('opacity','0');
+                    $('#app2_1').css('transform','translateY(100px)');
                 }
             }
 

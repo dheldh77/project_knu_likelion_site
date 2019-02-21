@@ -600,7 +600,26 @@ footer .container .contact a:hover{
     }
 }
 
-.app1, .app2{
+.app1{
+    opacity: 0;
+    transform: translateY(-100px);
+}
+.app2{
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+#app2_1{
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+#app1_1{
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+#app1_2{
     opacity: 0;
     transform: translateY(100px);
 }
