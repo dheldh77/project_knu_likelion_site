@@ -15,8 +15,8 @@
         <div class="section">
             <section id="service" class="serv">
                 <div class="con">
-                    <div class="title">
-                        <h1>멋사를 통해 우리는</h1>
+                    <div class="title app1">
+                        <h1>멋사가 뭐에요?</h1>
                     </div>
                     <div class="icon">
                         <div id="item1" onmouseover="change_text('text1')" class="item">
@@ -59,8 +59,10 @@
                 <div class="home_ad">
                     <div class="ad">
                         <div class="title">
-                            <h1>멋사소식이닷!</h1>
-                            <p>이렇게 저렇게 진행됩니다</p>
+                            <div class="app2" style="text-align:start;">
+                                <h1>멋사소식이닷!</h1>
+                                <p>이렇게 저렇게 진행됩니다</p>
+                            </div>
                         </div>
                         <div class="flexslider">
                             <ul class="slides">
@@ -87,14 +89,6 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                <div class="whynot">
-                    <div class="news">
-                        <h1>멋사 새소식</h1>
-                        ㅁㄴㅇㄹㅁㄴㅇㄹ
-                        에라이모르겠다 신웅아 부탁해
-                    </div>
-                    
                 </div>
             </div>
             
@@ -170,15 +164,30 @@
         });
         });
     </script>
-
+    <script src="{% static 'js/scrolloverflow.min.js.map '%}"></script>
     <script src="{% static 'js/scrolloverflow.min.js'%}"></script>
     <script src="{% static 'js/fullpage.js'%}"></script>
     <script>
         new fullpage('#fullpage', {
+            anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
             licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-            navigation: true,       
-            normalScrollElements: '.sch_text',
-            scrollOverflow: true
+            navigation: true,
+            
+            afterSlideLoad: function( section, origin, destination, direction){
+                var loadedSlide = this;
+
+                //두번째 구역의 첫번째 슬라이드
+                if(section.anchor == 'secondPage' && destination == 1){
+                    alert("First slide loaded");
+                }
+
+                //두번째 구역의 두번째 슬라이드
+                //(#secondSlide가 두번째 슬라이드의 앵커라고 가정할 때)
+                if(section.index == 1 && destination.anchor == 'secondSlide'){
+                    alert("Second slide loaded");
+                }
+            }
+
         });
     </script>
 

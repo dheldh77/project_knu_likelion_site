@@ -33,7 +33,7 @@ header{
     top:0;
     width: 100%;
     z-index: 100;
-    background: white;
+    background: transparent;
     height: 70px;
 }
 
@@ -292,26 +292,23 @@ header .menubar .menu li a:hover{
     align-items: center;
 }
 
-.whynot{
-    flex:1;
-    color:black;
-}
-
-.whynot .news{
-    padding-left:100px;
-    padding-right:100px;
-}
-
 .home_ad .ad{
     text-align: center;
     background: transparent;
     flex:1;
+    max-width: 1000px;
+    margin-left:auto;
+    margin-right: auto;
 }
 
 .home_ad .title{
+    margin-top:100px;
     font-family: 'Oswald', sans-serif;
-    color:white;
+    color:black;
     margin-bottom:10px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom:50px;
 }
 
 .home_ad .title h1{
@@ -467,7 +464,6 @@ footer .container .contact a:hover{
 
 .sch_text{
     position: relative;
-    height:100vh;
     overflow: auto;
 }
 
@@ -480,6 +476,8 @@ footer .container .contact a:hover{
     background-position: center;
     background-size: cover;
     position: relative;
+    overflow:auto;
+    height: 100%;
 }
 
 .sch_text::-webkit-scrollbar{
