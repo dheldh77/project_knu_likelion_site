@@ -12,18 +12,24 @@ header .menubar .menu li a{
 
 /* ABOUT */
 .about_what .con h3{
-    color:white;
+    font-size:2em;
+    color:black;
     font-family: 'locus_sangsang';
-    margin-bottom:100px;
+    
 }
 
+
+
 .about_what .con h4{
-    color:white;
+    font-size:1.2em;
+    margin-bottom:70px;
+    color:#666;
     font-family: 'locus_sangsang';
 }
 
 .about_what .con p{
-    font-size:15px;
+    margin-top:30px;
+    font-size:1.2em;
     font-family: 'BMJUA';
 }
 
@@ -34,14 +40,25 @@ header .menubar .menu li a{
 .about_how .con .text{
     font-family:'locus_sangsang';
 }
+.about_how .con h2{
+    font-size:2em !important;
+    font-family:'locus_sangsang';
+
+}
 
 .about_last .con .text h2{
+    font-size:2em !important;
     font-family:'locus_sangsang';
+}
+
+.about_how .con .text p{
+    font-family:'BMJUA';
+    font-size: 1.2em !important;
 }
 
 .about_last .con .text p{
     font-family:'BMJUA';
-    font-size:15px;
+    font-size:1.2em;
 }
 
 
