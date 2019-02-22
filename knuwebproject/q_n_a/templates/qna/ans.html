@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="content">
-                <p id= "qna_body">{{ans.body}}</p>
+                <p id= "qna_body">{{ans.body|safe}}</p>
                 {#% for pic in qna.photo_set.all%#}
                     <!-- <img src="{{pic.image.url}}" alt="picture"> -->
                 {#% endfor %#}

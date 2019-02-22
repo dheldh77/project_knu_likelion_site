@@ -27,7 +27,7 @@ class Answer(models.Model):
     qna = models.ForeignKey(QNA, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
-    body = models.TextField()
+    body = RichTextUploadingField(blank=True,null=True)
 
     def __str__(self):
         return self.title
