@@ -176,6 +176,12 @@
             $('#app0_2').css('transform','translateX(0)');
         }
     </script>
+
+    <script>
+        new fullpage('.sch_text',{
+            autoScrolling: false;
+        })
+    </script>
     <script>
         new fullpage('#fullpage', {
             anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage'],
@@ -184,9 +190,6 @@
             
             afterLoad: function(origin, section){
                 var loadedSection = this;
-
-                console.log(section.anchor);
-                console.log(origin.index);
                 if(section.anchor == 'firstPage'){
                     $('#app0_1').css('opacity','1');
                     $('#app0_1').css('transition','.5s');
