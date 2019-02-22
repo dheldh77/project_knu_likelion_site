@@ -8,91 +8,35 @@
 
 .qna_new .con{
     margin-top:150px;
-    width: 700px;
+    max-width:1300px;
     margin-left:auto;
     margin-right:auto;
-    border-top:30px solid rgb(200,5,69);
-    border-radius: 10px;
-    padding-left:20px;
-    padding-right:20px;
     display: flex;
     justify-content: center;
-    align-items: center
-}
-
-.qna_new .con form .input_title{
-    margin-top:30px;
-    display: block;
-    width: 600px;
-    margin-bottom:20px;
-}
-
-.qna_new .con form .input_title input{
-    font-size:18px;
-    display: block;
-    width: 100%;
-    padding:5px 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-.qna_new .con form .input_content{
-    width: 600px;
-    margin-bottom: 20px;
-}
-.qna_new .con form .input_content textarea{
-    font-size:18px;
-    display: block;
-    width:100%;
-    padding:5px 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    resize: none;
-    overflow-y:auto;
-    height: 300px;
-}
-
-.qna_new .con form .input_file{
-    width: 600px;
-    justify-content: flex-end;
     align-items: center;
-    padding-bottom:10px;
-    margin-bottom:10px;
+    background:linear-gradient(-90deg, #B91372, #6B0F1A);
 }
 
-.qna_new .con form .input_file input{
-    width: 100%;
-}
+.qna_new .con form{
+    margin-top:20px;
+    padding-top:50px;
 
-.qna_new .con form .input_submit{
-    width: 600px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin-bottom:50px;
+    background:white;
 }
-
-.qna_new .con form .input_submit input{
-    display: inline;
-    transition: .5s;
-    letter-spacing: 2px;
+.qna_new .con form .sibal{
     background:transparent;
     border:none;
-    border-radius: 5px;
-    padding-top:5px;
-    padding-left:30px;
-    padding-bottom:5px;
-    color:black;
-    
-}
-
-.qna_new .con form .input_submit input:hover{
-    padding-left:50px;
     transition: .5s;
-    cursor: pointer;
+    font-size:1em !important;
+    letter-spacing: 2px;
+    padding-top:30px;
+    padding-left:15px;
 }
 
-.qna_new .con form .input_submit input:focus{
-    outline: none;
+.qna_new .con form .sibal:hover{
+    cursor: pointer;
+    transition: .5s;
+    padding-left:30px;
 }
 
 

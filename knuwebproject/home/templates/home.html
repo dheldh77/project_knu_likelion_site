@@ -121,7 +121,7 @@
             </section>
         </div>
         <div class="section">
-            <hr style="transform:rotate(90deg);"> 
+            <hr style="color: rgb(200, 5, 69); transform:rotate(90deg);"> 
             <section class="timeline_cus">
                 
                 <div class="con">
@@ -180,7 +180,6 @@
             licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
             navigation: true,
             responsiveWidth:700,
-            
             afterLoad: function(origin, section){
                 var loadedSection = this;
                 if(section.anchor == 'firstPage'){
@@ -233,25 +232,30 @@
                 }
 
                 if(section.anchor == 'fourthPage'){
+                    $('.thisistimeline').css('opacity','1');
+                    $('.thisistimeline').css('transition','.5s');
+                    $('.thisistimeline').css('transform','translateY(0)');
                     setTimeout(function() {
                         $('#time_1').css('opacity','1');
                         $('#time_1').css('transition','.5s');
                         $('#time_1').css('transform','translateX(0)');
-                    }, 0);
+                    }, 100);
                     
                     setTimeout(function() {
                         $('#time_2').css('opacity','1');
                         $('#time_2').css('transition','.5s');
                         $('#time_2').css('transform','translateX(0)');
-                    }, 200);
+                    }, 300);
 
                     setTimeout(function() {
                         $('#time_3').css('opacity','1');
                         $('#time_3').css('transition','.5s');
                         $('#time_3').css('transform','translateX(0)');
-                    }, 400);
+                    }, 500);
                 }
                 else{
+                    $('.thisistimeline').css('opacity','0');
+                    $('.thisistimeline').css('transform','translateY(-200px)');
                     $('#time_1').css('opacity','0');
                     $('#time_1').css('transform','translateX(400px)');
                     $('#time_2').css('opacity','0');
@@ -261,11 +265,9 @@
                 }
 
                 if(section.anchor == 'fifthPage'){
-                    setTimeout(function() {
-                        $('#time_4').css('opacity','1');
-                        $('#time_4').css('transition','.5s');
-                        $('#time_4').css('transform','translateX(0)');
-                    }, 0);
+                    $('#time_4').css('opacity','1');
+                    $('#time_4').css('transition','.5s');
+                    $('#time_4').css('transform','translateX(0)');
                     
                     setTimeout(function() {
                         $('#time_5').css('opacity','1');

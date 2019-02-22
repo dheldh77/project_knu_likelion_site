@@ -1,15 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
-<br><br><br><br><br>
-<form action="{% url 'qna:editQNA' qna.id%}" method="POST">
-    {% csrf_token %}
-    {{form.media}}
-    <table>
-    {{form.as_table}}
-    </table>
-    <br>
-        <input class="btn btn dark" type="submit" value="제출하기">
-    </form>
-</form>
+    <section class="qna_new">
+        <div class="con">
+            <div class="content">
+                <form action="{% url 'qna:editQNA' qna.id%}" onsubmit="SubmitQ()" method="POST">
+                    {% csrf_token %}
+                    {{form.media}}
+                    <table>
+                    {{form.as_table}}
+                    </table>
+                    <div style="text-align:end;">
+                        <input class="sibal" type="submit" value="제출하기">
+                    </div>
+                    </form>
+                </form>
+            </div>
+        </div>
+    </section>
 {% endblock content %}

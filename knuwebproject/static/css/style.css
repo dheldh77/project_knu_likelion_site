@@ -33,24 +33,8 @@ header{
     top:0;
     width: 100%;
     z-index: 100;
-    background: transparent;
+    background: white;
     height: 70px;
-}
-
-header:hover{
-    opacity: 1;
-    transition:.5s;
-    background: black;
-}
-
-header:hover .logo h2{
-    transition: .5s;
-    color:white;
-}
-
-header:hover .menubar .menu li a{
-    transition: .5s;
-    color:white;
 }
 
 header .header{
@@ -89,7 +73,7 @@ header .logo h2{
 }
 
 header .menubar li ul {
-    background: rgba(0, 0,0 , 0.2);
+    background: white;
     display:none;  
     height:auto;
     padding:0px;
@@ -102,7 +86,7 @@ header .menubar li ul {
 
 header .menubar li:hover ul {
     transition: .5s;
-    display:block;   
+    display:block;
 }
 
 header .menubar li .drop_one{
@@ -128,7 +112,7 @@ header .menubar .menu li a{
     text-decoration: none;
     letter-spacing: 2px;
 }
-header .menubar .menu li a:hover{
+header .menubar .menu .drop_one a:hover{
     padding-bottom: 10px;
     border-bottom: 1px solid #c50045;
     transition: .5s;
@@ -447,7 +431,7 @@ footer .container .contact a:hover{
 
 .gap_2{
     color:white;
-    padding:120px 50px;
+    padding:50px 50px;
     background:black;
     font-family: 'Oswald', sans-serif;
     display: flex;
@@ -472,7 +456,7 @@ footer .container .contact a:hover{
 }
 
 .sch_text{
-    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,1)), url(../img/sch_1.jpg);
+    background: white;
     background-position: center;
     background-size: cover;
     position: relative;
@@ -631,4 +615,59 @@ footer .container .contact a:hover{
 #app0_2{
     opacity: 0;
     transform: translateX(-100px);
+}
+
+.timeline_cus{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline_cus .con{
+    width: 1000px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.timeline_cus .con .item_right{
+    display: flex;
+    width:1000px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.timeline_cus .con .item_right .content{
+    display: block;
+    width:500px;
+}
+.timeline_cus .con .item_left{
+    display: flex;
+    width:1000px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.timeline_cus .con .item_left .content{
+    text-align:end;
+    display: block;
+    width:500px;
+}
+
+.timeline_cus .con .thisistimeline{
+    display: inline-block;
+    font-size:24px;
+    padding-bottom:10px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 100px;
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+#time_1, #time_3, #time_5{
+    opacity: 0;
+    transform: translateX(400px);
+}
+#time_2, #time_4, #time_6{
+    opacity: 0;
+    transform: translateX(-400px);
 }

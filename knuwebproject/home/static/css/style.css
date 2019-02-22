@@ -37,12 +37,6 @@ header{
     height: 70px;
 }
 
-
-header:hover .menubar .menu li a{
-    transition: .5s;
-    color:white;
-}
-
 header .header{
     height: 70px;
     max-width: 1100px;
@@ -79,7 +73,7 @@ header .logo h2{
 }
 
 header .menubar li ul {
-    background: rgba(0, 0,0 , 0.2);
+    background: white;
     display:none;  
     height:auto;
     padding:0px;
@@ -92,7 +86,7 @@ header .menubar li ul {
 
 header .menubar li:hover ul {
     transition: .5s;
-    display:block;   
+    display:block;
 }
 
 header .menubar li .drop_one{
@@ -118,7 +112,7 @@ header .menubar .menu li a{
     text-decoration: none;
     letter-spacing: 2px;
 }
-header .menubar .menu li a:hover{
+header .menubar .menu .drop_one a:hover{
     padding-bottom: 10px;
     border-bottom: 1px solid #c50045;
     transition: .5s;
@@ -665,6 +659,8 @@ footer .container .contact a:hover{
     padding-bottom:10px;
     border-bottom: 1px solid #eee;
     margin-bottom: 100px;
+    opacity: 0;
+    transform: translateY(-100px);
 }
 
 #time_1, #time_3, #time_5{

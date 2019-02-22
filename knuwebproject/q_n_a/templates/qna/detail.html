@@ -8,7 +8,6 @@
                 <div class="main">
                     <h1>{{qna.title}}</h1>
                 </div>
-                <div class="qna_description" style="text-align:center;">{{qna.description|safe}}</div>
                 <div class="sub_title">
                     <p><i class="fas fa-calendar-alt"></i>{{qna.pub_date}}</p>
                     <p><i class="fas fa-user"></i>{{qna.user.username}}</p>
@@ -43,6 +42,7 @@
                 </div>
             </div>
             <div class="content">
+                <div class="qna_description" style="text-align:center;">{{qna.description|safe}}</div>
                 <p id= "qna_body">{{qna.body}}</p>
                 {% for pic in qna.photo_set.all%}
                     <img src="{{pic.image.url}}" alt="picture">
