@@ -4,7 +4,7 @@
     align-items: center;
     height: 100vh;
     width: 100%;
-    background: black;
+    background: white;
 }
 .about_title .con{
     max-width: 1000px;
@@ -59,12 +59,12 @@
 .about_how{
     height: 100vh;
     font-family: 'Oswald', sans-serif;
-    color:white;
+    color:black;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    background:black;
+    background:white
 }
 
 .about_how .con{
