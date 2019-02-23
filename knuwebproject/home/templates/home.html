@@ -55,54 +55,52 @@
             </section>
         </div>
         <div class="section">
-            <div class="special">
-                <div class="home_ad">
-                    <div class="ad">
-                        <div class="title">
-                            <div class="app2" style="text-align:start;">
-                                <h1>멋사소식이닷!</h1>
-                                <p>이렇게 저렇게 진행됩니다</p>
-                            </div>
-                        </div>
-                        <div id="app2_1" class="flexslider">
-                            <ul class="slides">
-                                <li>
-                                    <div class="content">
-                                        <img src="{% static 'img/new/n1.jpg'%}" alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="content">
-                                        <img src="{% static 'img/new/n2.jpg'%}" alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="content">
-                                        <img src="{% static 'img/new/n3.jpg'%}" alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="content">
-                                        <img src="{% static 'img/new/n4.jpg'%}" alt="">
-                                    </div>
-                                </li>
-                            </ul>
+            <section class="home_news">
+                <div class="con">
+                    <div class="title">
+                        <div class="app2" style="text-align:start;">
+                            <h1>멋사소식이닷!</h1>
                         </div>
                     </div>
+                    <div id="app2_1" class="flexslider">
+                        <ul class="slides">
+                            <li>
+                                <div class="content">
+                                    <img src="{% static 'img/new/n1.jpg'%}" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content">
+                                    <img src="{% static 'img/new/n2.jpg'%}" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content">
+                                    <img src="{% static 'img/new/n3.jpg'%}" alt="">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="content">
+                                    <img src="{% static 'img/new/n4.jpg'%}" alt="">
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-            
+            </section>
         </div>
         <div class="section">
             <section class="timeline_cus">
                 <div class="con">
-                    <div class="thisistimeline">
+                    <div id="thisistimeline" class="title">
                         <h1>멋사 타임라인.</h1>
                     </div>
                     <div id="time_1" class="item_left">
                         <div class="content">
-                            <h2>7기 모집(2019.2.20 ~ 3.7)</h2>
-                            <p>3/7 지원 마감, 3/8 ~ 3/9 면접, 3/10 최종 발표<br>1년간 함께 할 <span style="color:#EE7600;">멋쟁이 사자처럼 7기</span>를 모집합니다. </p>
+                            <div class="card">
+                                <h2>7기 모집(2019.2.20 ~ 3.7)</h2>
+                                <p>3/7 지원 마감, 3/8 ~ 3/9 면접, 3/10 최종 발표<br>1년간 함께 할 <span style="color:#EE7600;">멋쟁이 사자처럼 7기</span>를 모집합니다. </p>
+                            </div>
                         </div>
                     </div>
                     <div id="time_2" class="item_right">
@@ -114,20 +112,21 @@
                     <div id="time_3" class="item_left">
                         <div class="content">
                             <h2>교내 해커톤(2019.5.24 ~ 5.25)</h2>
-                            <p>그 동안 배웠던 내용을 기반으로 <br> 경북대학교 멋쟁이 사자처럼 <span style="color:#EEC900;">교내 해커톤</span>을 실시합니다.<br>여러분의 실력을 맘껏 뽐내주세요!</p>
+                            <p style="margin-bottom: 100px;">그 동안 배웠던 내용을 기반으로 <br> 경북대학교 멋쟁이 사자처럼 <span style="color:#EEC900;">교내 해커톤</span>을 실시합니다.<br>여러분의 실력을 맘껏 뽐내주세요!</p>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
         <div class="section">
+            <!--
             <hr style="color: rgb(200, 5, 69); transform:rotate(90deg);"> 
+            -->
             <section class="timeline_cus">
-                
                 <div class="con">
                     <div id="time_4" class="item_left">
                         <div class="content">
-                            <h2>아이디어톤(2019.7.20)</h2>
+                            <h2 style="margin-top: 100px;" >아이디어톤(2019.7.20)</h2>
                             <p>여러분이 꿈꾸왔던 또는 만들고 싶은 <br><span style="color:#EE7600;">IT 서비스에 대한 아이디어</span>를 공유해보세요. <br>Top 20에 선정된 아이디어는 구글 캠퍼스 서울에서 피칭을 하게 됩니다.</p>
                         </div>
                     </div>
@@ -232,9 +231,9 @@
                 }
 
                 if(section.anchor == 'fourthPage'){
-                    $('.thisistimeline').css('opacity','1');
-                    $('.thisistimeline').css('transition','.5s');
-                    $('.thisistimeline').css('transform','translateY(0)');
+                    $('#thisistimeline').css('opacity','1');
+                    $('#thisistimeline').css('transition','.5s');
+                    $('#thisistimeline').css('transform','translateY(0)');
                     setTimeout(function() {
                         $('#time_1').css('opacity','1');
                         $('#time_1').css('transition','.5s');
@@ -254,8 +253,8 @@
                     }, 500);
                 }
                 else{
-                    $('.thisistimeline').css('opacity','0');
-                    $('.thisistimeline').css('transform','translateY(-200px)');
+                    $('#thisistimeline').css('opacity','0');
+                    $('#thisistimeline').css('transform','translateY(-200px)');
                     $('#time_1').css('opacity','0');
                     $('#time_1').css('transform','translateX(400px)');
                     $('#time_2').css('opacity','0');
