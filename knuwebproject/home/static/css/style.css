@@ -487,7 +487,7 @@ footer .container .contact a:hover{
 .timeline_cus .con .title{
     display: inline-block;
     padding-bottom:10px;
-    margin-bottom: 70px;
+    margin-bottom: 30px;
     opacity: 0;
     transform: translateY(-100px);
 }
@@ -495,10 +495,8 @@ footer .container .contact a:hover{
 .timeline_cus .con .title h1{
     font-family: 'Oswald', sans-serif;
     display:inline;
-    padding-bottom: 30px;
     font-size: 2.2em;
     margin-left:-50px;
-    border-bottom: 1px solid #ddd;
 }
 
 #time_1, #time_3, #time_5{
@@ -548,7 +546,7 @@ footer .container .contact a:hover{
 }
 
 .home_news .title{
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .home_news .title h1{
