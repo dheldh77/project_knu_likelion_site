@@ -20,7 +20,7 @@ class QNA(models.Model):
     
 class Photo(models.Model):
     qna = models.ForeignKey(QNA, on_delete=models.CASCADE, null=True)
-    image = models.ImageField(upload_to='images/', blank=True, null=True)
+    image = models.ImageField(upload_to='usr', blank=True, null=True)
     description = models.CharField(max_length=200)
 
 class Answer(models.Model):

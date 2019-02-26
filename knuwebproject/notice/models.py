@@ -14,5 +14,5 @@ class Notice(models.Model):
     
 class Pic(models.Model):
     notice = models.ForeignKey(Notice, on_delete=models.CASCADE, null=True)
-    image = models.ImageField(upload_to='images/', blank=True, null=True)
+    image = models.ImageField(upload_to='usr', blank=True, null=True)
     description = models.CharField(max_length=200)

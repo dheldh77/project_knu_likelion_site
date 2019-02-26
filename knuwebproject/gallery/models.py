@@ -10,5 +10,5 @@ class Gallery(models.Model):
 
 class Pic(models.Model):
     gallery = models.ForeignKey(Gallery, on_delete=models.CASCADE, null=True)
-    image = models.ImageField(upload_to='images/',blank=True, null=True)
+    image = models.ImageField(upload_to='usr',blank=True, null=True)
     description = models.CharField(max_length=250)

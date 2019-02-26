@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import dj_database_url
+import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'gallery.apps.GalleryConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -137,37 +139,52 @@ USE_L10N = True
 USE_TZ = False
 
 
-PAGINATION_SETTINGS = {
-    'PAGE_RANGE_DISPLAYED': 10,
-    'MARGIN_PAGES_DISPLAYED': 2,
+# PAGINATION_SETTINGS = {
+#     'PAGE_RANGE_DISPLAYED': 10,
+#     'MARGIN_PAGES_DISPLAYED': 2,
 
-    'SHOW_FIRST_PAGE_WHEN_INVALID': True,
-}
+#     'SHOW_FIRST_PAGE_WHEN_INVALID': True,
+# }
 
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
+STATICFILES_STORAGE = 'config.storages.StaticStorage'
 
+ROOT_DIR = os.path.dirname(BASE_DIR)
+CONFIG_SECRET_DIR = os.path.join(ROOT_DIR, '.config_secret')
+CONFIG_SETTINGS_COMMON_FILE = os.path.join(CONFIG_SECRET_DIR, 'settings_common.json')
 
-STATIC_URL = '/static/'
+config_secret = json.loads(open(CONFIG_SETTINGS_COMMON_FILE).read())
+AWS_ACCESS_KEY_ID = config_secret['aws']['access_key_id']
+AWS_SECRET_ACCESS_KEY = config_secret['aws']['secret_access_key']
+AWS_STORAGE_BUCKET_NAME = config_secret['aws']['s3_bucket_name']
+
+MEDIAFILES_LOCATION = 'media'
+STATICFILES_LOCATION = 'static'
+
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+# STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'home', 'static'),
-    os.path.join(BASE_DIR, 'game', 'static'),
-    os.path.join(BASE_DIR, 'notice', 'static'),
-    os.path.join(BASE_DIR, 'q_n_a', 'static'),
-    os.path.join(BASE_DIR, 'interview', 'static'),
+    # os.path.join(BASE_DIR, 'home', 'static'),
+    # os.path.join(BASE_DIR, 'game', 'static'),
+    # os.path.join(BASE_DIR, 'notice', 'static'),
+    # os.path.join(BASE_DIR, 'q_n_a', 'static'),
+    # os.path.join(BASE_DIR, 'interview', 'static'),
+    STATIC_DIR,
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_URL = '/media/'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 # ckeditor
-CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_UPLOAD_PATH = 'config.storages.MediaStorage'
 CKEDITOR_IMAGE_BACKEND = "pillow"
