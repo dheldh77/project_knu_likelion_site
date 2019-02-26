@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import dj_database_url
-from storages.backends.s3boto3 import S3Boto3Storage
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -151,32 +151,32 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-MEDIAFILES_LOCATION = 'media'
-STATICFILES_LOCATION = 'static'
+# MEDIAFILES_LOCATION = 'media'
+# STATICFILES_LOCATION = 'static'
 
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATIC_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    # os.path.join(BASE_DIR, 'home', 'static'),
-    # os.path.join(BASE_DIR, 'game', 'static'),
-    # os.path.join(BASE_DIR, 'notice', 'static'),
-    # os.path.join(BASE_DIR, 'q_n_a', 'static'),
-    # os.path.join(BASE_DIR, 'interview', 'static'),
-    STATIC_DIR,
+    os.path.join(BASE_DIR, 'home', 'static'),
+    os.path.join(BASE_DIR, 'game', 'static'),
+    os.path.join(BASE_DIR, 'notice', 'static'),
+    os.path.join(BASE_DIR, 'q_n_a', 'static'),
+    os.path.join(BASE_DIR, 'interview', 'static'),
+    # STATIC_DIR,
 ]
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 # ckeditor
-CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage'
+# CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = "pillow"
