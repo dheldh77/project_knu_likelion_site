@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import dj_database_url
-# import json
+from storages.backends.s3boto3 import S3Boto3Storage
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -151,8 +151,8 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-DEFAULT_FILE_STORAGE = 'knuwebsite.storages.MediaStorage'
-STATICFILES_STORAGE = 'knuwebsite.storages.StaticStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 MEDIAFILES_LOCATION = 'media'
 STATICFILES_LOCATION = 'static'
@@ -177,5 +177,5 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 # ckeditor
-CKEDITOR_UPLOAD_PATH = 'knuwebsite.storages.MediaStorage'
+CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage'
 CKEDITOR_IMAGE_BACKEND = "pillow"
