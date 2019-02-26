@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import dj_database_url
-import json
+# import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -154,14 +154,14 @@ USE_TZ = False
 DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
 STATICFILES_STORAGE = 'config.storages.StaticStorage'
 
-ROOT_DIR = os.path.dirname(BASE_DIR)
-CONFIG_SECRET_DIR = os.path.join(ROOT_DIR, '.config_secret')
-CONFIG_SETTINGS_COMMON_FILE = os.path.join(CONFIG_SECRET_DIR, 'settings_common.json')
+# ROOT_DIR = os.path.dirname(BASE_DIR)
+# CONFIG_SECRET_DIR = os.path.join(ROOT_DIR, '.config_secret')
+# CONFIG_SETTINGS_COMMON_FILE = os.path.join(CONFIG_SECRET_DIR, 'settings_common.json')
 
-config_secret = json.loads(open(CONFIG_SETTINGS_COMMON_FILE).read())
-AWS_ACCESS_KEY_ID = config_secret['aws']['access_key_id']
-AWS_SECRET_ACCESS_KEY = config_secret['aws']['secret_access_key']
-AWS_STORAGE_BUCKET_NAME = config_secret['aws']['s3_bucket_name']
+# config_secret = json.loads(open(CONFIG_SETTINGS_COMMON_FILE).read())
+# AWS_ACCESS_KEY_ID = config_secret['aws']['access_key_id']
+# AWS_SECRET_ACCESS_KEY = config_secret['aws']['secret_access_key']
+# AWS_STORAGE_BUCKET_NAME = config_secret['aws']['s3_bucket_name']
 
 MEDIAFILES_LOCATION = 'media'
 STATICFILES_LOCATION = 'static'
