@@ -158,7 +158,8 @@ MEDIAFILES_LOCATION = 'media'
 STATICFILES_LOCATION = 'static'
 
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-# STATIC_URL = '/static/'
+STATIC_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+
 STATICFILES_DIRS = [
     # os.path.join(BASE_DIR, 'home', 'static'),
     # os.path.join(BASE_DIR, 'game', 'static'),
@@ -171,7 +172,7 @@ STATICFILES_DIRS = [
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_URL = '/media/'
+MEDIA_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
