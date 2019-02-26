@@ -154,15 +154,6 @@ USE_TZ = False
 DEFAULT_FILE_STORAGE = 'knuwebsite.storages.MediaStorage'
 STATICFILES_STORAGE = 'knuwebsite.storages.StaticStorage'
 
-# ROOT_DIR = os.path.dirname(BASE_DIR)
-# CONFIG_SECRET_DIR = os.path.join(ROOT_DIR, '.config_secret')
-# CONFIG_SETTINGS_COMMON_FILE = os.path.join(CONFIG_SECRET_DIR, 'settings_common.json')
-
-# config_secret = json.loads(open(CONFIG_SETTINGS_COMMON_FILE).read())
-# AWS_ACCESS_KEY_ID = config_secret['aws']['access_key_id']
-# AWS_SECRET_ACCESS_KEY = config_secret['aws']['secret_access_key']
-# AWS_STORAGE_BUCKET_NAME = config_secret['aws']['s3_bucket_name']
-
 MEDIAFILES_LOCATION = 'media'
 STATICFILES_LOCATION = 'static'
 
@@ -186,5 +177,5 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 # ckeditor
-CKEDITOR_UPLOAD_PATH = 'config.storages.MediaStorage'
+CKEDITOR_UPLOAD_PATH = 'knuwebsite.storages.MediaStorage'
 CKEDITOR_IMAGE_BACKEND = "pillow"
