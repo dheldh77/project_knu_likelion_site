@@ -151,8 +151,8 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-DEFAULT_FILE_STORAGE = 'config.storages.MediaStorage'
-STATICFILES_STORAGE = 'config.storages.StaticStorage'
+DEFAULT_FILE_STORAGE = 'knuwebsite.storages.MediaStorage'
+STATICFILES_STORAGE = 'knuwebsite.storages.StaticStorage'
 
 # ROOT_DIR = os.path.dirname(BASE_DIR)
 # CONFIG_SECRET_DIR = os.path.join(ROOT_DIR, '.config_secret')
