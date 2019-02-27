@@ -151,7 +151,7 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # MEDIAFILES_LOCATION = 'media'
@@ -170,8 +170,9 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'interview', 'static'),
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'http://s3.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME + '/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
