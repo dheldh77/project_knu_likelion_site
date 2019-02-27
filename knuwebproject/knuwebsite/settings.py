@@ -160,6 +160,7 @@ AWS_STORAGE_BUCKET_NAME = "knulikelion7"
 
 # STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # STATIC_URL = 'http://s3.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME + '/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'home', 'static'),
@@ -169,10 +170,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'interview', 'static'),
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_URL = 'http://s3.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME + '/'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
