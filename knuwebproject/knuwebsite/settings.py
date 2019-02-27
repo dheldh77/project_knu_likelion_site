@@ -154,7 +154,6 @@ USE_TZ = False
 
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
-# MEDIAFILES_LOCATION = 'media'
 # STATICFILES_LOCATION = 'static'
 AWS_STORAGE_BUCKET_NAME = "knulikelion7"
 
@@ -171,8 +170,9 @@ STATICFILES_DIRS = [
 ]
 
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+MEDIA_URL = 'http://%s.s3.amazonaws.com/%s' % (AWS_STORAGE_BUCKET_NAME, MEDIAFILES_LOCATION)
+DEFAULT_FILE_STORAGE = 'knuwebsite.custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
