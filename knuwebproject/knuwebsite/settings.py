@@ -144,6 +144,8 @@ PAGINATION_SETTINGS = {
     'SHOW_FIRST_PAGE_WHEN_INVALID': True,
 }
 
+AWS_QUERYSTRING_AUTH = False
+
 
 
 # Static files (CSS, JavaScript, Images)
