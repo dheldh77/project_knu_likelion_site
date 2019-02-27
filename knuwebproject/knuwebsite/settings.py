@@ -156,7 +156,7 @@ USE_TZ = False
 
 # STATICFILES_LOCATION = 'static'
 AWS_STORAGE_BUCKET_NAME = "knulikelion7"
-
+AWS_DEFAULT_ACL = None
 # STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # STATIC_URL = 'http://s3.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME + '/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
