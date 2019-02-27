@@ -151,14 +151,14 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # MEDIAFILES_LOCATION = 'media'
 # STATICFILES_LOCATION = 'static'
 
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATIC_URL = 'http://s3.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME + '/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'home', 'static'),
     os.path.join(BASE_DIR, 'game', 'static'),
@@ -177,6 +177,6 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
 # ckeditor
-# CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage'
-CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage'
+# CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = "pillow"
