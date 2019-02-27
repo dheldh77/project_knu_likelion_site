@@ -151,14 +151,14 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # MEDIAFILES_LOCATION = 'media'
 # STATICFILES_LOCATION = 'static'
 AWS_STORAGE_BUCKET_NAME = "knulikelion7"
 
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
+# STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # STATIC_URL = 'http://s3.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME + '/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'home', 'static'),
@@ -166,7 +166,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'notice', 'static'),
     os.path.join(BASE_DIR, 'q_n_a', 'static'),
     os.path.join(BASE_DIR, 'interview', 'static'),
-    # STATIC_DIR,
 ]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
