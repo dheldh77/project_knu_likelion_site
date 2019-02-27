@@ -156,6 +156,7 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # MEDIAFILES_LOCATION = 'media'
 # STATICFILES_LOCATION = 'static'
+AWS_STORAGE_BUCKET_NAME = "knulikelion7"
 
 # STATIC_DIR = os.path.join(BASE_DIR, 'static')
 STATIC_URL = 'http://s3.amazonaws.com/%s' % AWS_STORAGE_BUCKET_NAME + '/'
