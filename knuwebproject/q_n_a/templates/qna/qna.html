@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 {% load static %}
+<!--    
     <div id="fullpage">
         <div class="section">
             <section class="qna_intro">
@@ -15,71 +16,75 @@
             </section>
         </div>
         <div class="section">
-            <section class="qna">
-                <div class="con">
-                    <table>
-                        <thead>
-                            <tr>
-                            <th>#</th>
-                            <th>제목</th>
-                            <th>날짜</th>
-                            <th>글쓴이</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+            
+        </div>
+    </div>-->
+    <section class="qna">
+        <div class="con">
+            <table>
+                <thead>
+                    <tr>
+                    <th>#</th>
+                    <th>제목</th>
+                    <th>날짜</th>
+                    <th>글쓴이</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    {% for qna in qnas %}
+                        <tr>
+                            <th class="one">{{qna.id}}</th>
                             
-                            {% for qna in qnas %}
-                                <tr>
-                                    <th class="one">{{qna.id}}</th>
-                                    
-                                    <td class="two"><a href="{% url 'qna:detail' qna.id %}">{{qna.title}}</a></td>
-                                    <td class="three"><p>{{qna.pub_date}}</p></td>
-                                    <td class="four">{{qna.user.username}}</td>
-                                </tr>
-                                {% for ans in qna.answer_set.all %}
-                                    <tr>
-                                        <th class="one"></th>
-                                        <td class="two"><a href="{%url 'qna:ans' ans.id %}">└답변: {{ans.title}}</a></td>
-                                        <td class="three"><p>{{ans.pub_date}}</p></td>
-                                        <td class="four">관리자</td>
-                                    </tr>   
-                                {% endfor %}
-                            {% endfor %}
-                        </tbody>
-                    </table>
-                    <div class="new">
-                        {% if user.is_authenticated %}
-                            <i class="fas fa-angle-double-left"></i>
+                            <td class="two"><a href="{% url 'qna:detail' qna.id %}">{{qna.title}}</a></td>
+                            <td class="three"><p>{{qna.pub_date}}</p></td>
+                            <td class="four">{{qna.user.username}}</td>
+                        </tr>
+                        {% for ans in qna.answer_set.all %}
+                            <tr>
+                                <th class="one"></th>
+                                <td class="two"><a href="{%url 'qna:ans' ans.id %}">└답변: {{ans.title}}</a></td>
+                                <td class="three"><p>{{ans.pub_date}}</p></td>
+                                <td class="four">관리자</td>
+                            </tr>   
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div class="new">
+                {% if user.is_authenticated %}
+                    <i class="fas fa-angle-double-left"></i>
 
-                            <button class="nouser" onclick="window.location.href='{% url 'qna:newQNA' %}'">질문하기</button>
+                    <button class="nouser" onclick="window.location.href='{% url 'qna:newQNA' %}'">질문하기</button>
 
-                        {% else %}
-                            <i class="fas fa-angle-double-left"></i>
-                            <button class="nouser" onClick="nouser('{% url 'login'%}')" >질문하기</button>
+                {% else %}
+                    <i class="fas fa-angle-double-left"></i>
+                    <button class="nouser" onClick="nouser('{% url 'login'%}')" >질문하기</button>
+                {% endif %}
+            </div>
+            <div style="display:flex; justify-content:center; align-items:center; margin-top:20px;">
+                <div class="pagination">
+                    <div>
+                        {% if qnas.has_previous %}
+                            <!--<a href="?page=1">First</a>-->
+                            <a href="?page={{qnas.previous_page_number}}"><i class="fas fa-angle-left"></i></a>
                         {% endif %}
                     </div>
-                    <div style="display:flex; justify-content:center; align-items:center; margin-top:20px;">
-                        <div>
-                            {% if qnas.has_previous %}
-                                <a href="?page=1">First</a>
-                                <a href="?page={{qnas.previous_page_number}}">Previous</a>
-                            {% endif %}
-
-                            <span>{{qnas.number}}</span>
-                            <span>of</span>
-                            <span>{{qnas.paginator.num_pages}}</span>
-
-                            {% if qnas.has_next %}
-                                <a href="?page={{qnas.next_page_number}}">Next</a>
-                                <a href="?page={{qnas.paginator.num_pages}}">Last</a>
-                            {% endif %}
-                        </div>
+                    <div>
+                        <span>{{qnas.number}}</span>
+                        <span>of</span>
+                        <span>{{qnas.paginator.num_pages}}</span>
+                    </div>
+                    <div>
+                        {% if qnas.has_next %}
+                            <a href="?page={{qnas.next_page_number}}"><i class="fas fa-angle-right"></a>
+                            <!--<a href="?page={{qnas.paginator.num_pages}}">Last</a>-->
+                        {% endif %}
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
-    </div>
-
+    </section>
     <script>
         function SubmitQ() {
             console.log(document.getElementById("qna_body").value)

@@ -49,6 +49,8 @@ body{
 }
 
 .noti .con{
+    padding-top:150px;
+    padding-bottom:150px;
     color: black;
     letter-spacing: 2px;
     max-width: 1300px;
