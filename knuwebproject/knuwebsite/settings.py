@@ -172,6 +172,6 @@ DATABASES['default'].update(db_from_env)
 CKEDITOR_RESTRICT_BY_USER = True
 CKEDITOR_REQUIRE_STAFF=False
 # ckeditor
-CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage'
-# CKEDITOR_UPLOAD_PATH = 'uploads/'
+# CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage'
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = "pillow"
