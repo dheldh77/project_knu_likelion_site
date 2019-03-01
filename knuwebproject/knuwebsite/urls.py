@@ -42,7 +42,7 @@ urlpatterns = [
     path('qna/',include('q_n_a.urls')),
     path('accounts/',include('accounts.urls')),
     path('shuffle/', game.views.shuffle, name="shuffle"),
-    path('interview/',interview.views.board, name="interview"),
+    path('cardnews/',interview.views.board, name="cardnews"),
     path('gallery/',gallery.views.board,name='gallery'),
     path('ckeditor/', include('ckeditor_uploader.urls')), # ckeditor
     path(r'^upload/', login_required(views_ckeditor.upload), name='ckeditor_upload'),
