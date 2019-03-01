@@ -19,4 +19,22 @@
             </form>
         </div>
     </section>
+    <!-- <script>
+        function abc(post_id){
+            $.ajax({
+                type: "POST",
+                url: "/algorithm/more/",
+                data: {'pk': post_id, 'csrfmiddlewaretoken':'{{csrf_token}}'},
+                dataType: "json",
+                success: function(res){
+                    console.log(res.body);
+                    $("#summary-"+post_id).replaceWith('<p>'+res.body+'</p>')
+                    $(".btn-"+post_id).remove();
+                },
+                error: function(request, status, error){
+                    alert(error);
+                },
+            });
+        }
+    </script> -->
 {% endblock %}

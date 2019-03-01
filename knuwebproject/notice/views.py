@@ -47,16 +47,3 @@ def detail(request,notice_id):
         next = next_in_order(notice).id
 
     return render(request,'notice/detail.html',{'notice':notice, 'prev':prev, 'next':next})
-
-# def more(request):
-#     pk = request.POST.get('pk',None)
-#     notice = get_object_or_404(Notice, pk = pk)
-    
-#     # 돌려 보낼 때 모델 객체 자체를 보내지 말고, dict로 만들어서 보내라
-#     # 모델 객체 자체를 보내려고 하면, 직렬화 error발생 하면서 힘들어짐 방법을 찾아야 할듯
-#     ret = {
-#         'body': notice.body,
-#         'id': notice.id
-#     }
-#     # print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"+str(notice)+"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
-#     return HttpResponse(json.dumps(ret), content_type="application/json")
