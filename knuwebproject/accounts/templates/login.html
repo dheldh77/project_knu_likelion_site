@@ -20,4 +20,10 @@
             </div>
         </div>
     </section>
+    <script>
+        window.onload=log;
+        function log(){
+            if ({{status}} == 0) alert({{error}});
+        }
+    </script>
 {% endblock %}

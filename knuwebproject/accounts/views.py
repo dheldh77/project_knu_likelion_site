@@ -13,9 +13,9 @@ def login(request):
             auth.login(request,user)
             return redirect('home')
         else:
-            return render(request,"login.html",{'error':'user ID or password is incorrect'})
+            return render(request,"login.html",{'error':'유저 ID 혹은 password가 잘못되었습니다.', 'status': 0})
     else:
-        return render(request,"login.html")
+        return render(request,"login.html", {'status': 1})
 
 def signup(request):
     if request.method == "POST":
