@@ -19,9 +19,10 @@ def login(request):
 
 def signup(request):
     if request.method == "POST":
-        user = User.objects.create_user(username=request.POST['user_id'], password=request.POST['passwd1'])
+        user = auth.authenticate(request,username=request.POST['user_id'])
         if user is not None :
             if request.POST['passwd1'] == request.POST['passwd2']:
+                User.objects.create_user(username=request.POST['user_id'], password=request.POST['passwd1'])
                 auth.login(request, user)
                 return redirect('home')
             else :
