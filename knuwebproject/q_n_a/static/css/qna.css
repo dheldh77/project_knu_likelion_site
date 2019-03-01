@@ -100,6 +100,9 @@ body{
     width: 20%;
     text-align: center;
 }
+.qna .con table .two{
+    padding-left:50px;
+}
 .qna .con table .three{
     text-align: center;
     font-size:10px;
