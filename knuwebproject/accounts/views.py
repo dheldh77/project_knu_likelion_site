@@ -19,7 +19,7 @@ def login(request):
 
 def signup(request):
     if request.method == "POST":
-        if User.objects.filter(username=request.POST['user_id']).exists() :
+        if not User.objects.filter(username=request.POST['user_id']).exists() :
             if request.POST['passwd1'] == request.POST['passwd2']:
                 user = User.objects.create_user(username=request.POST['user_id'], password=request.POST['passwd1'])
                 auth.login(request, user)
