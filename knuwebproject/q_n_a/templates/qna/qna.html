@@ -42,7 +42,7 @@
                         </tr>
                         {% for ans in qna.answer_set.all %}
                             <tr>
-                                <th class="one"></th>
+                                <!--th class="one"></th>-->
                                 <td class="two"><a href="{%url 'qna:ans' ans.id %}">└답변: {{ans.title}}</a></td>
                                 <td class="three"><p>{{ans.pub_date}}</p></td>
                                 <td class="four">관리자</td>
