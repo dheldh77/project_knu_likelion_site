@@ -12,4 +12,4 @@ class Interview(models.Model):
 class Pic(models.Model):
     interview = models.ForeignKey(Interview, on_delete=models.CASCADE, null=True)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
-    description = RichTextField(blank=True,null=True)
+    description = models.CharField(max_length = 255, null=True, blank=True)
