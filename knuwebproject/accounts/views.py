@@ -25,9 +25,9 @@ def signup(request):
                 auth.login(request, user)
                 return redirect('home')
             else :
-                render(request, "signup.html",{"error":"비밀 번호가 일치하지 않습니다.", "status": 1})
+                return render(request, "signup.html",{"error":"비밀 번호가 일치하지 않습니다.", "status": 1})
         else :
-            render(request, "signup.html",{"error":"이미 존재하는 ID입니다.", "status": 1})
+            return render(request, "signup.html",{"error":"이미 존재하는 ID입니다.", "status": 1})
     return render(request,"signup.html", {"status":0})
 
 def logout(request):
