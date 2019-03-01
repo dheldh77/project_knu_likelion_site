@@ -19,6 +19,12 @@
             </form>
         </div>
     </section>
+    <script>
+        window.onload=sign;
+        function sign(){
+            if ({{status}} == 1) alert("{{error}}");
+        }
+    </script>
     <!-- <script>
         function abc(post_id){
             $.ajax({
