@@ -12,3 +12,6 @@ class Pic(models.Model):
     interview = models.ForeignKey(Interview, on_delete=models.CASCADE, null=True)
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
     description = models.CharField(max_length=200)
+
+    class Meta:
+        ordering = ('id',)
