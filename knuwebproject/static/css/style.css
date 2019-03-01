@@ -12,8 +12,8 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-    -webkit-text-fill-color: white;
-    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+    -webkit-text-fill-color: #444;
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
     transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -556,4 +556,11 @@ footer .container .contact a:hover{
     font-size: 2.2em;
     margin-left:-50px;
     border-bottom: 1px solid #ddd;
+}
+
+.pagination{
+    display: flex;
+    width:150px;
+    justify-content: space-between;
+    align-items: flex-end;
 }

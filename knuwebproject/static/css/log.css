@@ -5,9 +5,6 @@ body{
 
 .signup{
     font-family: 'Oswald', sans-serif;
-    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../img/log_bg.jpg);
-    background-position: center;
-    background-size: cover;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -21,12 +18,11 @@ body{
     padding-bottom:70px;
     padding-left:100px;
     padding-right: 100px;
-    background:rgba(0,0,0,0.4);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border:1px solid #eee;
 }
 
 .signup .con h1{
-    color:white;
+    color:#444;
     letter-spacing: 4px;
     padding-left: 10px;
     /* font-family: 'Oswald', sans-serif; */
@@ -47,12 +43,20 @@ body{
     width: 300px;
     border:none;
     border-radius: 30px;
-    background:rgba(0,0,0,0.2);
+    background:white;
     margin-top:12px;
     margin-bottom:12px;
     padding: 12px 30px;
     color:white;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border:1px solid #eee;
+}
+
+.signup .con .input:hover{
+    transition: .5s;
+    cursor: pointer;
+    background: white;
+    color:#c50045;
+    border:1px solid #c50045;
 }
 
 .signup .con input:focus{
@@ -60,10 +64,11 @@ body{
 }
 
 .signup .con .input{
+    transition: .5s;
     font-family: 'Oswald', sans-serif;
     width: 360px;
     background:#c50045;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border:1px solid #eee;
 }
 
 .signup .con .input:focus{
@@ -74,9 +79,6 @@ body{
 
 .login{
     /* font-family: 'Oswald', sans-serif; */
-    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(../img/log_bg.jpg);
-    background-position: center;
-    background-size: cover;
     height: 100vh;
     width: 100%;
     display: flex;
@@ -90,12 +92,11 @@ body{
     padding-bottom:70px;
     padding-left:100px;
     padding-right: 100px;
-    background:rgba(0,0,0,0.4);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border:1px solid #eee;
 }
 
 .login .con h1{
-    color:white;
+    color:#444;
     letter-spacing: 4px;
     padding-left: 10px;
     /* font-family: 'Oswald', sans-serif; */
@@ -116,12 +117,12 @@ body{
     width: 300px;
     border:none;
     border-radius: 30px;
-    background:rgba(0,0,0,0.2);
+    background:white;
     margin-top:12px;
     margin-bottom:12px;
     padding: 12px 30px;
     color:white;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border:1px solid #eee;
 }
 
 .login .con input:focus{
@@ -132,7 +133,16 @@ body{
     /* font-family: 'Oswald', sans-serif; */
     width: 360px;
     background:#c50045;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border:1px solid #ddd;
+    transition: .5s;
+}
+
+.login .con .input:hover{
+    transition: .5s;
+    cursor: pointer;
+    background: white;
+    color:#c50045;
+    border:1px solid #c50045;
 }
 
 .login .con .input:focus{
@@ -141,7 +151,7 @@ body{
 
 .login .con a{
     letter-spacing: 2px;
-    color: white;
+    color: #444;
     text-decoration: none;
     /* font-size: 12px; */
 }
