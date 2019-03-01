@@ -83,7 +83,7 @@ body{
 
 .qna .con table td {
     height: 50px;
-    vertical-align: cente;
+    vertical-align: center;
     padding: 5px 15px;
     border-bottom: 1px solid #eee;
 }
@@ -99,6 +99,9 @@ body{
 .qna .con table .one{
     width: 20%;
     text-align: center;
+}
+.qna .con table .two{
+    padding-left:50px;
 }
 .qna .con table .three{
     text-align: center;
