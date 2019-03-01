@@ -176,3 +176,4 @@ CKEDITOR_REQUIRE_STAFF=False
 # CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = "pillow"
+CKEDITOR_FILENAME_GENERATOR = 'utils.get_filename'
