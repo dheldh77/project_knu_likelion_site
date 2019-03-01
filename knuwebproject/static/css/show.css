@@ -63,6 +63,7 @@ body{
 }
 
 .show .con .card .content{
+    overflow-x: auto;
     min-height: 600px;
     padding: 50px 50px;
     border-bottom: 1px solid #eee;
@@ -75,6 +76,7 @@ body{
 }
 
 .show .con .card .content p{
+    font-family: 'NIXGONM-Vb';
     word-wrap: break-word;
     word-break: keep-all;
 }
