@@ -33,7 +33,7 @@
                 <tbody>
                     {% for notice in notices %}
                         <tr>
-                            <th class="one">{{notice.id}}</th>
+                            <!-- <th class="one">{#{notice.id}#}</th> -->
                             <td class="two">
                                 <a href="{% url 'notice:detail' notice.id %}">{{notice.title}}</a>
                             </td>
