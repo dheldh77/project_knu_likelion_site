@@ -2,45 +2,6 @@ body{
     margin:0;
 }
 
-
-.noti_intro {
-    height: 500px;
-    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.6)), url(../img/notification.jpg);
-    background-position: center;
-    background-size: cover;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-}
-.noti_intro .des{
-    word-break: keep-all;
-    font-family: 'Oswald', sans-serif;
-    padding-left:50px;
-    width: 1000px;
-    margin-right: auto;
-    margin-left: auto;
-    display: flex;
-    justify-content: center;
-    padding-bottom:30px;
-}
-
-
-.noti_intro .des h1{
-    letter-spacing: 5px;
-    font-size:38px;
-}
-
-.noti_intro .des p{
-    letter-spacing: 2px;
-}
-
-.noti_intro .des .flex{
-    color:white;
-}
-
-
 .noti{
     display: flex;
     justify-content: center;
@@ -56,6 +17,19 @@ body{
     max-width: 1300px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.noti .con .noti_search{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-bottom: 50px;
+}
+.noti .con .noti_title h1{
+    margin:0;
+    font-size: 42px;
+    letter-spacing: 2px;
+    color:#444;
 }
 
 .noti .con table{
@@ -116,12 +90,12 @@ body{
 .noti .con table .three{
     text-align: center;
     font-size:10px;
-    width:20%;
+    width:25%;
 }
 .noti .con table .four{
     text-align: center;
     font-size:14px;
-    width:10%;
+    width:15%;
 }
 
 .noti .con .current{

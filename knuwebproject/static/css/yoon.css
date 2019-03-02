@@ -112,3 +112,19 @@ header .menubar .menu li a{
     font-size:15px;
 }
 
+.qna .con .qna_title h1{
+    font-family:"locus_sangsang" !important;
+}
+
+.noti .con .noti_title h1{
+    font-family:"locus_sangsang" !important;
+}
+
+.go_ans a{
+    font-family:"locus_sangsang" !important;
+    letter-spacing: 2px;
+}
+
+.picture .cont .content .card .prepare h5{
+    font-family:"locus_sangsang" !important;
+}

@@ -49,9 +49,6 @@
                 {% endfor %}
             </div>
         </div>
-        {% if c_ans == 1 %}
-            <a href="{% url 'qna:ans' ans.id %}">답변보기</a>
-        {% endif %}
         <div class="go">
             {% if prev == 0 %}
                 <a href="#" onclick="alert('처음 질문 입니다!')"><i class="fas fa-angle-left"></i> previous</a>
@@ -67,31 +64,22 @@
         </div>
     </div>
 </section>
+<div class="go_ans">
+    {% if c_ans == 1 %}
+        <a id="test1" href="{% url 'qna:ans' ans.id %}">답변이 등록되었습니다</a>
+    {% endif %}
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script>
-function changeStr(){
-    var str = document.getElementById("qna_body").innerHTML;
-    document.getElementById("qna_body").innerHTML= document.getElementById("qna_body").innerText
-}
-window.onload=changeStr;
-</script>
-
-<script>
-    var modal = document.getElementById('myModal');
-    var btn = document.getElementById("myBtn");
-    var span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = function() {
-        modal.style.display = "block";
+    function changeStr(){
+        var str = document.getElementById("qna_body").innerHTML;
+        document.getElementById("qna_body").innerHTML= document.getElementById("qna_body").innerText
     }
-
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
+    window.onload=changeStr;
+    window.onload = function(){
+        $(".go_ans").css("opacity","1");
+        $(".go_ans").css("transition",".5s ease");
+        $(".go_ans").css("transform","translateX(0)");
     }
 </script>
 

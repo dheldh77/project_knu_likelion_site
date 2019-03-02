@@ -24,6 +24,7 @@ body{
     flex:2.5;
 }
 
+
 .picture .cont .content::-webkit-scrollbar{
     display: none;
 }
@@ -59,6 +60,20 @@ body{
     height: 40px;
     width: 40px;
     margin-right: 20px;
+}
+
+.picture .cont .content .card .prepare{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:600px;
+}
+
+.picture .cont .content .card .prepare h5{
+    margin:0;
+    margin-top:20px;
+    font-size:24px;
+    text-align: center;
 }
 
 .picture .cont .content .card .text{

@@ -6,56 +6,46 @@
 <section class="picture">
     <div class="cont">
         <div class="content">
-            {% for gallery in galleries.all %}
-                <div class="card">
-                    <div class="title">
+            {% if galleries|length == 0 %}
+                <div style="border:none;" class="card">
+                    <div style="opacity:0;" class="title">
                         <img src="{% static '/img/friend.jpg'%}" alt="">
                         <h1>7기 헤커톤</h1>
                     </div>
-                    <div class="flexslider">
-                        <ul class="slides">
-                            {% for pic in gallery.pic_set.all %}
-                                <li>
-                                    <div class="img">
-                                        <img src="{{ pic.image.url}}" alt="">
-                                    </div>
-                                </li>
-                            {% endfor %}
-                        </ul>
+                    <div class="prepare">
+                        <div>
+                            <h5 style="font-size:50px;"><i class="far fa-smile-wink"></i></h5>
+                            <h5>7기 사진은 준비중이에요</h5>
+                        </div>
                     </div>
-                    <div class="text">
-                        <p>{{gallery.body}}</p>
+                    <div style="opacity:0;" class="text">
+                        <p>#준비중#환영합니다</p>
                     </div>
                 </div>
-            {% endfor %}
-            <div style="display:none;" class="card">
-                <div class="title">
-                    <img src="{% static '/img/friend.jpg'%}" alt="">
-                    <h1>5기 헤커톤</h1>
-                </div>
-                <div class="flexslider">
-                    <ul class="slides">
-                        <li>
-                            <div class="img">
-                                <img src="{% static '/img/friend.jpg'%}" alt="">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img">
-                                <img src="{% static '/img/student/이시준.jpg'%}" alt="">
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img">
-                                <img src="{% static '/img//picture_bg.jpg'%}" alt="">
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="text">
-                    <p>#헤커톤#해커톤#멋사</p>
-                </div>
-            </div>
+            {% else %}
+                {% for gallery in galleries.all %}
+                    <div class="card">
+                        <div class="title">
+                            <img src="{% static '/img/friend.jpg'%}" alt="">
+                            <h1>7기 헤커톤</h1>
+                        </div>
+                        <div class="flexslider">
+                            <ul class="slides">
+                                {% for pic in gallery.pic_set.all %}
+                                    <li>
+                                        <div class="img">
+                                            <img src="{{ pic.image.url}}" alt="">
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="text">
+                            <p>{{gallery.body}}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
         </div>
         <div class="nav">
             <div class="nav_header">
