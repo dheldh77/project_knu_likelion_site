@@ -13,4 +13,5 @@ urlpatterns = [
     path('<int:ans_id>/ans', views.ans,name='ans'),
     path('newQNA/', views.newQNA, name="newQNA"),
     path('<int:qna_id>/editQNA/', views.editQNA, name="editQNA"),
+    path('search/',views.search, name="search"),
 ]

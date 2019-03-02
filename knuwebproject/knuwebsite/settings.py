@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-import dj_database_url
+# import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -88,24 +88,24 @@ WSGI_APPLICATION = 'knuwebsite.wsgi.application'
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 # deploy용 database setting
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'knuwebsite',
-        'USER': 'name',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
-
-# local용 database setting
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'knuwebsite',
+#         'USER': 'name',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '',
 #     }
 # }
+
+# local용 database setting
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 
 
 # Password validation
@@ -164,17 +164,17 @@ STATICFILES_DIRS = [
 
 # local용 media setting
 # MEDIA_ROOT는 upload파일을 어디에 저장할 건지, MEDIA_URL은 어디서 upload한 파일을 가져올 건지
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 # deploy용 media setting
 # MEDIA_URL은 media file(upload한 file)을 어디서 부터 가져올 건지, DEFAULT_FILE_STORAGE는 file들을 어디로 upload할 건지
-MEDIA_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# MEDIA_URL = 'http://%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
+# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # heroku server는 postgres로 돌려야 되서 이에 필요한 설정, 위에 import도 같이 주석을 하고 풀어줘야 한다.
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
 
 # 신웅이가 주석 달아주겠지?
 CKEDITOR_RESTRICT_BY_USER = True

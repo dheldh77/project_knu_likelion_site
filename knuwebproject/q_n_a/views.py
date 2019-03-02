@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.core.paginator import Paginator, PageNotAnInteger
 from next_prev import next_in_order, prev_in_order
 from .forms import QNAForm
+from django.db.models import Q
 
 # Create your views here.
 def qna(request):
@@ -41,6 +42,8 @@ def new(request):
 def detail(request, qna_id):
     qna = get_object_or_404(QNA,pk=qna_id)
 
+    ans = qna.answer_set.all()
+    
     #맨 처음 글
     if(QNA.objects.first() == qna):
         prev = 0
@@ -58,7 +61,17 @@ def detail(request, qna_id):
     else:
         canEdit = False
     
-    return render(request,'qna/detail.html',{'qna':qna, 'prev':prev, 'next':next, 'canEdit':canEdit})
+    # 답변 달렸는지 여부
+    # queryset의 empty 여부는 not으로 한다.
+    if not ans:
+        # print("@@@@@@@@@@@@@@@")
+        c_ans = 0
+        return render(request,'qna/detail.html',{'qna':qna, 'prev':prev, 'next':next, 'canEdit':canEdit, 'c_ans': c_ans})
+    else:
+        # print("!!!!!!!!!!!!!!!!!!!!")
+        c_ans = 1
+        return render(request,'qna/detail.html',{'qna':qna, 'prev':prev, 'next':next, 'canEdit':canEdit, 'ans':ans[0], 'c_ans': c_ans})
+    
 
 def delete(request, qna_id):
     get_object_or_404(QNA, pk=qna_id).delete()
@@ -116,3 +129,17 @@ def editQNA(request, qna_id):
     else :
         form = QNAForm(instance=qna)
         return render(request, 'qna/edit.html', {'qna':qna,'form':form})
+
+def search(request):
+    query = request.GET['search']
+    # kwds = QNA.objects.filter(title__icontains=query) | QNA.objects.filter(body__icontains=query)
+    kwds = QNA.objects.filter(Q(title__icontains=query) | Q(description__icontains=query)).order_by('-id')
+    paginator = Paginator(kwds, 10)
+
+    try:
+        page = request.GET.get('page', 1)
+    except PageNotAnInteger:
+        page = 1
+
+    posts = paginator.get_page(page)
+    return render(request, 'qna/search.html', {'kwds':posts})

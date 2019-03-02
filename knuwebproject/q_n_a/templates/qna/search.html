@@ -32,14 +32,14 @@
                 </thead>
                 <tbody>
                     
-                    {% for qna in qnas %}
+                    {% for qna in kwds %}
                         <tr>
                             <!-- <th class="one">{#{qna.id}#}</th> -->
                             
                             <td class="two"><a href="{% url 'qna:detail' qna.id %}">{{qna.title}}</a></td>
                             <td class="three"><p>{{qna.pub_date}}</p></td>
                             {% if qna.user.is_superuser %}
-                            <td class="four">관리자</td>
+                                <td class="four">관리자</td>
                             {% else %}
                                 <td class="four">{{qna.user.username}}</td>
                             {% endif %}
@@ -69,18 +69,18 @@
             <div style="display:flex; justify-content:center; align-items:center; margin-top:20px;">
                 <div class="pagination">
                     <div>
-                        {% if qnas.has_previous %}
+                        {% if kwds.has_previous %}
                             <!--<a href="?page=1">First</a>-->
                             <a href="?page={{qnas.previous_page_number}}"><i class="fas fa-angle-left"></i></a>
                         {% endif %}
                     </div>
                     <div>
-                        <span>{{qnas.number}}</span>
+                        <span>{{kwds.number}}</span>
                         <span>of</span>
-                        <span>{{qnas.paginator.num_pages}}</span>
+                        <span>{{kwds.paginator.num_pages}}</span>
                     </div>
                     <div>
-                        {% if qnas.has_next %}
+                        {% if kwds.has_next %}
                             <a href="?page={{qnas.next_page_number}}"><i class="fas fa-angle-right"></i></a>
                             <!--<a href="?page={{qnas.paginator.num_pages}}">Last</a>-->
                         {% endif %}
@@ -88,7 +88,7 @@
                 </div>
             </div>
             <form action="{% url 'qna:search' %}">
-                <input type="text" name='search' >
+                <input type="text" name='search' placeholder="제목 또는 내용으로 검색">
                 <input type="submit" value="검색">
             </form>
         </div>

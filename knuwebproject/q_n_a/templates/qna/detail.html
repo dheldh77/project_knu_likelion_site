@@ -49,6 +49,9 @@
                 {% endfor %}
             </div>
         </div>
+        {% if c_ans == 1 %}
+            <a href="{% url 'qna:ans' ans.id %}">답변보기</a>
+        {% endif %}
         <div class="go">
             {% if prev == 0 %}
                 <a href="#" onclick="alert('처음 질문 입니다!')"><i class="fas fa-angle-left"></i> previous</a>
